@@ -1,3 +1,15 @@
+/*==================================
+TEMAS Y MENSAJES
+================================== */
+.forum > .data {
+  font: 100 var(--f-s) var(--f-metadata);
+}
+
+/*==================================
+LINKS
+================================== */
+
+
 @container style(--links:contrast) {
   .forum-links a {
     background: var(--surface-contrast);
