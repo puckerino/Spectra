@@ -1,4 +1,28 @@
 /*==================================
+TITULO
+================================== */
+.forum > .title {
+  font: 200 var(--f-2xl) var(--f-forum-title);
+}
+
+/*==================================
+ICONO
+================================== */
+
+.forum > .icon {
+  display: none;
+}
+
+/*==================================
+DESCRIPCION
+================================== */
+
+.forum > .description {
+  font: var(--f-base) var(--f-text);
+  text-wrap: pretty;
+}
+
+/*==================================
 TEMAS Y MENSAJES
 ================================== */
 .forum > .data {
@@ -9,6 +33,15 @@ TEMAS Y MENSAJES
 LINKS
 ================================== */
 
+.forum .forum-links {
+  a {
+    font: var(--f-s) var(--f-forum-links);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+  }
+}
+
 
 @container style(--links:contrast) {
   .forum-links a {
@@ -18,3 +51,4 @@ LINKS
     border-radius: 999px;
   }
 }
+
