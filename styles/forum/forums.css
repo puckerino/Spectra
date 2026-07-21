@@ -1,1 +1,8 @@
-
+@container style(--links:contrast) {
+  .forum-links a {
+    background: var(--surface-contrast);
+    color: var(--text-contrast);
+    padding: var(--spacing-2xs) var(--spacing);
+    border-radius: 999px;
+  }
+}
