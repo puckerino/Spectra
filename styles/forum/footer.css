@@ -235,6 +235,7 @@ footer .pixie-footer-groups {
             padding: var(--spacing);
             position: relative;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             overflow: clip;
@@ -242,6 +243,11 @@ footer .pixie-footer-groups {
 
             span, strong {
                 position: relative;
+            }
+
+            span {
+                font: var(--f-l) var(--f-title-deco);
+                text-transform: uppercase;
             }
 
             &[href*="/g2-"] {
