@@ -78,9 +78,11 @@
 	.lasttopics { 
 		grid-area: topics;
 		display: grid;
+		padding: var(--spacing);
 
 		.tablon-title {
-			font: var(--f-l) var(--f-title);
+			font: var(--f-xl) var(--f-title);
+			text-transform: lowercase;
 		}
 		
 		.wrap {
@@ -92,8 +94,11 @@
 		.lasttopic { 
 			gap: 0;
 			border: 1px solid var(--border);
+			border-radius: var(--spacing-s);
+			corner-shape: var(--shape-elements);
 			padding: var(--spacing-s);
 			line-height: 1;
+			background: var(--background);
 			
 			.title { 
 				font: bold 1rem var(--f-title);
@@ -104,7 +109,7 @@
 			}
 
 			.date { 
-				font: var(--f-s) var(--f-text); 
+				font: var(--f-s) var(--f-metadata); 
 				text-transform: uppercase;
 			}
 		}
