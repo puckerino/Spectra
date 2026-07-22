@@ -1,0 +1,249 @@
+/*links anuncios topics staff localizacion periodo intro */
+
+#tablon { 
+	background: var(--surface-elevated);
+	gap: var(--spacing);
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(5, max-content);
+	grid-template-areas: 
+		"links links links links links links"
+		"intro intro intro anuncios anuncios anuncios"
+		"periodo periodo periodo localizacion localizacion localizacion"
+		"eventos eventos staff staff redes redes"
+		"topics topics topics topics topics topics";
+
+	.redes {
+		grid-area: redes;
+	}
+	
+
+	.linksrapidos { 
+		grid-area: links;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		gap: var(--spacing-xs);
+
+		a { 
+			display: flex;
+			align-items: center;
+			background: var(--surface);
+			padding: var(--spacing-xs) var(--spacing-s);
+			font: var(--f-base) var(--f-label);
+		}
+	}
+
+	.anuncios { 
+		grid-area: anuncios;
+		display: flex;
+		flex-direction:column;
+		background: var(--surface);
+		
+		.tablon-title {
+			font: var(--f-l) var(--f-title);
+		}
+		
+		.wrap {
+			display: flex;
+			flex-direction: column;
+			gap: var(--spacing-xs);
+			max-height: 200px;
+			overflow:auto;
+		}	
+
+		a { 
+			display: flex;
+			align-items: center;
+			gap: var(--spacing-s);
+			border: 1px solid var(--border);
+    		padding: var(--spacing-xs);
+
+			span { 
+				font-weight: bold;
+			}
+
+			&:before {
+				content: "";
+				height: 1rem;
+				width: 1rem;
+				background: var(--accent);
+				mask-image: url("https://unpkg.com/lucide-static/icons/megaphone.svg");
+				mask-size: contain;
+				mask-repeat: no-repeat;
+				mask-position: center;
+			}
+		}
+	}
+
+	.lasttopics { 
+		grid-area: topics;
+		display: grid;
+
+		.tablon-title {
+			font: var(--f-l) var(--f-title);
+		}
+		
+		.wrap {
+			display: grid;
+			grid-template-columns: repeat(4,1fr);
+			gap: var(--spacing-s);
+		}	
+		
+		.lasttopic { 
+			gap: 0;
+			border: 1px solid var(--border);
+			padding: var(--spacing-s);
+			line-height: 1;
+			
+			.title { 
+				font: bold 1rem var(--f-title);
+			}
+
+			.username { 
+				font: bold 1rem var(--f-title);
+			}
+
+			.date { 
+				font: var(--f-s) var(--f-text); 
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	.staff { 
+		grid-area: staff;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+		gap: 0 var(--spacing);
+
+		&:before {
+			content: "STAFF";
+			grid-column: 1 / -1;
+			font: var(--f-l) var(--f-title);
+		}
+
+		a { 
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			height: 100px;
+			width: 100px;
+			transition: all .5s ease-in-out;
+
+			span {
+				transition: all .5s ease-in-out;
+				position: relative;
+				color: var(--text-contrast);
+				opacity: 0;
+				filter: blur(5px);
+			}
+
+			&:hover {
+				transition: all .5s ease-in-out;
+				span {
+					transition: all .5s ease-in-out;
+					opacity: 1;
+					filter: blur(0);
+				}
+			}
+
+			&:before {
+				content: "";
+				inset: 0;
+				position: absolute;
+				background: var(--staff-img);
+				background-size: cover;
+				background-position: center;
+			}
+		}
+	}
+
+	.localizacion { 
+		grid-area: localizacion;
+
+	}
+
+	.periodoroleable { 
+		grid-area: periodo;
+		display: flex;
+		align-items: center;
+		gap: var(--spacing);
+
+		.tablon-title {
+			font: var(--f-l) var(--f-title);
+		}
+	}
+
+	.introduccion { 
+		grid-area: intro;
+		display: grid;
+		grid-template-columns: calc(200px + var(--spacing)) 1fr;
+		gap: var(--spacing);
+
+		@media (max-width: 700px) {
+			grid-template-columns: 1fr;
+		}
+
+		img {
+			object-fit: cover;
+			height: 100%;
+
+			@media (max-width: 700px) {
+				display: none;
+			}
+		}
+
+		.wrap {
+			display: flex;
+			flex-direction: column;
+
+			p {
+				margin: 0;
+				text-wrap: balance;
+			}
+		}
+	}
+
+	.eventos {
+		grid-area: eventos;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: var(--spacing);
+
+		a {
+			height: 100px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: var(--spacing);
+			position: relative;
+			line-height: 1;
+
+			span {
+				position: relative;
+				color: var(--text-contrast);
+				line-height: 1;
+				text-align: center;
+
+				&.title {
+					font: bold var(--f-base) var(--f-title);
+				}
+
+				&.description {
+					font: var(--f-s) var(--f-text);
+				}
+			}
+
+			&:before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				background: var(--evento-img);
+				background-size: cover;
+				background-position: center;
+			}
+		}
+	}
+}
