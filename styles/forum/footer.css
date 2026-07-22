@@ -79,8 +79,9 @@ LINKS OPCIONES
 
 footer .forum-options {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     gap: var(--spacing-s);
     padding: var(--spacing);
 
