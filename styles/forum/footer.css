@@ -192,8 +192,8 @@ footer {
                 padding-right: 0;
                 
                 h4 {
-                    font: var(--f-2xl) var(--f-title);
-                    text-transform: lowercase;
+                    font: var(--f-2xl) var(--f-title-deco);
+                    text-transform: uppercase;
                 }
 
                 .pixie-footer-user-list {
