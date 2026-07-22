@@ -81,7 +81,7 @@ footer .forum-options {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     gap: var(--spacing-s);
     padding: var(--spacing);
 
