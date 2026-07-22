@@ -1,3 +1,17 @@
+.panel-tabs.ucp #tabs {
+  background: var(--background-elevated);
+
+  ul {
+    gap: var(--spacing-s);
+
+    li {
+      border-radius: var(--spacing-s);
+      corner-shape: squircle;
+      background: var(--background);
+    }
+  }
+}
+
 .switch-preferences {
   menu {
     border: 1px solid var(--border);
