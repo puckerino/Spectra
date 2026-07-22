@@ -10,6 +10,13 @@
             display: flex;
             align-items: center;
             gap: var(--spacing-s);
+			padding: var(--spacing-s);
+			border: 1px solid var(--border);
+			background: var(--background-elevated);
+
+			&.active {
+				background: red;
+			}
 
 			.switcheroo__avatar { 
                 height: 60px;
