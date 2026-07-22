@@ -12,6 +12,8 @@
             gap: var(--spacing-s);
 			padding: var(--spacing-s);
 			border: 1px solid var(--border);
+			border-radius: var(--spacing-s);
+			corner-shape: var(--shape-elements);
 			background: var(--background-elevated);
 
 			&.active {
@@ -27,6 +29,8 @@
                     object-fit: cover;
 					width: 60px;
 					height: 60px;
+					border-radius: var(--spacing-s);
+					corner-shape: var(--shape-elements);
 				}
 			}
 
@@ -46,7 +50,8 @@
                 padding: var(--spacing-s);
                 aspect-ratio: 1;
                 font-size: var(--f-s);
-                border-radius: var(--shape-elements);
+                border-radius: var(--spacing-s);
+				corner-shape: var(--shape-elements);
 			}
 		}
 	}
