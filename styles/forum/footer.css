@@ -221,33 +221,17 @@ GRUPOS
 ================================== */
 
 footer .pixie-footer-groups {
-    display: grid;
-    grid-template-columns: .25fr 1fr .35fr;
-    grid-template-areas: "title grouplist grouplist";
-    background: var(--background);
-
-    &:before {
-        content: "GRUPOS";
-        grid-area: title;
-        font: 100 var(--f-xl) var(--f-title-deco);
-        color: var(--text-subtle);
-        height: 100%;
-        width: 100%;
-        display: flex; 
-        justify-content: center;
-        align-items: center;
-        padding: var(--spacing);
-    }
     
     .pixie-footer-group-list {
-        grid-area: grouplist;
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
         gap: var(--spacing-s);
         padding: var(--spacing);
 
         .pixie-footer-group {
+            aspect-ratio: 1;
             background: var(--group-color);
-            padding: var(--spacing) var(--spacing-2xl);
+            padding: var(--spacing);
             position: relative;
             display: flex;
             justify-content: center;
