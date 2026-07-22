@@ -26,7 +26,7 @@ DESCRIPCION
 TEMAS Y MENSAJES
 ================================== */
 .forum > .data {
-  font: 200 var(--f-s) var(--f-metadata);
+  font: 300 var(--f-s) var(--f-metadata);
 }
 
 /*==================================
