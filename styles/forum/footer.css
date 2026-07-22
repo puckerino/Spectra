@@ -84,7 +84,6 @@ footer .forum-options {
     justify-content: space-around;
     gap: var(--spacing-s);
     padding: var(--spacing);
-    background: linear-gradient(to left, var(--accent), transparent);
 
     li {
         display: flex;
@@ -100,7 +99,7 @@ footer {
     
     div[data-pixie-footer] {
         display: grid;
-        grid-template-columns: .25fr 1fr .35fr;
+        grid-template-columns: .5fr 1fr .35fr;
         grid-template-areas:
             "forum-stats online last-user"
             "groups online last-user";
