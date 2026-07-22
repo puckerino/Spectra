@@ -1,1 +1,387 @@
+footer {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-areas: 
+        "title title title options options options"
+        "online online online online online online"
+        "disclaimer disclaimer img img creditos creditos"
+        "afiliados afiliados afiliados afiliados afiliados afiliados"
+        ;
 
+    @media (max-width: 700px) {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-img {
+        grid-area: img;
+        position: relative;
+        background: var(--footer-img), radial-gradient(circle at 50% 120%,var(--accent) 0%, transparent 60%);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .forum-options {
+        grid-area: options;
+    }
+
+    & > h2 {
+        grid-area: title;
+    }
+
+    div[data-pixie-footer] {
+        grid-area: online;
+    }
+
+    .disclaimer {
+        grid-area: disclaimer;
+        padding: var(--spacing);
+
+        &:before {
+            content: var(--titulo-foro);
+            font: 100 var(--f-l) var(--f-title-deco);
+            text-fit: grow;
+            display: block;
+            color: var(--text-subtle);
+            line-height: 1;
+        }
+    }
+
+    .afiliados {
+        grid-area: afiliados;
+    }
+
+    .forum-credits {
+        grid-area: creditos;
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+
+/* ==================================
+TITULO
+================================== */
+
+footer > h2 {
+    font: 100 var(--f-5xl) var(--f-title-deco);
+    color: var(--text-subtle); 
+    line-height: 1;
+    padding: var(--spacing);
+    text-transform: uppercase;
+}
+
+/* ==================================
+LINKS OPCIONES
+================================== */
+
+footer .forum-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: var(--spacing-s);
+    padding: var(--spacing);
+    background: linear-gradient(to left, var(--accent), transparent);
+
+    li {
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* ==================================
+BLOQUE PRINCIPAL 
+================================== */
+
+footer {
+    
+    div[data-pixie-footer] {
+        display: grid;
+        grid-template-columns: .25fr 1fr .35fr;
+        grid-template-areas:
+            "forum-stats online last-user"
+            "groups groups groups";
+
+        @media (max-width: 700px) {
+            grid-template-columns: 1fr;
+            grid-template-areas: "forum-stats" "online" "last-user" "groups";
+        }
+        
+        &:not(:has(.pixie-footer-online)) {
+            display: none;
+        }
+
+        .pixie-footer-stats {
+            grid-area: forum-stats;
+            background: var(--surface-3);
+
+            @media (max-width: 700px) {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+            }
+
+            .pixie-footer-stat {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align:center;
+
+                strong {
+                    font: italic var(--f-xl) var(--f-title);
+                }
+
+                span {
+                    font: 500 var(--f-s) var(--f-metadata);
+                    letter-spacing: .1ch;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .pixie-footer-lastuser {
+            grid-area: last-user;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                font: var(--f-l) var(--f-title);
+            }
+
+            a {
+                font: var(--f-xl) var(--f-post-username);
+            }
+
+            @media (max-width: 700px) {
+                flex-direction: row;
+                justify-content: flex-start;
+            }
+        }
+
+        .pixie-footer-online {
+            grid-area: online;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: max-content 1fr;
+            
+            .pixie-footer-online-summary {
+                grid-column: 1 / -1;
+                background: var(--background);
+                padding: var(--spacing-s);
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                span {
+                    font: 500 var(--f-s) var(--f-metadata);
+                    text-transform: uppercase;
+
+                    strong {
+                        font: italic var(--f-xl) var(--f-title);
+                    }
+                }
+            }
+
+            .pixie-footer-users {
+                padding: var(--spacing);
+                padding-right: 0;
+                
+                h4 {
+                    font: italic var(--f-2xl) var(--f-title);
+                }
+
+                .pixie-footer-user-list {
+                    height: 30vh;
+                    overflow: auto;
+
+                    a {
+                        font: var(--f-l) var(--f-title);
+                    }
+                }
+            }
+
+            @media (max-width: 700px) {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .pixie-footer-groups {
+            grid-area: groups;
+        }
+    }
+}
+
+/* ==================================
+GRUPOS
+================================== */
+
+footer .pixie-footer-groups {
+    display: grid;
+    grid-template-columns: .25fr 1fr .35fr;
+    grid-template-areas: "title grouplist grouplist";
+    background: var(--background);
+
+    &:before {
+        content: "GRUPOS";
+        grid-area: title;
+        font: 100 var(--f-xl) var(--f-title-deco);
+        color: var(--text-subtle);
+        height: 100%;
+        width: 100%;
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        padding: var(--spacing);
+    }
+    
+    .pixie-footer-group-list {
+        grid-area: grouplist;
+        display: flex;
+        gap: var(--spacing-s);
+        padding: var(--spacing);
+
+        .pixie-footer-group {
+            background: var(--group-color);
+            padding: var(--spacing) var(--spacing-2xl);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: clip;
+            color: contrast-color(var(--group-color));
+
+            span, strong {
+                position: relative;
+            }
+
+            &[href*="/g2-"] {
+                --group: 2;
+            }
+            
+            &[href*="/g3-"] {
+                --group: 3;
+            }            
+            
+            &[href*="/g4-"] {
+                --group: 4;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                background: var(--text-contrast);
+                opacity: .3;
+                height: 90%;
+                width: 100%;
+                -webkit-mask-position-x: center;
+                -webkit-mask-position-y: center;
+                mask-size: contain;
+                mask-repeat: no-repeat;
+                
+                @container style(--group: 2) {
+                    mask-image: var(--group-2-icon);
+                }                
+                
+                @container style(--group: 3) {
+                    mask-image: var(--group-3-icon);
+                }                
+                
+                @container style(--group: 4) {
+                    mask-image: var(--group-4-icon);
+                }
+            }
+        }
+    }
+}
+
+/* ==================================
+FOOTER WIDGETS - AFILIADOS
+================================== */
+
+footer .afiliados {
+    display: grid;
+    grid-template-columns: .5fr max-content 1fr;
+    gap: var(--spacing);
+    padding: var(--spacing);
+    background: light-dark(var(--surface-3), var(--background));
+    grid-template-areas: 
+        "title title title"
+        "img hermanos normales";
+
+    &:before {
+        grid-area: img;
+        content: "";
+        background: var(--afiliados-img);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    h2.footer-title {
+        grid-area: title;
+        font: 100 var(--f-4xl) var(--f-title-deco);
+        text-align: right;
+        display: flex;
+        gap: var(--spacing);
+        justify-content: flex-end;
+        align-items: center;
+
+        &:before {
+            content: "";
+            min-width: 20px;
+            height: 1px;
+            flex-grow: 1;
+            background: var(--border);
+        }
+    }
+    
+    #afiliadosnormales {
+        grid-area: normales;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+        gap: var(--spacing-s);
+
+        figure img {
+            height: 50px;
+            width: 50px;
+            object-fit: cover;
+        }
+    }
+
+    #afiliadoshermanos {
+        grid-area: hermanos;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: var(--spacing-s);
+
+        figure img {
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+        }
+    }
+        
+}
+
+/* ==================================
+LINKS FOROACTIVO 
+==================================== */
+
+#page-footer {
+  .rightside {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface-contrast);
+    color: var(--text-contrast);
+    padding: var(--spacing-s);
+    gap: var(--spacing-s);
+    font: var(--f-s) var(--f-mono);
+    text-transform: uppercase;
+  }
+}
