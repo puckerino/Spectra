@@ -1,1 +1,8 @@
-
+.switch-preferences {
+  menu {
+    border: 1px solid var(--border);
+    border-radius: var(--spacing);
+    corner-shape: var(--shape-elements);
+    padding: var(--spacing-s);
+  }
+}
