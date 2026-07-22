@@ -26,7 +26,44 @@ DESCRIPCION
 TEMAS Y MENSAJES
 ================================== */
 .forum > .data {
-  font: 100 var(--f-s) var(--f-metadata);
+  font: 200 var(--f-s) var(--f-metadata);
+}
+
+/*==================================
+LAST POST
+================================== */
+
+.lastpost { 
+
+	.avatar-lastpost-forum { 
+
+		img { 
+
+		}
+	}
+
+	.lastpost-data { 
+
+		.title { 
+      font: var(--f-base) var(--f-title);
+		}
+
+		.username { 
+      font: 300 var(--f-s) var(--f-metadata);
+      text-transform: uppercase;
+
+			strong { 
+        font: var(--f-base) var(--f-post-username);
+			}
+
+			.last-post-icon { 
+
+				img { 
+
+				}
+			}
+		}
+	}
 }
 
 /*==================================
