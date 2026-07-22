@@ -3,8 +3,8 @@ footer {
     grid-template-columns: max-content repeat(6,1fr);
     grid-template-areas: 
         "options online online online online online online"
-        ". disclaimer disclaimer img img creditos creditos"
-        ". afiliados afiliados afiliados afiliados afiliados afiliados"
+        "redes disclaimer disclaimer img img creditos creditos"
+        "afiliados afiliados afiliados afiliados afiliados afiliados afiliados"
         ;
 
     @media (max-width: 700px) {
