@@ -37,7 +37,6 @@
 		grid-area: anuncios;
 		display: flex;
 		flex-direction:column;
-		background: var(--surface);
 		
 		.tablon-title {
 			font: var(--f-l) var(--f-title);
@@ -94,8 +93,6 @@
 		.lasttopic { 
 			gap: 0;
 			border: 1px solid var(--border);
-			border-radius: var(--spacing-s);
-			corner-shape: var(--shape-elements);
 			padding: var(--spacing-s);
 			line-height: 1;
 			background: var(--background);
