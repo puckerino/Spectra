@@ -26,7 +26,7 @@
 			.switcheroo__popper { 
 
 				.switcheroo__popper-text { 
-                    font: var(--f-l) var(--f-username-post);
+                    font: var(--f-l) var(--f-post-username);
 				}
 			}
 
