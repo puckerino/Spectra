@@ -89,3 +89,12 @@ LINKS
   }
 }
 
+/*==================================
+GUIDEBOOK
+================================== */
+
+@container style(--category:guidebook) {
+	.data, .lastpost {
+		display: none;
+	}
+}
