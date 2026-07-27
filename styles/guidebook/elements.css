@@ -24,6 +24,10 @@
 
   .codebox .copy-button {
     background: var(--accent);
-    color: contrast-color(var(--accent));
+    color: var(--text-contrast)!important;
+  }
+
+  li::marker {
+    color: var(--accent) !important;
   }
 }
