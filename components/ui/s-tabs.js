@@ -88,8 +88,8 @@ export default class STabs extends HTMLElement {
           background: none;
           cursor: pointer;
           padding:var(--spacing-s) var(--spacing);
-          border-radius:999px !important;
-          color: contrast-color(var(--background-elevated));
+          border-radius: 999px !important;
+          color: contrast-color(var(--background-elevated)) !important;
           background: var(--background-elevated);
           font:var(--f-s) var(--f-metadata);
           text-transform:uppercase;
@@ -99,7 +99,7 @@ export default class STabs extends HTMLElement {
 
         s-tabs .s-tab-button:hover {
           background:var(--text-subtle);
-          color: contrast-color(var(--text-subtle));
+          color: contrast-color(var(--text-subtle)) !important;
         }
 
         s-tabs .s-tab-button[active] {
