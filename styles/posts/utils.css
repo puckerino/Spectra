@@ -1,9 +1,9 @@
 
 .post:has(.profile-no) {
-  --post-style: noprofile;
+  --profile: no;
 }
 
-@container style(--post-style: noprofile) {
+@container style(--profile: no) {
   .profile {
     display: none !important;
   }
@@ -36,10 +36,10 @@
 }
 
 .post:has(.ficha, s-rol) {
-  --post-style: nopadding;
+  --padding: no;
 }
 
-@container style(--post-style: nopadding) {
+@container style(--padding: no) {
   .content.message {
     padding: 0 !important;
   }
