@@ -11,3 +11,12 @@
     grid-column: 1 / -1 !important;
   }
 }
+
+
+.viewtopic_body:has(.post-wide) {
+  width: 90vw;
+
+  @media(min-width: 1799px) {
+    max-width: 1800px !important;
+  }
+}
