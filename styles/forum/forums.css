@@ -2,7 +2,7 @@
 TITULO
 ================================== */
 .forum > .title {
-  font: 100 var(--f-2xl) var(--f-forum-title);
+  font: 200 var(--f-xl) var(--f-forum-title);
 }
 
 /*==================================
