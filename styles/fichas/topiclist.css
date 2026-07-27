@@ -41,6 +41,15 @@
       width: 100%;
       padding: var(--spacing);
       text-align: left;
+      margin-top: -1lh;
+    }
+
+    .lastpost {    
+      justify-content: space-between;
+      width: 100%;
+      padding: var(--spacing);
+      border-top: 1px solid var(--border);
+      background: var(--background-elevated);
     }
   }
 }
