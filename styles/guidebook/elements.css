@@ -6,10 +6,11 @@
 
   h3 {
     font: var(--f-xl) var(--f-title);
+    text-transform: uppercase;
   }
 
   h4 {
-    font: var(--f-l) var(--f-metadata);
+    font: var(--f-base) var(--f-metadata);
     text-transform: uppercase;
     letter-spacing: .1ch;
     color: var(--text-subtle);
