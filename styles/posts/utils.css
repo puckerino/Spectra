@@ -23,6 +23,10 @@
 
 .viewtopic_body:has(.ficha) {
   --quickreply:no;
+
+  .topic-actions.topic-actions-bottom {
+    display: none;
+  }
 }
 
 @container style(--quickreply:no) {
