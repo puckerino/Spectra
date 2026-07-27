@@ -64,7 +64,7 @@ export default class SLocation extends HTMLElement {
       </style>
 
       <figure class="s-location-media">
-        ${imagen ? `<img src="${imagen}" alt="${nombre}">` : ""}
+        ${imagen ? '<img src="${imagen}" alt="${nombre}">' : ""}
       </figure>
 
       <div class="s-location-content">
