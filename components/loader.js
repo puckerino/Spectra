@@ -7,7 +7,10 @@ const COMPONENTS = {
   "s-carousel": "ui/s-carousel.js",
   "s-copy": "ui/s-copy.js",
   "s-accordion": "ui/s-accordion.js",
-  "s-rol": "posts/s-rol.js"
+
+  // POSTS
+  "s-rol": "posts/s-rol.js",
+  "s-timeline": "posts/s-timeline.js"
 };
 
 const loadingComponents = new Set();
