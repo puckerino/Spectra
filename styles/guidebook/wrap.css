@@ -53,6 +53,7 @@
         
         .content.message {
           padding: var(--spacing-2xl);
+          text-wrap: balance;
         }
       }
     }
