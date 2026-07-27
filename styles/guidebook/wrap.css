@@ -5,6 +5,10 @@
     display: grid;
     grid-template-columns: 20vw 1fr;
 
+    @media(max-width: 700px) {
+      grid-template-columns: 1fr;
+    }
+
     .guidebook-toc {
       display: flex;
       flex-direction: column;
@@ -12,6 +16,10 @@
       height: max-content;
       position: sticky;
       top: var(--nav-size);
+
+      @media (max-width: 700px) {
+        display: none;
+      }
 
       li {
         display: flex;
@@ -65,6 +73,10 @@
         .content.message {
           padding: var(--spacing-2xl);
           text-wrap: balance;
+
+          @media (max-width: 700px) {
+            padding: var(--spacing-s);
+          }
         }
       }
     }
