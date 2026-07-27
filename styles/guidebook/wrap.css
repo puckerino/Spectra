@@ -45,6 +45,11 @@
           padding: var(--spacing-2xl);
           border-bottom: 1px solid var(--border);
         }
+
+        .data .profile-icons {
+          display: flex;
+          justify-content: flex-end;
+        }
         
         .content.message {
           padding: var(--spacing-2xl);
