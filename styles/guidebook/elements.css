@@ -20,4 +20,9 @@
     background: color-mix(in srgb, var(--background-elevated), transparent 20%);
     padding: var(--spacing-2xl);
   }
+
+  .codebox .copy-button {
+    background: var(--accent);
+    color: contrast-color(var(--accent));
+  }
 }
