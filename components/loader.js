@@ -10,7 +10,9 @@ const COMPONENTS = {
 
   // POSTS
   "s-rol": "posts/s-rol.js",
-  "s-timeline": "posts/s-timeline.js"
+  "s-timeline": "posts/s-timeline.js",
+  "s-event": "posts/s-event.js",
+  "s-location": "posts/s-location.js"
 };
 
 const loadingComponents = new Set();
