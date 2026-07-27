@@ -28,6 +28,8 @@
 
       .guidebook-subject {
         font: var(--f-2xl) var(--f-title-deco);
+        padding: var(--spacing-2xl);
+        border-bottom: 1px solid var(--border);
       }
 
       .content.message {
