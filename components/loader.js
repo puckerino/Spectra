@@ -1,12 +1,12 @@
 const COMPONENTS = {
   // UI
-  "pix-audio": "ui/pix-audio.js",
-  "pix-spoiler": "ui/pix-spoiler.js",
-  "pix-tabs": "ui/pix-tabs.js",
-  "pix-tab": "ui/pix-tab.js",
-  "pix-carousel": "ui/pix-carousel.js",
-  "pix-copy": "ui/pix-copy.js",
-  "pix-accordion": "ui/pix-accordion.js"
+  "s-audio": "ui/s-audio.js",
+  "s-spoiler": "ui/s-spoiler.js",
+  "s-tabs": "ui/s-tabs.js",
+  "s-tab": "ui/s-tab.js",
+  "s-carousel": "ui/s-carousel.js",
+  "s-copy": "ui/s-copy.js",
+  "s-accordion": "ui/s-accordion.js"
 };
 
 const loadingComponents = new Set();
