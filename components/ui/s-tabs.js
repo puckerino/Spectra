@@ -87,9 +87,10 @@ export default class STabs extends HTMLElement {
           border: none;
           background: none;
           cursor: pointer;
-          padding:var(--spacing-2xs) var(--spacing);
+          padding:var(--spacing-s) var(--spacing);
           border-radius:999px;
-          color:var(--text-subtle);
+          color:var(--text1);
+          background: var(--text-subtle);
           font:var(--f-s) var(--f-metadata);
           text-transform:uppercase;
           transition: .2s ease;
