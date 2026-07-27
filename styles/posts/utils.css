@@ -1,1 +1,13 @@
 
+.post:has(.profile-no) {
+  --perfil:no;
+}
+
+@container style(--perfil:no) {
+  .profile {
+    display: none;
+  }
+  .postbody {
+    grid-column: 1 / -1;
+  }
+}
