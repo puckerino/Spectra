@@ -1,5 +1,20 @@
 .viewcomments_body .post.blog {
 
+  h2 {
+    font: var(--f-2xl) var(--f-title-deco);
+  }
+
+  h3 {
+    font: var(--f-xl) var(--f-title);
+  }
+
+  h4 {
+    font: var(--f-l) var(--f-metadata);
+    text-transform: uppercase;
+    letter-spacing: .1ch;
+    color: var(--text-subtle);
+  }
+
   blockquote {
     border: 1px solid var(--border);
     background: color-mix(in srgb, var(--background-elevated), transparent 20%);
