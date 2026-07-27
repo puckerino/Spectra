@@ -15,7 +15,8 @@ export default class S_Spoiler extends HTMLElement {
         s-spoiler {
           display: block;
           border: 1px solid var(--border);
-          border-radius: var(--br);
+          border-radius: var(--spacing);
+          corner-shape: var(--shape-elements);
           overflow: clip;
           background: var(--background-elevated);
         }
@@ -27,7 +28,7 @@ export default class S_Spoiler extends HTMLElement {
           padding:var(--spacing);
           border: none;
           background: none;
-          color: var(--text-subtle);
+          color: var(--text-1)!important;
           font: var(--f-s) var(--f-metadata);
           text-transform: uppercase;
           cursor: pointer;
