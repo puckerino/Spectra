@@ -1,9 +1,9 @@
 
 .post:has(.profile-no) {
-  --perfil:no;
+  --post-style: noprofile;
 }
 
-@container style(--perfil:no) {
+@container style(--post-style: noprofile) {
   .profile {
     display: none !important;
   }
@@ -27,14 +27,20 @@
   .topic-actions.topic-actions-bottom {
     display: none;
   }
-
-  .content.message {
-    padding: 0;
-  }
 }
 
 @container style(--quickreply:no) {
   .quickreply {
     display: none;
+  }
+}
+
+.post:has(.ficha, s-rol) {
+  --post-style: nopadding;
+}
+
+@container style(--post-style: nopadding) {
+  .content.message {
+    padding: 0;
   }
 }
