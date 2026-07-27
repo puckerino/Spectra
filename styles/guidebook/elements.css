@@ -1,0 +1,8 @@
+.viewcomments_body .post.blog {
+
+  blockquote {
+    border: 1px solid var(--border);
+    background: color-mix(in srgb, var(--background-elevated), transparent 20%);
+    padding: var(--spacing-2xl);
+  }
+}
