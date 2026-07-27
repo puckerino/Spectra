@@ -20,3 +20,13 @@
     max-width: 1800px !important;
   }
 }
+
+.viewtopic_body:has(.ficha) {
+  --quickreply:no;
+}
+
+@container style(--quickreply:no) {
+  .quickreply {
+    display: none;
+  }
+}
