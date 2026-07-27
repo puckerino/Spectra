@@ -19,6 +19,7 @@
         display: flex;
         align-items: center;
         font: var(--f-base) var(--f-label);
+        padding: var(--spacing-s);
       }
     }
 
@@ -26,14 +27,21 @@
       display: flex;
       flex-direction: column;
 
-      .guidebook-subject {
-        font: var(--f-2xl) var(--f-title-deco);
-        padding: var(--spacing-2xl);
-        border-bottom: 1px solid var(--border);
-      }
+      .post.blog {
 
-      .content.message {
-        padding: var(--spacing-2xl);
+        &:not(:last-of-type) {
+          border-bottom: 1px solid var(--border);
+        }
+        
+        .guidebook-subject {
+          font: var(--f-2xl) var(--f-title-deco);
+          padding: var(--spacing-2xl);
+          border-bottom: 1px solid var(--border);
+        }
+        
+        .content.message {
+          padding: var(--spacing-2xl);
+        }
       }
     }
   }
