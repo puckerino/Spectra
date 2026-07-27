@@ -6,7 +6,8 @@ const COMPONENTS = {
   "s-tab": "ui/s-tab.js",
   "s-carousel": "ui/s-carousel.js",
   "s-copy": "ui/s-copy.js",
-  "s-accordion": "ui/s-accordion.js"
+  "s-accordion": "ui/s-accordion.js",
+  "s-rol": "posts/s-rol.js"
 };
 
 const loadingComponents = new Set();
