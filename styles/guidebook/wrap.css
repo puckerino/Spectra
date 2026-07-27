@@ -1,1 +1,33 @@
 
+.viewcomments_body {
+
+  .guidebook-wrap {
+    display: grid;
+    grid-template-columns: 20vw 1fr;
+
+    .guidebook-toc {
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+
+      @media (max-width: 700px) {
+        border-right: 0;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        font: var(--f-base) var(--f-label);
+      }
+    }
+
+    .guidebook-content {
+      display: flex;
+      flex-direction: column;
+
+      .guidebook-subject {
+        font: var(--f-2xl) var(--f-title-deco);
+      }
+    }
+  }
+}
