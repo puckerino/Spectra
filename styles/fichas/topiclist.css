@@ -1,0 +1,32 @@
+.topiclist.grid {
+  .topiclist-title {
+    display: none;
+  }
+
+  .topic { 
+    display: flex;
+    flex-direction: column;
+    
+    .icon { 
+      display: none;
+    }
+    
+    .card-hero { 
+      width: 100%;
+      aspect-ratio: 1;
+      
+      img { 
+        object-fit: cover;
+      }
+    }
+    
+    .topic-type { 
+      display: none;
+    }
+    
+    .title { 
+      font: 100 var(--f-2xl) var(--f-title-deco);
+      text-fit: grow per-line-all;
+    }
+  }
+}
