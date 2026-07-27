@@ -20,18 +20,13 @@ function loadComponent(tag) {
 
   loadingComponents.add(tag);
 
-  // Resuelve la ruta tomando como referencia components/loader.js
   const componentUrl = new URL(file, import.meta.url);
 
-  import(componentUrl.href)
-    .then(module => {
-      if (customElements.get(tag)) return;
+  console.log(`[Spectra] Cargando ${tag}:`, componentUrl.href);
 
-      const component = module.default || module;
-      customElements.define(tag, component);
-    })
+  import(componentUrl.href)
     .catch(error => {
-      console.error(`Error cargando ${tag}`, error);
+      console.error(`[Spectra] Error cargando ${tag}:`, error);
     })
     .finally(() => {
       loadingComponents.delete(tag);
@@ -39,9 +34,11 @@ function loadComponent(tag) {
 }
 
 function scan(root = document) {
-  if (root.nodeType !== Node.ELEMENT_NODE &&
-      root.nodeType !== Node.DOCUMENT_NODE &&
-      root.nodeType !== Node.DOCUMENT_FRAGMENT_NODE) {
+  if (
+    root.nodeType !== Node.ELEMENT_NODE &&
+    root.nodeType !== Node.DOCUMENT_NODE &&
+    root.nodeType !== Node.DOCUMENT_FRAGMENT_NODE
+  ) {
     return;
   }
 
@@ -59,7 +56,7 @@ function scan(root = document) {
   });
 }
 
-scan();
+scan(document);
 
 new MutationObserver(mutations => {
   mutations.forEach(mutation => {
