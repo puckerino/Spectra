@@ -41,6 +41,6 @@
 
 @container style(--post-style: nopadding) {
   .content.message {
-    padding: 0;
+    padding: 0 !important;
   }
 }
