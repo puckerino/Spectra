@@ -6,26 +6,30 @@
     grid-template-columns: 20vw 1fr;
 
     .guidebook-toc {
-      border-right: 1px solid var(--border);
       display: flex;
       flex-direction: column;
       padding: var(--spacing);
-
-      @media (max-width: 700px) {
-        border-right: 0;
-      }
+      height: max-content;
+      position: sticky;
+      top: var(--nav-size);
 
       li {
         display: flex;
         align-items: center;
         font: var(--f-base) var(--f-label);
         padding: var(--spacing-s);
+        text-transform: uppercase;
       }
     }
 
     .guidebook-content {
       display: flex;
       flex-direction: column;
+      border-left: 1px solid var(--border);
+      
+      @media (max-width: 700px) {
+        border-left: 0;
+      }
 
       .post.blog {
         display: flex;
