@@ -22,11 +22,15 @@ function loadComponent(tag) {
 
   const componentUrl = new URL(file, import.meta.url);
 
-  console.log(`[Spectra] Cargando ${tag}:`, componentUrl.href);
-
   import(componentUrl.href)
+    .then(module => {
+      if (customElements.get(tag)) return;
+
+      const component = module.default || module;
+      customElements.define(tag, component);
+    })
     .catch(error => {
-      console.error(`[Spectra] Error cargando ${tag}:`, error);
+      console.error(`Error cargando ${tag}`, error);
     })
     .finally(() => {
       loadingComponents.delete(tag);
@@ -34,11 +38,9 @@ function loadComponent(tag) {
 }
 
 function scan(root = document) {
-  if (
-    root.nodeType !== Node.ELEMENT_NODE &&
-    root.nodeType !== Node.DOCUMENT_NODE &&
-    root.nodeType !== Node.DOCUMENT_FRAGMENT_NODE
-  ) {
+  if (root.nodeType !== Node.ELEMENT_NODE &&
+      root.nodeType !== Node.DOCUMENT_NODE &&
+      root.nodeType !== Node.DOCUMENT_FRAGMENT_NODE) {
     return;
   }
 
@@ -56,7 +58,7 @@ function scan(root = document) {
   });
 }
 
-scan(document);
+scan();
 
 new MutationObserver(mutations => {
   mutations.forEach(mutation => {
