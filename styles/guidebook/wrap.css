@@ -28,12 +28,15 @@
       flex-direction: column;
 
       .post.blog {
+        display: flex;
+        flex-direction: column;
 
         &:not(:last-of-type) {
           border-bottom: 1px solid var(--border);
         }
         
         .guidebook-subject {
+          width: 100%;
           font: var(--f-2xl) var(--f-title-deco);
           padding: var(--spacing-2xl);
           border-bottom: 1px solid var(--border);
