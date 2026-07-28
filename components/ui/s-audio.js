@@ -37,152 +37,86 @@ export default class SAudio extends HTMLElement {
         s-audio .s-audio {
 
           display: flex;
-
           align-items: center;
-
           gap: var(--spacing);
-
           padding: var(--spacing);
-
-          border:
-            1px solid var(--border);
-
-          border-radius:
-            var(--spacing);
-
-          background:
-            var(--background-elevated);
+          border: 1px solid var(--border);
+          border-radius: var(--spacing);
+          corner-shape: var(--shape-elements);
+          background: var(--background-elevated);
 
         }
 
         s-audio .s-audio-button {
-
           width: 3rem;
           height: 3rem;
-
           flex-shrink: 0;
-
-          border:
-            1px solid var(--border);
-
-          border-radius:
-            50%;
-
-          background:
-            var(--background);
-
-          color:
-            var(--text1);
-
+          border:  1px solid var(--border);
+          border-radius: 50%;
+          background: var(--background);
+          color:  var(--text-subtle);
           cursor: pointer;
-
           display: grid;
           place-items: center;
-
           font-size: 1rem;
-
           transition:
             background .2s ease,
             border-color .2s ease,
             color .2s ease;
-
         }
 
         s-audio .s-audio-button:hover {
-
-          background:
-            var(--accent);
-
-          border-color:
-            var(--accent);
-
+          background: var(--poster);
+          border-color: var(--poster-dark);
         }
 
         s-audio .s-audio-content {
-
           display: grid;
-
           gap: .25rem;
-
           min-width: 0;
-
           flex-grow: 1;
-
         }
 
         s-audio .s-audio-title {
-
-          font:
-            var(--f-base)
-            var(--f-metadata);
-
+          font: var(--f-base) var(--f-metadata);
         }
 
         s-audio .s-audio-status {
-
-          font:
-            var(--f-s)
-            var(--f-mono);
-
-          text-transform:
-            uppercase;
-
-          color:
-            var(--text-subtle);
+          font: var(--f-s) var(--f-mono);
+          text-transform: uppercase;
+          color: var(--text-subtle);
 
         }
 
         s-audio iframe {
-
           position: absolute;
-
           width: 1px;
           height: 1px;
-
           opacity: 0;
-
           pointer-events: none;
-
           border: 0;
-
         }
 
       </style>
 
       <article class="s-audio">
 
-        <button
-          class="s-audio-button"
-          type="button"
-          aria-label="Reproducir audio"
-        >
-
+        <button class="s-audio-button" type="button" aria-label="Reproducir audio">
           <i data-lucide="play"></i>
-
         </button>
 
         <div class="s-audio-content">
-
           <div class="s-audio-title">
-
             ${titulo}
-
           </div>
 
           <div class="s-audio-status">
-
             detenido
-
           </div>
 
         </div>
 
-        <iframe
-          allow="autoplay; encrypted-media"
-          src="
-https://www.youtube.com/embed/${videoId}?enablejsapi=1&origin=${origin}&playsinline=1&controls=0
-"
-        ></iframe>
+        <iframe allow="autoplay; encrypted-media" src="https://www.youtube.com/embed/${videoId}?enablejsapi=1&origin=${origin}&playsinline=1&controls=0"></iframe>
 
       </article>
 
