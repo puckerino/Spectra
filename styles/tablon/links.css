@@ -15,8 +15,6 @@
      a {
        display: flex;
        align-items: center;
-       background: var(--surface);
-       padding: var(--spacing-xs) var(--spacing-s);
        font: var(--f-s) var(--f-metadata);
        text-transform: uppercase;
      }
