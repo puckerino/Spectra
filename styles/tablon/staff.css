@@ -26,8 +26,7 @@
         &:after {
             transition: all .5s allow-discrete;
             content: ">";
-            opacity: 0;
-            display: none;
+            color: var(--surface-3);
             transform: translateY(-5%);
         }
 
@@ -38,8 +37,7 @@
 
             &:after {
                 transition: all .5s allow-discrete;
-                opacity: 1;
-                display: flex;
+                color: var(--text-contrast);
                 transform: translateY(0);
             }  
         }
