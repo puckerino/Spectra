@@ -1,0 +1,11 @@
+.staff {
+
+    .tablon-title {
+      font: bold var(--f-xl) var(--f-title-deco);
+      text-transform: uppercase;
+    }
+
+    a {
+      font: var(--f-l) var(--f-title);
+    }
+}
