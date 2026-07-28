@@ -60,7 +60,7 @@ export default class SSearch extends HTMLElement {
       <div class="s-search">
         <div class="s-search-sidebar">
             <h3 class="s-search-title">${titulo}</h3>
-            <span class="s-search-subtitle">${subtitulo}</span>
+            <div class="s-search-subtitle">${subtitulo}</div>
             <figure class="s-search-media">
               <img src="${imagen}" />
             </figure>
