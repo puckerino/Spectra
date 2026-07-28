@@ -141,3 +141,66 @@ nav {
 #notif_list li {
     border: 1px solid var(--border);
 }
+
+.switcheroo {
+
+    .switcheroo__squircles {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-s);
+
+        .switcheroo__squircle {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-s);
+            padding: var(--spacing-s);
+            border: 1px solid var(--border);
+            border-radius: var(--spacing-s);
+            corner-shape: var(--shape-elements);
+            background: var(--background-elevated);
+
+            &.active {
+                background: red;
+            }
+
+            .switcheroo__avatar {
+                height: 50px;
+                width: 50px;
+
+                img {
+                    aspect-ratio: 1;
+                    object-fit: cover;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: var(--spacing-s);
+                    corner-shape: var(--shape-elements);
+                }
+            }
+
+            .switcheroo__popper {
+
+                .switcheroo__popper-text {
+                    font: var(--f-l) var(--f-post-username);
+
+                    .switcheroo__squircle--button & {
+                        font: var(--f-base) var(--f-buttons);
+                    }
+                }
+            }
+
+            .switcheroo__delete {
+                position: absolute;
+                top: var(--spacing);
+                right: var(--spacing);
+                background: var(--accent);
+                color: contrast-color(var(--accent));
+                padding: var(--spacing-s);
+                aspect-ratio: 1;
+                font-size: var(--f-s);
+                border-radius: var(--spacing-s);
+                corner-shape: var(--shape-elements);
+            }
+        }
+    }
+}
