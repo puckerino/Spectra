@@ -8,7 +8,7 @@ main {
         width: 80vw;
     }
 
-    &.viewforum_body[forum="fichas"], .&.viewcomments_body, &.memberlist {
+    &.viewforum_body[forum="fichas"], &.viewcomments_body, &.memberlist {
         width: 95vw;
     }
 
