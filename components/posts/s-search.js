@@ -19,12 +19,14 @@ export default class SSearch extends HTMLElement {
         .s-search .s-sidebar {
           display: flex;
           flex-direction: column;
+          justify-content: flex-end;
           gap: var(--spacing);
         }
 
         .s-search .s-search-title {
           font: bold var(--f-l) var(--f-title-deco);
           text-align: right;
+          padding-right: var(--spacing-2xl);
         }
 
         .s-search .s-search-subtitle {
@@ -32,6 +34,7 @@ export default class SSearch extends HTMLElement {
           color: var(--text-subtle);
           text-transform: uppercase;
           text-align: right;
+          padding-right: var(--spacing-2xl);
         }
 
         .s-search .s-search-media {
