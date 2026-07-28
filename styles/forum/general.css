@@ -31,7 +31,7 @@ DESCRIPCION
 TEMAS Y MENSAJES
 ================================== */
 .forum>.data {
-    font: 200 var(--f-s) var(--f-metadata);
+    font: var(--f-s) var(--f-metadata);
     text-transform: uppercase;
     color: var(--text-subtle);
 }
