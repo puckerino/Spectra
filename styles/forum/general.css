@@ -1,8 +1,13 @@
+.forum {
+	background: var(--background);
+}
+
 /*==================================
 TITULO
 ================================== */
 .forum > .title {
-  font: 200 var(--f-xl) var(--f-forum-title);
+	font: 200 var(--f-xl) var(--f-forum-title);
+	text-transform: uppercase;
 }
 
 /*==================================
@@ -19,14 +24,16 @@ DESCRIPCION
 
 .forum > .description {
   font: var(--f-base) var(--f-text);
-  text-wrap: pretty;
+  text-wrap: balance;
 }
 
 /*==================================
 TEMAS Y MENSAJES
 ================================== */
 .forum > .data {
-  font: 300 var(--f-s) var(--f-metadata);
+	font: 200 var(--f-s) var(--f-metadata);
+	text-transform: uppercase;
+	color: var(--text-subtle);
 }
 
 /*==================================
