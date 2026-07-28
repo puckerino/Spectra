@@ -24,18 +24,27 @@ export default class SSearch extends HTMLElement {
 
         .s-search .s-search-title {
           font: bold var(--f-l) var(--f-title-deco);
+          text-align: right;
         }
 
         .s-search .s-search-subtitle {
           font: var(--f-s) var(--f-metadata);
           color: var(--text-subtle);
+          text-transform: uppercase;
+          text-align: right;
         }
+
+        .s-search .s-search-media {
+          padding: var(--spacing-2xl);
+          }
 
         .s-search .s-search-media img {
           display: block;
           width: 100%;
           aspect-ratio: 1;
           object-fit: cover;
+          outline: 1px solid var(--poster);
+          outline-offset: var(--spacing-s);
         }
 
         .s-search .s-search-body {
