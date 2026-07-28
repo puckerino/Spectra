@@ -15,7 +15,7 @@ export default class S_Spoiler extends HTMLElement {
         s-spoiler {
           display: block;
           border: 1px solid var(--border);
-          border-radius: var(--spacing);
+          border-radius: var(--spacing-s);
           corner-shape: var(--shape-elements);
           overflow: clip;
           background: var(--background-elevated);
@@ -32,7 +32,7 @@ export default class S_Spoiler extends HTMLElement {
           font: var(--f-s) var(--f-metadata);
           text-transform: uppercase;
           cursor: pointer;
-          justify-content: flex-start;
+          justify-content: flex-start !important;
         }
 
         s-spoiler .spoiler-icon {
