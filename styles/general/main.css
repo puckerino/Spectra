@@ -102,7 +102,7 @@ main {
             width: 20vw;
             position: absolute;
             bottom: 0;
-            left: var(--spacing-5xl);
+            left: 25%;
             background: var(--page-title-img);
             background-size: contain;
             background-repeat: no-repeat;
