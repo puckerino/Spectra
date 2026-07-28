@@ -21,12 +21,12 @@ export default class SSearch extends HTMLElement {
           flex-direction: column;
           justify-content: flex-end;
           gap: var(--spacing);
+          padding-right: var(--spacing-2xl);
         }
 
         .s-search .s-search-title {
           font: bold var(--f-l) var(--f-title-deco);
           text-align: right;
-          padding-right: var(--spacing-2xl);
           line-height: 1;
         }
 
@@ -35,12 +35,12 @@ export default class SSearch extends HTMLElement {
           color: var(--text-subtle);
           text-transform: uppercase;
           text-align: right;
-          padding-right: var(--spacing-2xl);
-          width: 100%;
         }
 
         .s-search .s-search-media {
-          padding: var(--spacing-2xl);
+          padding-top: var(--spacing-2xl);
+          padding-left: var(--spacing-2xl);
+          padding-bottom: var(--spacing-s);
           }
 
         .s-search .s-search-media img {
