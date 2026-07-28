@@ -3,6 +3,7 @@
 #tablon { 
 	background: var(--surface-elevated);
 	gap: var(--spacing);
+	padding: var(--spacing);
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(4, max-content);
