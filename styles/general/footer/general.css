@@ -9,6 +9,14 @@ footer {
         "afiliados afiliados afiliados afiliados"
         ;
 
+    &:not(:has(.pixie-footer-online)) {
+        grid-template-areas:
+            "options disclaimer img creditos"
+            "redes redes redes redes"
+            "afiliados afiliados afiliados afiliados"
+            ;
+    }
+
     @media (max-width: 700px) {
         grid-template-columns: 1fr;
     }
