@@ -61,4 +61,8 @@
         border: 1px solid var(--poster-darker);
     }
 
+    .lastpost > menu {
+        flex-grow: 1;
+    }
+
 }
