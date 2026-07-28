@@ -32,6 +32,7 @@ export default class S_Spoiler extends HTMLElement {
           font: var(--f-s) var(--f-metadata);
           text-transform: uppercase;
           cursor: pointer;
+          justify-content: start;
         }
 
         s-spoiler .spoiler-icon {
