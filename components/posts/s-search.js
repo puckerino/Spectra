@@ -27,6 +27,7 @@ export default class SSearch extends HTMLElement {
           font: bold var(--f-l) var(--f-title-deco);
           text-align: right;
           padding-right: var(--spacing-2xl);
+          line-height: 1;
         }
 
         .s-search .s-search-subtitle {
