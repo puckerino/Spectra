@@ -1,0 +1,10 @@
+
+.forum[forum*="tiendas"] {
+  --forum-rows: 4;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-areas: 
+    "img title title"
+    "img desc desc"
+    "img links links"
+    "img data lastpost";
+}
