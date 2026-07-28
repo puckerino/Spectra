@@ -18,10 +18,22 @@ LINKS
 
 @container style(--forum-links-style:contrast) {
   .forum-links a {
-    background: var(--surface-contrast);
-    color: var(--text-contrast);
-    padding: var(--spacing-2xs) var(--spacing);
-    border-radius: 999px;
+      font: var(--f-base) var(--f-metadata);
+      text-transform: uppercase;
+      letter-spacing: .1ch;
+      background: var(--background-contrast);
+      color: var(--text-contrast);
+      padding: var(--spacing-2xs) var(--spacing-l);
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all .3s allow-discrete;
+
+      &:hover {
+          transition: all .3s allow-discrete;
+          background: var(--background-elevated-contrast);
+      }
   }
 }
 
