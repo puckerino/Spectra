@@ -1,0 +1,93 @@
+/* ===== MAIN WIDTHS ===== */
+
+main {
+  margin: var(--spacing-2xl) auto;
+  background: var(--surface-1);
+  
+  &:not(.memberlist, .message-body, .index, .viewcomments_body) {width: 80vw;}
+  
+  &.viewtopic_body:not(:has(pix-admin)) {
+    max-width: 1200px !important;
+  }
+  
+  &.viewcomments_body {
+    width: 95vw;
+  } 
+    
+    
+  &.memberlist{width: 90vw;}
+  &.message-body {width: 60vw;}
+  &.index {width: 100%; margin: 0 auto;}
+  
+  @media(max-width:700px) { width: 100% !important;}
+  @media(min-width:1500px) {max-width: 1400px !important;}
+  @media(min-width:1800px) {max-width: 1800px !important;}
+}
+
+/* ===== SHARED STYLES ====== */
+
+.viewforum_body, .viewtopic_body, .modcp > form, .modcp:not(:has(form)), .posting > form, .topic-review, .ucp, 
+.privmsgs-body, .memberlist, .discover, .search-list > form, .search-list.list-posts, .message-body, .viewonline_body,
+.groupcp, .viewcomments_body {
+    border: 1px solid var(--border);border-radius: 1rem; corner-shape: var(--shape-deco);
+  
+  .page-title {
+    position: relative;
+    padding: var(--spacing-3xl) var(--spacing); font: bold var(--f-3xl) var(--f-title-deco); border-bottom: 1px solid var(--border);
+    display: flex; flex-direction: column; justify-content: center; text-align: center;
+    & ~ .page-title {border-top: 1px solid var(--border);}
+    
+    &.forum-title {text-transform: uppercase;padding: var(--spacing-5xl);position: relative;}
+    
+    .viewcomments_body & {
+      padding: var(--spacing-5xl) var(--spacing);
+    }
+    
+    &:before {content: "";position: absolute;inset: 0;background: radial-gradient(ellipse 70% 60% at 50% 0%, color-mix(in srgb, var(--accent), transparent 85%), transparent);pointer-events: none;}
+    &:after {content: var(--page-subtitle); font: var(--f-s) var(--f-metadata); text-transform: uppercase; color: var(--text-subtle);}
+    .page-title-img {height: 100%; width: 20vw;position: absolute; bottom: 0; left: var(--spacing-5xl); background: var(--page-title-img); background-size: contain;}
+    a {position: relative;}
+  }
+  
+  .page-subtitle {font: bold var(--f-l) var(--f-title);}
+  
+  .topic-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing);
+    padding: var(--spacing);
+    background: var(--background-elevated);
+    
+    &.topic-actions-top {border-bottom: 1px solid var(--border);}
+    &.topic-actions-bottom {border-top: 1px solid var(--border);}
+    li:last-of-type {flex-grow: 1; display: flex; justify-content: flex-end;}
+    &:has(li:only-child:empty) {display: none;}
+    &:has(li:only-child:empty):has(.alert:has(b)) {
+      li {display: none;}
+      .alert {flex-grow: 1;}
+    }
+    
+    .privmsgs-body & {
+      display:grid; grid-template-columns: repeat(4,1fr);
+      
+      &:has(li:nth-of-type(3):last-of-type) {grid-template-columns: repeat(3,1fr);}
+      &:has(li:nth-child(5)) {grid-template-columns: repeat(5,1fr);}
+      
+      li {display: flex;}
+      li:last-of-type {flex-grow: 0;}
+      .button {font: bold var(--f-xs) var(--f-text); display: flex; justify-content: center; align-items: center; width: 100%;}
+    }
+    
+  }
+  
+  &:has( > .topic-actions-bottom + .quickreply) > .topic-actions-bottom {border-bottom: 1px solid var(--border);}
+  
+  .page-top {padding: var(--spacing); border-bottom: 1px solid var(--border);}
+  .page-bottom {padding: var(--spacing);border-top: 1px solid var(--border);}
+}
+
+.pagination {
+  &.pagination-bottom {border-top: 1px solid var(--border);padding: var(--spacing);}
+  &.pagination-top {border-bottom: 1px solid var(--border);padding: var(--spacing);} 
+  &:empty {display: none;}
+}
