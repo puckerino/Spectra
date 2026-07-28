@@ -1,0 +1,12 @@
+.memberlist-users {
+    border-left: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing);
+
+    .member {
+        .username {
+            font: var(--f-xl) var(--f-post-username);
+        }
+    }
+}
