@@ -4,14 +4,13 @@
 	background: var(--surface-elevated);
 	gap: var(--spacing);
 	display: grid;
-	grid-template-columns: repeat(6, 1fr);
-	grid-template-rows: repeat(5, max-content);
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(4, max-content);
 	grid-template-areas: 
-		"links links links links links links"
-		"intro intro intro anuncios anuncios anuncios"
-		"periodo periodo periodo localizacion localizacion localizacion"
-		"eventos eventos staff staff redes redes"
-		"topics topics topics topics topics topics";
+		"intro redes staff"
+		"links links anuncios"
+		"localizacion periodo eventos"
+		"topics topics topics";
 
 	.redes {
 		grid-area: redes;
