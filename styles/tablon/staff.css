@@ -1,11 +1,47 @@
 .staff {
-
     .tablon-title {
       font: bold var(--f-xl) var(--f-title-deco);
       text-transform: uppercase;
     }
 
+    p {
+        font: var(--f-s) var(--f-metadata);
+        text-transform: uppercase;
+        text-wrap: balance;
+        line-height: 1;
+        color: var(--text-subtle);
+    }
+
     a {
-      font: var(--f-l) var(--f-title);
+        font: var(--f-l) var(--f-title);
+        padding: var(--spacing-s) var(--spacing);
+        background: var(--surface-3);
+        border-radius: var(--spacing-s);
+        corner-shape: var(--shape-elements);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: all .5s allow-discrete;
+
+        &:after {
+            transition: all .5s allow-discrete;
+            content: ">";
+            opacity: 0;
+            display: none;
+            transform: translateY(-5%);
+        }
+
+        &:hover {
+            transition: all .5s allow-discrete;
+            background: var(--accent);
+            color: var(--text-contrast);
+
+            &:after {
+                transition: all .5s allow-discrete;
+                opacity: 1;
+                display: flex;
+                transform: translateY(0);
+            }  
+        }
     }
 }
