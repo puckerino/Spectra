@@ -1,0 +1,64 @@
+.topiclist {
+    border: 1px solid var(--border);
+
+    h2.topiclist-title {
+        font: var(--f-xl) var(--f-title);
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--border);
+    }
+
+}
+
+.topic {
+    background: var(--surface);
+
+    &:not(:last-of-type) {
+        border-bottom: 1px solid var(--border);
+    }
+
+    &[status="No hay nuevos mensajes"] {
+        --topic-icon: var(--icon-topic-read);
+        --topic-icon-surface: transparent;
+    }
+
+    &[status~="cerrado"] {
+        --topic-icon: var(--icon-topic-closed);
+        --topic-icon-surface: color-mix(in srgb, var(--accent), var(--surface-contrast) 50%);
+    }
+
+    &:has(.topic-type:not(:empty)) {
+        --topic-icon: var(--icon-topic-pinned);
+        --topic-icon-surface: red;
+    }
+
+    .icon {
+        border-radius: .5rem;
+        corner-shape: var(--shape-deco);
+        background: var(--topic-icon-surface);
+
+        &:before {
+            background: var(--text-1);
+            mask-image: var(--topic-icon);
+        }
+    }
+
+    .title {
+        font: bold var(--f-l) var(--f-title);
+    }
+
+    .author {
+        font: bold var(--f-base) var(--f-title);
+    }
+
+    .data {
+        font: var(--f-s) var(--f-text);
+        text-transform: uppercase;
+    }
+
+    .lastpost img {
+        border-radius: .5rem;
+        corner-shape: var(--shape-deco);
+        border: 1px solid var(--poster-darker);
+    }
+
+}
