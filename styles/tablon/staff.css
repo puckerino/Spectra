@@ -1,4 +1,4 @@
-.staff {
+#tablon .staff {
     .tablon-title {
       font: bold var(--f-xl) var(--f-title-deco);
       text-transform: uppercase;
