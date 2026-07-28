@@ -1,0 +1,24 @@
+.tablon .linksrapidos {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: var(--spacing-xs);
+
+   div {
+     display: flex;
+     flex-direction: column;
+
+     span {
+       font: var(--f-l) var(--f-title-deco);
+       text-transform: uppercase;
+     }
+     
+     a {
+       display: flex;
+       align-items: center;
+       background: var(--surface);
+       padding: var(--spacing-xs) var(--spacing-s);
+       font: var(--f-s) var(--f-metadata);
+       text-transform: uppercase;
+     }
+   }
+}
