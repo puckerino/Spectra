@@ -1,4 +1,4 @@
-.tablon .anuncios {
+#tablon .anuncios {
     display: flex;
     flex-direction: column;
 
