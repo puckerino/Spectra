@@ -41,7 +41,7 @@ export default class SAudio extends HTMLElement {
           gap: var(--spacing);
           padding: var(--spacing);
           border: 1px solid var(--border);
-          border-radius: var(--spacing);
+          border-radius: var(--spacing-s);
           corner-shape: var(--shape-elements);
           background: var(--background-elevated);
 
@@ -52,9 +52,10 @@ export default class SAudio extends HTMLElement {
           height: 3rem;
           flex-shrink: 0;
           border:  1px solid var(--border);
-          border-radius: 50%;
-          background: var(--background);
-          color:  var(--text-1);
+          border-radius: var(--spacing-s) !important;
+          corner-shape: var(--shape-elements) !important;
+          background: var(--poster-darker) !important;
+          color:  var(--text-subtle) !important;
           cursor: pointer;
           display: grid;
           place-items: center;
