@@ -1,0 +1,124 @@
+nav {
+    display: grid;
+    gap: 0 var(--spacing-s);
+    padding-left: var(--spacing-s);
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: "forum logo user";
+
+	&:has(.breadcrumbs:not(:empty)) {
+		grid-template-rows: repeat(2,max-content);
+		grid-template-areas: "forum logo user" "forum breadcrumbs user";
+	}
+
+    .forum-nav {
+        grid-area: forum;
+		
+    }
+
+    .nav-logo {
+        grid-area: logo;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		line-height: 1;
+    }
+
+    .breadcrumbs {
+        grid-area: breadcrumbs;
+		justify-content: center;
+
+        &:empty {
+            display: none;
+        }
+
+    }
+
+    .user-nav {
+        grid-area: user;
+        justify-content: flex-end;
+    }
+
+    .guest-nav {
+        grid-area: user;
+        justify-content: flex-end;
+        padding-right: var(--spacing);
+      
+      button {
+        padding: var(--spacing-xs) var(--spacing);
+        font: var(--f-s) var(--f-buttons);
+        background: var(--accent);
+        color: contrast-color(var(--accent));
+      }
+    }
+}
+
+/* ====== POPOVERS ====== */
+
+#notis-popover {
+    --popover-width: 30vw;
+    --popover-height: calc(100vh - var(--nav-size) - var(--spacing));
+    --popover-transform: translateX(100%);
+    --popover-transform-open: translateX(0);
+    margin-right: calc(var(--spacing) / 2);
+    margin-top: calc(var(--nav-size) + calc(var(--spacing)/2));
+    border: 0;
+    border-radius: var(--spacing);
+    corner-shape: var(--shape-elements);
+}
+
+#forumnavmenu {
+    --popover-width: 20vw;
+    --popover-height: calc(100vh - var(--nav-size) - var(--spacing));
+    --popover-transform: translateX(-100%);
+    --popover-transform-open: translateX(0);
+    margin-left: calc(var(--spacing) / 2);
+    margin-top: calc(var(--nav-size) + calc(var(--spacing)/2));
+    border: 0;
+    border-radius: var(--spacing);
+    corner-shape: var(--shape-elements);
+
+    svg {
+        height: 1rem;
+    }
+}
+
+#login-popover {
+    --popover-width: max-content;
+    --popover-height: max-content;
+    --popover-transform: translateY(-10%);
+    --popover-transform-open: translateY(0);
+    border-radius: var(--spacing);
+    corner-shape: var(--shape-elements);
+    border: 0;
+}
+
+#profile-popover {
+    --popover-width: 50vw;
+    --popover-height: calc(100vh - var(--nav-size) - var(--spacing));
+    --popover-transform: translateX(100%);
+    --popover-transform-open: translateX(0);
+    border-radius: var(--spacing);
+    corner-shape: var(--shape-elements);
+    margin-right: calc(var(--spacing) / 2);
+    margin-top: calc(var(--nav-size) + calc(var(--spacing)/2));
+    overflow: auto;
+    border: 0;
+}
+
+#switcheroo-popover {
+    --popover-width: 30vw;
+    --popover-height: calc(100vh - var(--nav-size) - var(--spacing));
+    --popover-transform: translateX(100%);
+    --popover-transform-open: translateX(0);
+    border-radius: var(--spacing);
+    corner-shape: var(--shape-elements);
+    margin-right: calc(var(--spacing) / 2);
+    margin-top: calc(var(--nav-size) + calc(var(--spacing)/2));
+    border: 0;
+}
+
+/* ===== NOTIS ===== */
+
+#notif_list li {
+    border: 1px solid var(--border);
+}
