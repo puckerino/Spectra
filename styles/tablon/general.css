@@ -10,11 +10,19 @@
 	grid-template-areas: 
 		"intro intro staff"
 		"links links anuncios"
-		"localizacion periodo eventos"
+		"dinamicas ciclo eventos"
 		"topics topics topics";
 
 	.redes {
 		grid-area: redes;
+	}
+
+	.ciclo {
+		grid-area: ciclo;
+	}
+
+	.dinamicas {
+		grid-area: dinamicas;
 	}
 	
 
@@ -67,23 +75,7 @@
 	.staff { 
 		grid-area: staff;
 	}
-
-	.localizacion { 
-		grid-area: localizacion;
-
-	}
-
-	.periodoroleable { 
-		grid-area: periodo;
-		display: flex;
-		align-items: center;
-		gap: var(--spacing);
-
-		.tablon-title {
-			font: var(--f-l) var(--f-title);
-		}
-	}
-
+	
 	.introduccion { 
 		grid-area: intro;
 		display: grid;
