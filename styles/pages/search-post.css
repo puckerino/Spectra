@@ -1,0 +1,30 @@
+.search-list-post {
+    border: 1px solid var(--border);
+
+    .username {
+        font: var(--f-base) var(--f-post-username);
+    }
+
+    .page-subtitle {
+        border-bottom: 1px solid var(--border);
+    }
+
+    .topic-actions {
+        li {
+            display: flex;
+        }
+
+        a.permalink {
+            padding: var(--spacing-s);
+            aspect-ratio: 1;
+            background: var(--poster);
+            color: contrast-color(var(--poster));
+        }
+
+        svg {
+            height: var(--f-base);
+            width: var(--f-base);
+            display: flex;
+        }
+    }
+}
