@@ -1,4 +1,4 @@
 .page-title[topic*="web-components"] {
-  --page-title-img: var(--webcomponents-img);
+  --page-title-img: url(https://i.pinimg.com/736x/22/88/19/2288194bf63d0313589400a1f6afd411.jpg);
   --page-subtitle: "Códigos etc etc etc";
 }
