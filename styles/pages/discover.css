@@ -1,0 +1,16 @@
+.discover {
+    .feed-item {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-s);
+
+        .avatar-discover img {
+            border-radius: var(--spacing-s);
+            corner-shape: var(--shape-deco);
+        }
+
+        .act-icon {
+            display: none;
+        }
+    }
+}
