@@ -4,21 +4,12 @@ main {
     margin: var(--spacing-2xl) auto;
     background: var(--surface-1);
 
-    &:not(.memberlist, .message-body, .index, .viewcomments_body) {
+    &:not(.memberlist, .message-body, .index, .viewcomments_body, .viewforum_body[forum="fichas"]) {
         width: 80vw;
     }
 
-    &.viewtopic_body:not(:has(pix-admin)) {
-        max-width: 1200px !important;
-    }
-
-    &.viewcomments_body {
+    &.viewforum_body[forum="fichas"], .&.viewcomments_body, &.memberlist {
         width: 95vw;
-    }
-
-
-    &.memberlist {
-        width: 90vw;
     }
 
     &.message-body {
