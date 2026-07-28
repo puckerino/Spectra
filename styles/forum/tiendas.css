@@ -8,6 +8,10 @@
     "img links links"
     "img data lastpost";
 
+  & > .title {
+    font: bold var(--f-4xl) var(--f-title-deco);
+  }
+
   .forum-links {
     display: flex;
     gap: var(--spacing);
