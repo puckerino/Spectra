@@ -77,51 +77,6 @@
 
 	.staff { 
 		grid-area: staff;
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-		gap: 0 var(--spacing);
-
-		&:before {
-			content: "STAFF";
-			grid-column: 1 / -1;
-			font: var(--f-l) var(--f-title);
-		}
-
-		a { 
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			position: relative;
-			height: 100px;
-			width: 100px;
-			transition: all .5s ease-in-out;
-
-			span {
-				transition: all .5s ease-in-out;
-				position: relative;
-				color: var(--text-contrast);
-				opacity: 0;
-				filter: blur(5px);
-			}
-
-			&:hover {
-				transition: all .5s ease-in-out;
-				span {
-					transition: all .5s ease-in-out;
-					opacity: 1;
-					filter: blur(0);
-				}
-			}
-
-			&:before {
-				content: "";
-				inset: 0;
-				position: absolute;
-				background: var(--staff-img);
-				background-size: cover;
-				background-position: center;
-			}
-		}
 	}
 
 	.localizacion { 
