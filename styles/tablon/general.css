@@ -20,17 +20,6 @@
 
 	.linksrapidos { 
 		grid-area: links;
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-		gap: var(--spacing-xs);
-
-		a { 
-			display: flex;
-			align-items: center;
-			background: var(--surface);
-			padding: var(--spacing-xs) var(--spacing-s);
-			font: var(--f-base) var(--f-label);
-		}
 	}
 
 	.anuncios { 
