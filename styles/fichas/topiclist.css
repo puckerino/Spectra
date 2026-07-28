@@ -38,11 +38,12 @@
     }
     
     .title { 
-      font: 100 var(--f-2xl) var(--f-title-deco);
+      font: bold var(--f-2xl) var(--f-title-deco);
       width: 100%;
       padding: var(--spacing);
       text-align: left;
       margin-top: -1lh;
+      position: relative;
     }
 
     .lastpost {    
