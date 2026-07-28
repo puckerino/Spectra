@@ -54,7 +54,7 @@ export default class SAudio extends HTMLElement {
           border:  1px solid var(--border);
           border-radius: 50%;
           background: var(--background);
-          color:  var(--text-subtle);
+          color:  var(--text-1);
           cursor: pointer;
           display: grid;
           place-items: center;
