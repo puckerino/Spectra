@@ -1,10 +1,10 @@
 @font-face {
     font-family: voyage;
-    src: url(https://dl.dropboxusercontent.com/scl/fi/6o1du527y75okt1f3i288/voyage_regular-1.otf?rlkey=uyu9jl4wdhyy5p0mvuy8i475v&st=6o8ph4zr&dl=0);
+    src: url(https://puckerino.github.io/Spectra/assets/fonts/voyage_regular.css);
 }
 
 @font-face {
     font-family: voyage;
     font-style: bold;
-    src: url(https://dl.dropboxusercontent.com/scl/fi/ug2bgwyg802ql1u2jwpis/voyage_bold-1.otf?rlkey=i4kt0gyb8s2sqzhihuc58duvt&st=vgf3stqq&dl=0);
+    src: url(https://puckerino.github.io/Spectra/assets/fonts/voyage_bold.css);
 }
