@@ -1,4 +1,6 @@
 footer {
+    background: var(--background-elevated-contrast);
+    color: var(--text-contrast);
     display: grid;
     grid-template-columns: max-content repeat(3,1fr);
     grid-template-areas: 
@@ -44,7 +46,7 @@ footer {
             font: 100 var(--f-l) var(--f-title-deco);
             text-fit: grow;
             display: block;
-            color: var(--text-subtle);
+            color: var(--text-subtle-contrast);
             line-height: 1;
         }
     }
@@ -67,7 +69,7 @@ TITULO
 
 footer > h2 {
     font: 100 var(--f-5xl) var(--f-title-deco);
-    color: var(--text-subtle); 
+    color: var(--text-subtle-contrast); 
     line-height: 1;
     padding: var(--spacing);
     text-transform: uppercase;
@@ -115,7 +117,7 @@ footer {
 
         .pixie-footer-stats {
             grid-area: forum-stats;
-            background: var(--surface-3);
+            background: var(--background-elevated2-contrast);
 
             @media (max-width: 700px) {
                 display: flex;
@@ -171,7 +173,7 @@ footer {
             
             .pixie-footer-online-summary {
                 grid-column: 1 / -1;
-                background: var(--background);
+                background: var(--background-contrast);
                 padding: var(--spacing-s);
                 display: flex;
                 justify-content: space-around;
@@ -299,7 +301,7 @@ footer .afiliados {
     grid-template-columns: .5fr max-content 1fr;
     gap: var(--spacing);
     padding: var(--spacing);
-    background: light-dark(var(--surface-3), var(--background));
+    background: var(--background-contrast);
     grid-template-areas: 
         "title title title"
         "img hermanos normales";
@@ -367,7 +369,7 @@ LINKS FOROACTIVO
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--surface-contrast);
+    background: var(--background-contrast);
     color: var(--text-contrast);
     padding: var(--spacing-s);
     gap: var(--spacing-s);
