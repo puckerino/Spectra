@@ -1,0 +1,17 @@
+@container style(--category:guidebook) {
+    .forum {
+        --forum-rows: 2;
+        grid-template-areas: "title" "links";
+
+      &[forum*="codigos"] {
+        --forum-rows: 1;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: "title links";
+      }
+
+        .data,
+        .lastpost {
+            display: none;
+        }
+    }
+}
