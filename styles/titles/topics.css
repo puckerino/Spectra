@@ -1,0 +1,4 @@
+.page-title[topic*="web-components"] {
+  --page-title-img: var(--webcomponents-img);
+  --page-subtitle: "Códigos etc etc etc";
+}
