@@ -35,6 +35,7 @@ export default class SSearch extends HTMLElement {
           text-transform: uppercase;
           text-align: right;
           padding-right: var(--spacing-2xl);
+          width: 100%;
         }
 
         .s-search .s-search-media {
