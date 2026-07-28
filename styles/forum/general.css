@@ -1,76 +1,72 @@
 .forum {
-	background: var(--background);
+    background: var(--background);
 }
 
 /*==================================
 TITULO
 ================================== */
-.forum > .title {
-	font: 200 var(--f-xl) var(--f-forum-title);
-	text-transform: uppercase;
+.forum>.title {
+    font: 200 var(--f-xl) var(--f-forum-title);
+    text-transform: uppercase;
 }
 
 /*==================================
 ICONO
 ================================== */
 
-.forum > .icon {
-  display: none;
+.forum>.icon {
+    display: none;
 }
 
 /*==================================
 DESCRIPCION
 ================================== */
 
-.forum > .description {
-  font: var(--f-base) var(--f-text);
-  text-wrap: balance;
+.forum>.description {
+    font: var(--f-base) var(--f-text);
+    text-wrap: balance;
 }
 
 /*==================================
 TEMAS Y MENSAJES
 ================================== */
-.forum > .data {
-	font: 200 var(--f-s) var(--f-metadata);
-	text-transform: uppercase;
-	color: var(--text-subtle);
+.forum>.data {
+    font: 200 var(--f-s) var(--f-metadata);
+    text-transform: uppercase;
+    color: var(--text-subtle);
 }
 
 /*==================================
 LAST POST
 ================================== */
 
-.lastpost { 
+.lastpost {
 
-	.avatar-lastpost-forum { 
+    .avatar-lastpost-forum {
 
-		img { 
+        img {}
+    }
 
-		}
-	}
+    .lastpost-data {
 
-	.lastpost-data { 
+        .title {
+            font: var(--f-base) var(--f-title);
+        }
 
-		.title { 
-      font: var(--f-base) var(--f-title);
-		}
+        .username {
+            font: 300 var(--f-s) var(--f-metadata);
+            text-transform: uppercase;
 
-		.username { 
-      font: 300 var(--f-s) var(--f-metadata);
-      text-transform: uppercase;
+            strong {
+                font: var(--f-base) var(--f-post-username);
+            }
 
-			strong { 
-        font: var(--f-base) var(--f-post-username);
-			}
+            .last-post-icon {
 
-			.last-post-icon { 
-
-				img { 
-
-				}
-			}
-		}
-	}
+                img {}
+            }
+        }
+    }
 }
 
 /*==================================
@@ -78,30 +74,10 @@ LINKS
 ================================== */
 
 .forum .forum-links {
-  a {
-    font: var(--f-s) var(--f-forum-links);
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-  }
-}
-
-
-@container style(--links:contrast) {
-  .forum-links a {
-    background: var(--surface-contrast);
-    color: var(--text-contrast);
-    padding: var(--spacing-2xs) var(--spacing);
-    border-radius: 999px;
-  }
-}
-
-/*==================================
-GUIDEBOOK
-================================== */
-
-@container style(--category:guidebook) {
-	.data, .lastpost {
-		display: none;
-	}
+    a {
+        font: var(--f-s) var(--f-forum-links);
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+    }
 }
