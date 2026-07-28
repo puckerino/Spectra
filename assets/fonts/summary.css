@@ -1,10 +1,10 @@
 @font-face {
     font-family: voyage;
-    src: url(https://puckerino.github.io/Spectra/assets/fonts/voyage_regular.css);
+    src: url(https://puckerino.github.io/Spectra/assets/fonts/voyage_regular.otf);
 }
 
 @font-face {
     font-family: voyage;
     font-style: bold;
-    src: url(https://puckerino.github.io/Spectra/assets/fonts/voyage_bold.css);
+    src: url(https://puckerino.github.io/Spectra/assets/fonts/voyage_bold.otf);
 }
