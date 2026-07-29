@@ -104,7 +104,7 @@ LAST POST
 .lastpost {
     display: flex;
     align-items: center;
-    gap: var(--spacing-s);
+    gap: var(--spacing);
 
     br {
         display: none;
