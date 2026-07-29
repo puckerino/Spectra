@@ -1,6 +1,10 @@
 .lasttopics {
     display: grid;
 
+    @media (min-width: 1800px) {
+        grid-template-columns: 20vw 1fr;
+      }
+
     .tablon-title {
         font: var(--f-xl) var(--f-title);
         text-transform: lowercase;
@@ -10,10 +14,6 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: var(--spacing-s);
-
-      @media (min-width: 1800px) {
-        grid-template-columns: repeat(5,1fr);
-      }
     }
 
     .lasttopic {
