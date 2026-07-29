@@ -8,9 +8,9 @@
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(4, max-content);
 	grid-template-areas: 
-		"intro links staff"
+		"intro intro links"
 		"ciclo ciclo anuncios"
-		"dinamicas eventos anuncios"
+		"dinamicas eventos staff"
 		"topics topics topics";
 
 	.redes {
