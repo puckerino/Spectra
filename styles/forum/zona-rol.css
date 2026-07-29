@@ -2,7 +2,6 @@
   .forum:first-of-type {}
   .forum:not(:first-of-type) {
     --forum-rows: 4;
-    gap: var(--spacing);
     grid-template-columns: 150px 1fr .5fr;
     grid-template-areas: 
       "img desc desc"
@@ -11,10 +10,31 @@
       "img links lastpost"
     ;
 
+    gap: 0 var(--spacing);
+    border-top: 1px solid var(--border);
+    padding: var(--spacing) 0;
+
+    & > .title {
+      text-transform: none;
+      font: var(--f-xl) var(--f-metadata);
+    }
+
     .description {
       font: var(--f-s) var(--f-metadata);
       text-transform: uppercase;
       color: var(--text-subtle);
+    }
+
+    .data {
+      display: flex;
+      align-items: center;
+
+      &:before {
+        content: "";
+        height: 1px;
+        width: 5vw;
+        background: var(--accent);
+      }
     }
 
     .lastpost {
