@@ -1,0 +1,42 @@
+@container style(--category: rol) {
+  .forum:first-of-type {}
+  .forum:not(:first-of-type) {
+    --forum-rows: 4;
+    gap: var(--spacing);
+    grid-template-columns: 150px 1fr .5fr;
+    grid-template-areas: 
+      "img desc desc"
+      "img title title"
+      "img data lastpost"
+      "img links lastpost"
+    ;
+
+    .description {
+      font: var(--f-s) var(--f-metadata);
+      text-transform: uppercase;
+      color: var(--text-subtle);
+    }
+
+    .lastpost {
+      flex-direction: row-reverse;
+    }
+
+    .forum-links {
+      display: flex;
+      flex-direction: row;
+      gap: var(--spacing-s);
+    }
+
+    .forum-img {
+      height: 150px;
+      width: 150px;
+
+      img {
+        object-fit: contain;
+        width: 150px;
+        height: 150px;
+        aspect-ratio: 1;
+      }
+    }
+  }
+}
