@@ -1,7 +1,7 @@
 #tablon .linksrapidos {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: var(--spacing-xs);
+    grid-template-columns: repeat(3,1fr);
+    gap: var(--spacing);
 
    div {
      display: flex;
