@@ -111,8 +111,8 @@ footer {
         display: grid;
         grid-template-columns: .5fr 1fr .35fr;
         grid-template-areas:
-            "forum-stats online last-user"
-            "groups online last-user";
+            "groups online last-user"
+            "groups online forum-stats";
 
         @media (max-width: 700px) {
             grid-template-columns: 1fr;
