@@ -1,0 +1,9 @@
+#tablon .introduccion {
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    font: var(--f-l) var(--f-title-deco);
+    text-transform: lowercase;
+  }
+}
