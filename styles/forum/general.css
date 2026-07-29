@@ -16,6 +16,7 @@ CATEGORY
             text-fit: grow;
             font-weight: 100;
             text-transform: lowercase;
+            line-height: .9;
         }
 
         &:before {
@@ -49,6 +50,8 @@ CATEGORY
       text-fit: none;
       color: var(--text-subtle);
       max-width: 60ch;
+      padding: var(--spacing-2xl);
+      align-self: center;
     }
 }
 
