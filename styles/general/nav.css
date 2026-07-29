@@ -81,7 +81,7 @@ nav {
     margin-right: calc(var(--spacing) / 2);
     margin-top: calc(var(--nav-size) + calc(var(--spacing)/2));
     border: 0;
-    border-radius: var(--spacing);
+    border-radius: var(--spacing-s);
     corner-shape: var(--shape-elements);
 }
 
@@ -93,7 +93,7 @@ nav {
     margin-left: calc(var(--spacing) / 2);
     margin-top: calc(var(--nav-size) + calc(var(--spacing)/2));
     border: 0;
-    border-radius: var(--spacing);
+    border-radius: var(--spacing-s);
     corner-shape: var(--shape-elements);
 
     svg {
@@ -106,7 +106,7 @@ nav {
     --popover-height: max-content;
     --popover-transform: translateY(-10%);
     --popover-transform-open: translateY(0);
-    border-radius: var(--spacing);
+    border-radius: var(--spacing-s);
     corner-shape: var(--shape-elements);
     border: 0;
 }
@@ -116,7 +116,7 @@ nav {
     --popover-height: calc(100vh - var(--nav-size) - var(--spacing));
     --popover-transform: translateX(100%);
     --popover-transform-open: translateX(0);
-    border-radius: var(--spacing);
+    border-radius: var(--spacing-s);
     corner-shape: var(--shape-elements);
     margin-right: calc(var(--spacing) / 2);
     margin-top: calc(var(--nav-size) + calc(var(--spacing)/2));
@@ -129,7 +129,7 @@ nav {
     --popover-height: calc(100vh - var(--nav-size) - var(--spacing));
     --popover-transform: translateX(100%);
     --popover-transform-open: translateX(0);
-    border-radius: var(--spacing);
+    border-radius: var(--spacing-s);
     corner-shape: var(--shape-elements);
     margin-right: calc(var(--spacing) / 2);
     margin-top: calc(var(--nav-size) + calc(var(--spacing)/2));
@@ -194,11 +194,11 @@ nav {
                 top: var(--spacing);
                 right: var(--spacing);
                 background: var(--accent);
-                color: contrast-color(var(--accent));
+                color: var(--text-contrast);
                 padding: var(--spacing-s);
                 aspect-ratio: 1;
                 font-size: var(--f-s);
-                border-radius: var(--spacing-s);
+                border-radius: var(--spacing-xs);
                 corner-shape: var(--shape-elements);
             }
         }
