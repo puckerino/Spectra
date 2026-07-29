@@ -26,11 +26,15 @@ main {
     }
 
     @media(min-width:1500px) {
-        max-width: 1400px !important;
+        &:not(.index) {
+            max-width: 1400px !important;
+        }
     }
 
     @media(min-width:1800px) {
-        max-width: 1800px !important;
+        &:not(.index) {
+          max-width: 1800px !important;
+        }
     }
 }
 
