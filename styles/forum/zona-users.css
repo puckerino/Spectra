@@ -18,4 +18,35 @@
       padding: var(--spacing);
     }
   }
+
+  
+.forum[forum*="tiendas"] {
+  --forum-rows: 4;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-areas: 
+    "title title img"
+    "desc desc img"
+    "links links img"
+    "data lastpost img";
+
+  & > .title {
+    font: bold var(--f-4xl) var(--f-title-deco);
+  }
+
+  .forum-links {
+    display: flex;
+    gap: var(--spacing);
+
+    a {
+      font: var(--f-l) var(--f-metadata);
+      text-transform: uppercase;
+      flex: 1;
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+    }
+  }
+}
+  
 }
