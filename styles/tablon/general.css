@@ -2,7 +2,7 @@
 
 #tablon { 
 	background: var(--surface-elevated);
-	gap: var(--spacing);
+	gap: var(--spacing-2xl);
 	padding: var(--spacing-2xl);
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
