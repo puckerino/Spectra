@@ -1,26 +1,32 @@
 #tablon .linksrapidos {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing);
 
     @media (min-width: 1800px) {
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
-   div {
-     display: flex;
-     flex-direction: column;
+    div {
+        display: flex;
+        flex-direction: column;
 
-     span {
-       font: var(--f-l) var(--f-title-deco);
-       text-transform: uppercase;
-     }
-     
-     a {
-       display: flex;
-       align-items: center;
-       font: var(--f-s) var(--f-metadata);
-       text-transform: uppercase;
-     }
-   }
+        span {
+            font: var(--f-l) var(--f-title-deco);
+            text-transform: uppercase;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            font: var(--f-s) var(--f-metadata);
+            text-transform: uppercase;
+            gap: var(--spacing-s);
+
+            &:before {
+                content: "✦";
+                color: var(--accent);
+            }
+        }
+    }
 }
