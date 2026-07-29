@@ -41,29 +41,43 @@ LAST POST
 ================================== */
 
 .lastpost {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-s);
+
+    br {
+        display: none;
+    }
 
     .avatar-lastpost-forum {
 
-        img {}
+        img {
+            filter: drop-shadow(0 0 0.75rem var(--poster-darker));
+        }
     }
 
     .lastpost-data {
+        gap: 0 var(--spacing-s);
+        
 
         .title {
             font: var(--f-base) var(--f-title);
         }
 
         .username {
-            font: 300 var(--f-s) var(--f-metadata);
+            font: var(--f-s) var(--f-metadata);
             text-transform: uppercase;
+            display: grid;
+            grid-template-columns: 1fr max-content;
+            grid-template-areas: ". icon" "username icon";
 
             strong {
-                font: var(--f-base) var(--f-post-username);
+                grid-area: username;
+                font: bold var(--f-base) var(--f-post-username);
             }
 
             .last-post-icon {
-
-                img {}
+                grid-area: icon;
             }
         }
     }
