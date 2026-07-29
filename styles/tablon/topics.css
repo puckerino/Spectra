@@ -1,0 +1,40 @@
+.lasttopics {
+    display: grid;
+
+    .tablon-title {
+        font: var(--f-xl) var(--f-title);
+        text-transform: lowercase;
+    }
+
+    .wrap {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-s);
+
+      @media (min-width: 1800px) {
+        grid-template-columns: repeat(5,1fr);
+      }
+    }
+
+    .lasttopic {
+        gap: 0;
+        border: 1px solid var(--border);
+        padding: var(--spacing);
+        line-height: 1;
+        background: var(--background);
+
+        .title {
+            font: bold 1rem var(--f-title);
+        }
+
+        .username {
+            font: bold 1rem var(--f-post-username);
+        }
+
+        .date {
+            font: var(--f-s) var(--f-metadata);
+            text-transform: uppercase;
+          color: var(--text-subtle);
+        }
+    }
+}
