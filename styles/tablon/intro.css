@@ -3,7 +3,6 @@
   flex-direction: column;
 
   .title {
-    font: var(--f-l) var(--f-title-deco);
-    text-transform: lowercase;
+    font: italic var(--f-xl) var(--f-title-deco);
   }
 }
