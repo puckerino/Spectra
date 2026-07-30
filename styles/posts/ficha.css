@@ -7,8 +7,11 @@
     .faceclaims {
       display: flex;
       width: 100%;
+      background: var(--poster);
 
       figure {
+        mix-blend-mode: multiply;
+        
         &:first-of-type {
           mask-image: linear-gradient(to right, black, transparent);
           width: 50%;
@@ -24,6 +27,7 @@
           object-fit: cover;
           height: 80vh;
           width: 100%;
+          filter: grayscale(1);
         }
       }
       
