@@ -39,7 +39,7 @@
     background: var(--accent);
     height: 100%;
     width: 70%;
-    position: relative;
+    position: absolute;
     right: 0;
     bottom: 0;
     mask-image: url(https://i.imgur.com/29VahEc.png);
