@@ -314,30 +314,13 @@ footer .afiliados {
         "title title title"
         "img hermanos normales";
 
-    &:before {
-        grid-area: img;
-        content: "";
-        background: var(--afiliados-img);
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-
     h2.footer-title {
         grid-area: title;
         font: 100 var(--f-4xl) var(--f-title-deco);
         text-align: right;
         display: flex;
         gap: var(--spacing);
-        justify-content: flex-end;
         align-items: center;
-
-        &:before {
-            content: "";
-            min-width: 20px;
-            height: 1px;
-            flex-grow: 1;
-            background: var(--border);
-        }
     }
     
     #afiliadosnormales {
