@@ -44,7 +44,7 @@
     right: 0;
     bottom: 0;
     mask-image: url(https://i.imgur.com/29VahEc.png);
-    mask-size: 100% 100%;
+    mask-size: 100% auto;
   }
 
   & > .title {
@@ -74,6 +74,12 @@
       flex-direction: column;
       border: 1px solid var(--border);
       backdrop-filter: blur(20px);
+      transition: all .3s allow-discrete;
+
+      &:hover {
+        transition: all .3s allow-discrete;
+        background: linear-gradient(to bottom, transparent, color-mix(in srgb, var(--accent), transparent 50%));
+      }
     }
   }
 }
