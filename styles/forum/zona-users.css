@@ -64,6 +64,16 @@
     z-index: 2;
   }
 
+  .forum-img {
+    z-index: 2;
+    padding: var(--spacing-3xl);
+
+    img {
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+
   .forum-links {
     display: flex;
     gap: var(--spacing);
