@@ -26,12 +26,25 @@
   
 .forum[forum*="tiendas"] {
   --forum-rows: 4;
+  position: relative;
   grid-template-columns: repeat(3,1fr);
   grid-template-areas: 
     "title title img"
     "desc desc img"
     "links links img"
     "data lastpost img";
+
+  &:before {
+    content: "";
+    background: var(--accent);
+    height: 100%;
+    width: 70%;
+    position: relative;
+    right: 0;
+    bottom: 0;
+    mask-image: url(https://i.imgur.com/29VahEc.png);
+    mask-size: 100% 100%;
+  }
 
   & > .title {
     font: bold var(--f-4xl) var(--f-title-deco);
