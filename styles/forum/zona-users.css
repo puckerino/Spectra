@@ -26,6 +26,7 @@
   
 .forum[forum*="tiendas"] {
   --forum-rows: 4;
+  --forum-lastpost: horizontal;
   position: relative;
   grid-template-columns: repeat(3,1fr);
   grid-template-areas: 
