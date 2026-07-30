@@ -15,6 +15,7 @@
 
         &:last-of-type {
           mask-image: linear-gradient(to left, black, transparent);
+          margin-left: -5vw;
         }
 
         img {
