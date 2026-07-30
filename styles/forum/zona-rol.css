@@ -16,6 +16,7 @@
       "img links lastpost"
     ;
 
+    align-items: center;
     gap: 0 var(--spacing);
     border: 1px solid var(--border);
     border-top: 0;
