@@ -49,17 +49,20 @@
 
   & > .title {
     font: bold var(--f-4xl) var(--f-title-deco);
+    z-index: 2;
   }
 
   .description {
     border-left: 2px solid var(--accent);
     padding-left: var(--spacing-2xl);
     width: 60ch;
+    z-index: 2;
   }
 
   .forum-links {
     display: flex;
     gap: var(--spacing);
+    z-index: 2;
 
 
     a {
