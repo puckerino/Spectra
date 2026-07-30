@@ -75,12 +75,14 @@
   }
 
   .forum-links {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--spacing);
     z-index: 2;
 
 
     a {
+      padding: var(--spacing-xl);
       font: var(--f-l) var(--f-title);
       text-transform: uppercase;
       flex: 1;
