@@ -50,12 +50,18 @@
     font: bold var(--f-4xl) var(--f-title-deco);
   }
 
+  .description {
+    border-left: 2px solid var(--accent);
+    padding-left: var(--spacing-2xl);
+    width: 60ch;
+  }
+
   .forum-links {
     display: flex;
     gap: var(--spacing);
 
     a {
-      font: var(--f-l) var(--f-metadata);
+      font: var(--f-l) var(--f-title);
       text-transform: uppercase;
       flex: 1;
       aspect-ratio: 1;
