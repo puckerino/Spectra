@@ -49,7 +49,6 @@ CATEGORY
       letter-spacing: .1ch;
       text-fit: none;
       color: var(--text-subtle);
-      max-width: 60ch;
       padding: var(--spacing-2xl);
       align-self: center;
     }
