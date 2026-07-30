@@ -1,2 +1,6 @@
 @container style(--category: pjs) {
+
+  .category {
+    padding: var(--spacing-5xl);
+  }
 }
