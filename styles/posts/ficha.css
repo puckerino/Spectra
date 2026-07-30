@@ -11,16 +11,19 @@
       figure {
         &:first-of-type {
           mask-image: linear-gradient(to right, black, transparent);
+          width: 50%;
         }
 
         &:last-of-type {
           mask-image: linear-gradient(to left, black, transparent);
-          margin-left: -5vw;
+          margin-left: -10vw;
+          width: calc(50% + 10vw);
         }
 
         img {
           object-fit: cover;
-          height: 50vh;
+          height: 80vh;
+          width: 100%;
         }
       }
       
