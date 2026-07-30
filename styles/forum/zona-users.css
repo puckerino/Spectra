@@ -1,5 +1,9 @@
 @container style(--category: users) {
 
+  .category {
+    padding: var(--spacing-5xl);
+  }
+
   .forum:not([forum*="tiendas"]) {
     --forum-rows: 6;
     grid-template-areas: 
