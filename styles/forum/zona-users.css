@@ -46,6 +46,7 @@
     bottom: 0;
     mask-image: url(https://i.imgur.com/29VahEc.png);
     mask-size: 100% auto;
+    mask-repeat: no-repeat;
   }
 
   & > .title {
