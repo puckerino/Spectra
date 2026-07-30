@@ -1,0 +1,28 @@
+.ficha {
+
+  header {
+    display: flex;
+    flex-direction: column;
+
+    .faceclaims {
+      display: flex;
+      width: 100%;
+
+      figure {
+        &:first-of-type {
+          mask-image: linear-gradient(to right, black, transparent);
+        }
+
+        &:last-of-type {
+          mask-image: linear-gradient(to left, black, transparent);
+        }
+
+        img {
+          object-fit: cover;
+          height: 50vh;
+        }
+      }
+      
+    }
+  }
+}
