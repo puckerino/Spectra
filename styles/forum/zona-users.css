@@ -28,7 +28,7 @@
   --forum-rows: 4;
   --forum-lastpost: horizontal;
   position: relative;
-  gap: 0 var(--spacing-5xl);
+  gap: var(--spacing-l) var(--spacing-5xl);
   grid-template-columns: repeat(3,1fr);
   grid-template-areas: 
     "title title img"
