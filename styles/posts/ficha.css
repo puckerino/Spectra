@@ -5,9 +5,10 @@
   }
 
   header {
+    --header-height: 60vh;
     display: flex;
     flex-direction: column;
-    height: 60vh;
+    height: var(--header-height);
     width: 100%;
     position: relative;
 
@@ -54,7 +55,7 @@
 
         img {
           object-fit: cover;
-          height: 100%;
+          height: var(--header-height);
           width: 100%;
           filter: grayscale(1);
         }
