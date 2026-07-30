@@ -18,6 +18,17 @@
       color: var(--text-contrast);
     }
 
+    &:before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      position: absolute; 
+      background: color-mix(in srgb, var(--background-elevated-contrast), transparent 50%);
+    }
+      
+
     .faceclaims {
       display: flex;
       width: 100%;
