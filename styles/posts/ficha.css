@@ -14,11 +14,12 @@
     h2 {
       font: var(--f-5xl) var(--f-post-username);
       position: relative;
-      z-index: 2;
+      z-index: 3;
       color: var(--text-contrast);
     }
 
     &:before {
+      z-index: 2;
       content: "";
       width: 100%;
       height: 100%;
