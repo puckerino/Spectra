@@ -1,1 +1,4 @@
-
+.page-title[forum*="tarot"] {
+  --page-title-img: url(https://png.pngtree.com/png-clipart/20240906/original/pngtree-tarot-cards-png-image_15950577.png);
+  --page-subtitle: "Los designios del Director te guiarán";
+}
