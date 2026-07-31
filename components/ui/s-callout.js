@@ -318,7 +318,7 @@ export default class SCallout extends HTMLElement {
         s-callout .s-callout-title {
           display: block;
           color: var(--s-callout-accent);
-          font: var(--f-l) var(--f-title-deco);
+          font: bold var(--f-l) var(--f-title);
           text-transform: uppercase;
         }
 
