@@ -45,28 +45,15 @@ LASTPOST
     .lastpost {
         display: flex;
         align-items: center;
-        gap: var(--spacing-s);
-        justify-content: space-between;
+        gap: var(--spacing);
 
         .lastpost-data {
             display: flex;
             flex-direction: row;
             align-items: center;
-            gap: var(--spacing-s);
+            gap: var(--spacing);
             flex-grow:1;
-
-            .title {
-                flex-grow: 1;
-            }
-
-            .username {
-                display: flex;
-                align-items: center;
-                gap: var(--spacing-s);
-                justify-content: space-between;
-            }
         }
-
     }
 }
 
