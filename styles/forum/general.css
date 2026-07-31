@@ -126,20 +126,18 @@ LAST POST
             font: var(--f-base) var(--f-title);
         }
 
-        .username {
+        .date {
             font: var(--f-s) var(--f-metadata);
             text-transform: uppercase;
-            display: grid;
-            grid-template-columns: 1fr max-content;
-            grid-template-areas: ". icon" "username icon";
+        }
+
+        .username {
+            font-size: 0;
 
             strong {
-                grid-area: username;
-                font: bold var(--f-base) var(--f-post-username);
-            }
-
-            .last-post-icon {
-                grid-area: icon;
+                font-size: var(--f-base) !important;
+                font-family: var(--f-post-username);
+                font-weight: bold;
             }
         }
     }
