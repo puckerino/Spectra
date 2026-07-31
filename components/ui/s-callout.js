@@ -251,10 +251,10 @@ export default class SCallout extends HTMLElement {
 
           display: grid;
           grid-template-columns: auto minmax(0, 1fr);
-          gap: var(--spacing-m, 1rem);
+          gap: var(--spacing);
           position: relative;
           overflow: clip;
-          padding: var(--spacing-m, 1rem);
+          padding: var(--spacing);
 
           color: var(--text-1, currentColor);
           background: var(--s-callout-soft);
@@ -263,16 +263,8 @@ export default class SCallout extends HTMLElement {
             var(--s-callout-accent) 35%,
             transparent
           );
-          border-radius: var(--spacing, 0.75rem);
-          corner-shape: var(--shape-elements, round);
-        }
-
-        s-callout::before {
-          content: "";
-          position: absolute;
-          inset: 0 auto 0 0;
-          width: 0.25rem;
-          background: var(--s-callout-accent);
+          border-radius: var(--spacing-s);
+          corner-shape: var(--shape-elements);
         }
 
         s-callout[tipo="info"] {
@@ -328,16 +320,8 @@ export default class SCallout extends HTMLElement {
 
         s-callout .s-callout-title {
           display: block;
-          margin: 0 0 var(--spacing-xs, 0.35rem);
-
           color: var(--s-callout-accent);
-          font: inherit;
-          font-weight: 700;
-          line-height: 1.25;
-        }
-
-        s-callout .s-callout-content {
-          line-height: 1.6;
+          font: bold var(--f-xl) var(--f-title-deco);
         }
 
         s-callout .s-callout-content > :first-child {
