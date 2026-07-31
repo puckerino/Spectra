@@ -38,6 +38,16 @@
     "links links img"
     ;
 
+  @media(max-width: 1600px) {
+    grid-template-areas:
+      "title title img"
+      "data data img"
+      "desc desc img"
+      "lastpost lastpost img"
+      "links links img"
+      ;
+  }
+
   &:before {
     content: "";
     background: var(--accent);
@@ -79,14 +89,14 @@
 
   .forum-links {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: var(--spacing);
     z-index: 2;
 
 
     a {
       padding: var(--spacing-xl);
-      font: var(--f-l) var(--f-title);
+      font: var(--f-base) var(--f-title);
       text-transform: uppercase;
       flex: 1;
       aspect-ratio: 1;
