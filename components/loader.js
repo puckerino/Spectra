@@ -7,6 +7,7 @@ const COMPONENTS = {
   "s-carousel": "ui/s-carousel.js",
   "s-copy": "ui/s-copy.js",
   "s-accordion": "ui/s-accordion.js",
+  "s-callout": "ui/s-callout.js",
 
   // POSTS
   "s-rol": "posts/s-rol.js",
