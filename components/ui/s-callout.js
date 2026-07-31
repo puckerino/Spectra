@@ -245,7 +245,7 @@ export default class SCallout extends HTMLElement {
           --s-callout-accent: light-dark(#2563eb, #60a5fa);
           --s-callout-soft: color-mix(
             in srgb,
-            var(--s-callout-accent) 12%,
+            var(--s-callout-accent) 5%,
             var(--surface-1, transparent)
           );
 
