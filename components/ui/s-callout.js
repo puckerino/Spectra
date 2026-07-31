@@ -258,12 +258,8 @@ export default class SCallout extends HTMLElement {
           filter: drop-shadow(0 0 0.75rem var(--s-callout-soft));
 
           color: var(--text-1);
-          background: var(--background);
-          border: 1px solid color-mix(
-            in srgb,
-            var(--s-callout-accent) 35%,
-            transparent
-          );
+          background: var(--background-elevated);
+          border: 1px solid var(--border);
           border-radius: var(--spacing-s);
           corner-shape: var(--shape-elements);
         }
@@ -322,7 +318,8 @@ export default class SCallout extends HTMLElement {
         s-callout .s-callout-title {
           display: block;
           color: var(--s-callout-accent);
-          font: bold var(--f-xl) var(--f-title-deco);
+          font: var(--f-l) var(--f-title-deco);
+          text-transform: uppercase;
         }
 
         s-callout .s-callout-content > :first-child {
