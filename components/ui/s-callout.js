@@ -255,9 +255,10 @@ export default class SCallout extends HTMLElement {
           position: relative;
           overflow: clip;
           padding: var(--spacing);
+          filter: drop-shadow(0 0 0.75rem var(--s-callout-soft));
 
-          color: var(--text-1, currentColor);
-          background: var(--s-callout-soft);
+          color: var(--text-1);
+          background: var(--background);
           border: 1px solid color-mix(
             in srgb,
             var(--s-callout-accent) 35%,
