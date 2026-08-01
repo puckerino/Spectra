@@ -24,6 +24,7 @@
         
         .data { 
             display: flex;
+            flex-direction: column;
             gap: var(--spacing-s);
             
             li { 
@@ -43,12 +44,12 @@
             padding: var(--spacing-s);
             
             li { 
-                .button {
+                a {
                     background: transparent !important;
 
                     svg {
-                        width: var(--f-s);
-                        height: var(--f-s);
+                        width: var(--f-base);
+                        height: var(--f-base);
                         stroke-width: 1;
                     }
                 }
