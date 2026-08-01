@@ -255,7 +255,8 @@ footer .pixie-footer-groups {
             overflow: clip;
             color: contrast-color(var(--group-color));
 
-            &:last-of-type {
+            &[href*="staff" {
+                grid-row: 3;
                 grid-column: 1 / -1;
                 aspect-ratio: auto;
             }
