@@ -2,7 +2,7 @@ const TAROT_CARDS = {
   loco: {
     numero: "0",
     nombre: "El Loco",
-    imagen: "https://www.odiseajung.com/wp-core-files/images/2015/02/fool.jpg"
+    imagen: "https://i.imgur.com/Tp24AV9.png"
   },
 
   mago: {
@@ -146,12 +146,6 @@ export default class STarot extends HTMLElement {
   }
 
   connectedCallback() {
-    /*
-     * Conservamos el HTML original solamente la primera vez.
-     *
-     * Es importante hacerlo antes de renderizar para que el componente
-     * no capture como contenido su propia estructura generada.
-     */
     if (!this._initialized) {
       this._sourceContent = this.innerHTML;
       this._initialized = true;
@@ -161,12 +155,6 @@ export default class STarot extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    /*
-     * attributeChangedCallback puede ejecutarse antes que
-     * connectedCallback cuando el elemento ya incluye carta="".
-     *
-     * Por eso no renderizamos hasta haber guardado el contenido original.
-     */
     if (
       !this.isConnected ||
       !this._initialized ||
@@ -242,7 +230,7 @@ export default class STarot extends HTMLElement {
       this.innerHTML = `
         <style>
           s-tarot {
-            --s-tarot-accent: var(--accent, var(--text-1));
+            --s-tarot-accent: var(--accent);
             --s-tarot-image-width: 11rem;
 
             display: grid;
@@ -259,7 +247,7 @@ export default class STarot extends HTMLElement {
             color: var(--text-1);
             background: var(--background-elevated);
             border: 1px solid var(--border);
-            border-radius: var(--spacing);
+            border-radius: var(--spacing-s);
             corner-shape: var(--shape-elements);
           }
 
@@ -301,12 +289,7 @@ export default class STarot extends HTMLElement {
           s-tarot .s-tarot-number {
             color: var(--s-tarot-accent);
             font: bold var(--f-s) var(--f-title);
-            letter-spacing: 0.12em;
             text-transform: uppercase;
-          }
-
-          s-tarot .s-tarot-number::after {
-            content: " ·";
           }
 
           s-tarot .s-tarot-name {
