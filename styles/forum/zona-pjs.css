@@ -14,7 +14,8 @@
       "links links"
       "lastpost lastpost"
       ;
-    
+
+    background: radial-gradient(ellipse 70% 70% at 0% 100%, color-mix(in srgb, var(--surface-4), transparent 65%), transparent);
     border-left: 1px solid var(--border);
     padding-left: var(--spacing);
   }
