@@ -98,6 +98,7 @@ nav {
         text-transform: uppercase;
         border-bottom: 1px solid var(--accent);
         padding-bottom: var(--spacing-s);
+    }
 
     a {
         font: var(--f-s) var(--f-metadata);
