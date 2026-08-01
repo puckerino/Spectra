@@ -3,6 +3,10 @@
         --forum-rows: 2;
         grid-template-areas: "title" "links";
 
+        &:not([forum*="codigos"]) {
+            border: 1px solid var(--border);
+        }
+
       &[forum*="codigos"] {
         --forum-rows: 1;
         grid-template-columns: repeat(2,1fr);
