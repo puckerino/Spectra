@@ -15,7 +15,7 @@
             "data data"
             "contact contact"
             ;
-        gap: 0;
+        gap: var(--spacing-s) var(--spacing);
         padding: var(--spacing);
         border: 1px solid var(--border);
         
@@ -28,13 +28,14 @@
             img {
                 object-fit: cover;
                 width: 100%;
+                height: auto;
                 aspect-ratio: 1;
             }
         }
         
         .username {
             grid-area: username;
-            font: var(--f-xl) var(--f-post-username);
+            font: var(--f-2xl) var(--f-post-username);
             line-height: 1;
             text-transform: uppercase;
         }
