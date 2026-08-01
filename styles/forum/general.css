@@ -138,6 +138,7 @@ LAST POST
                 font-size: var(--f-base) !important;
                 font-family: var(--f-post-username);
                 font-weight: bold;
+                line-height: 1;
             }
         }
     }
