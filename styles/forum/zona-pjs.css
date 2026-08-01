@@ -6,17 +6,22 @@
 
   .forum:not([forum*="fichas"]) {
     --forum-rows: 5;
-    grid-template-columns: 1fr .5fr;
+    grid-template-columns: var(--spacing) 1fr .5fr;
     grid-template-areas:
-      "title img"
-      "data img"
-      "desc desc"
-      "links links"
-      "lastpost lastpost"
+      "title title img"
+      "title data img"
+      "divider desc desc"
+      "divider links links"
+      "divider lastpost lastpost"
       ;
 
-    background: radial-gradient(ellipse 70% 70% at 0% 100%, color-mix(in srgb, var(--surface-4), transparent 65%), transparent);
-    border-left: 1px solid var(--border);
-    padding-left: var(--spacing);
+    &:before {
+      grid-area: divider;
+      width: 1px;
+      height: 100%;
+      background: var(--border);
+    }
+
+    background: radial-gradient(ellipse 70% 60% at 90% 30%, color-mix(in srgb, var(--surface-4), transparent 65%), transparent);
   }
 }
