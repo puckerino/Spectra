@@ -1,4 +1,10 @@
 @container style(--category:guidebook) {
+    hgroup {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2,max-content);
+        grid-template-areas: "title" "desc";
+    }
+    
     .forum {
         --forum-rows: 2;
         grid-template-areas: "title" "links";
