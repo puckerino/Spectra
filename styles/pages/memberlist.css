@@ -1,12 +1,58 @@
 .memberlist-users {
     border-left: 1px solid var(--border);
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: var(--spacing);
 
-    .member {
+    .member { 
+        display: flex;
+        flex-direction: column;
+        
+        .avatar-memberlist { 
+            img {
+                object-fit: cover;
+                height: 300px;
+                width: 300px;
+            }
+        }
+        
         .username {
             font: var(--f-xl) var(--f-post-username);
+            line-height: 1;
+            text-transform: uppercase;
+        }
+        
+        .data { 
+            display: flex;
+            gap: var(--spacing-s);
+            
+            li { 
+                font: var(--f-s) var(--f-metadata);
+                text-transform: uppercase;
+                
+                span { 
+                }
+            }
+        }
+        
+        .contact { 
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background: var(--poster);
+            padding: var(--spacing-s);
+            
+            li { 
+                .button {
+                    background: transparent !important;
+
+                    svg {
+                        width: var(--f-s);
+                        height: var(--f-s);
+                        stroke-width: 1;
+                    }
+                }
+            }
         }
     }
 }
