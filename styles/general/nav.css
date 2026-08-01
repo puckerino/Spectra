@@ -86,15 +86,18 @@ nav {
 }
 
 #forumnavmenu {
-    --popover-width: 20vw;
-    --popover-height: calc(100vh - var(--nav-size) - var(--spacing));
+    --popover-width: 100%;
+    --popover-height: calc(100vh - var(--nav-size));
     --popover-transform: translateX(-100%);
     --popover-transform-open: translateX(0);
-    margin-left: calc(var(--spacing) / 2);
-    margin-top: calc(var(--nav-size) + calc(var(--spacing)/2));
+    margin-top: var(--nav-size);
     border: 0;
-    border-radius: var(--spacing-s);
-    corner-shape: var(--shape-elements);
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-s);
+    }
 
     svg {
         height: 1rem;
