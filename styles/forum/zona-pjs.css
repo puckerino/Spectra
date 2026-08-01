@@ -3,4 +3,19 @@
   .category {
     padding: var(--spacing-5xl);
   }
+
+  .forum:not([forum*="fichas"]) {
+    --forum-rows: 5;
+    grid-template-columns: 1fr .5fr;
+    grid-template-areas:
+      "title img"
+      "data img"
+      "desc desc"
+      "links links"
+      "lastpost lastpost"
+      ;
+    
+    border-left: 1px solid var(--border);
+    padding-left: var(--spacing);
+  }
 }
