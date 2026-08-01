@@ -14,7 +14,10 @@ const COMPONENTS = {
   "s-timeline": "posts/s-timeline.js",
   "s-event": "posts/s-event.js",
   "s-location": "posts/s-location.js",
-  "s-search": "posts/s-search.js"
+  "s-search": "posts/s-search.js",
+
+  // RPG
+  "s-tarot": "rpg/s-tarot.js"
 };
 
 const loadingComponents = new Set();
