@@ -1,8 +1,13 @@
 @container style(--category:guidebook) {
+
+    .category {
+        padding: var(--spacing-5xl);
+    }
+    
     hgroup {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(2,max-content);
-        grid-template-areas: "title" "desc";
+        grid-template-columns: 1fr !important;
+        grid-template-rows: repeat(2,max-content) !important;
+        grid-template-areas: "title" "desc" !important;
     }
     
     .forum {
