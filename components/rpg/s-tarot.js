@@ -2,7 +2,7 @@ const TAROT_CARDS = {
   loco: {
     numero: "0",
     nombre: "El Loco",
-    imagen: "https://ejemplo.com/tarot/el-loco.webp"
+    imagen: "https://www.odiseajung.com/wp-core-files/images/2015/02/fool.jpg"
   },
 
   mago: {
