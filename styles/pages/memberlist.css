@@ -6,12 +6,25 @@
     gap: var(--spacing);
 
     .member { 
+        grid-row: span 4;
         display: grid;
         grid-template-rows: subgrid;
-        grid-row: span 4;
+        grid-template-columns: .5fr 1fr;
+        grid-template-areas: 
+            "img username"
+            "data data"
+            "contact contact"
+            ;
+        gap: 0;
+        padding: var(--spacing);
+        border: 1px solid var(--border);
         
         
         .avatar-memberlist { 
+            grid-area: img;
+            padding: var(--spacing-s);
+            border: 1px solid var(--border);
+            
             img {
                 object-fit: cover;
                 width: 100%;
@@ -20,12 +33,15 @@
         }
         
         .username {
+            grid-area: username;
             font: var(--f-xl) var(--f-post-username);
             line-height: 1;
             text-transform: uppercase;
         }
         
         .data { 
+            border-top: 1px solid var(--poster);
+            grid-area: data;
             display: flex;
             flex-direction: column;
             gap: var(--spacing-s);
@@ -40,15 +56,18 @@
         }
         
         .contact { 
+            grid-area: contact;
             display: flex;
             align-items: center;
             justify-content: space-around;
             background: var(--poster);
-            padding: var(--spacing-s);
+            padding: var(--spacing-xs);
             
             li { 
                 a {
                     background: transparent !important;
+                    padding: 0;
+                    margin: 0;
 
                     svg {
                         width: var(--f-base);
