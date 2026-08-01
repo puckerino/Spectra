@@ -99,6 +99,10 @@ footer .forum-options {
         display: flex;
         align-items: center;
     }
+
+    svg {
+        stroke-width: 1 !important;
+    }
 }
 
 /* ==================================
