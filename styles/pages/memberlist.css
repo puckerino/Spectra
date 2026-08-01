@@ -18,6 +18,8 @@
         gap: var(--spacing);
         padding: var(--spacing);
         border: 1px solid var(--border);
+        background: radial-gradient(ellipse 70% 60% at 90% 30%, color-mix(in srgb, var(--poster-dark), transparent 65%), transparent);
+
 
         hgroup {
             grid-area: header;
@@ -25,7 +27,6 @@
             grid-template-columns: .5fr 1fr;
             grid-template-areas: "img username";
             gap: 0 var(--spacing);
-            background: radial-gradient(ellipse 70% 60% at 90% 30%, color-mix(in srgb, var(--poster-dark), transparent 85%), transparent);
         }
 
 
@@ -101,6 +102,7 @@
                     background: transparent !important;
                     padding: 0;
                     margin: 0;
+                    color: contrast-color(var(--poster))!important;
 
                     svg {
                         width: var(--f-base);
