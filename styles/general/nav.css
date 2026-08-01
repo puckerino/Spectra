@@ -93,7 +93,15 @@ nav {
     margin-top: var(--nav-size);
     border: 0;
 
+    li.title {
+        font: bold var(--f-base) var(--f-title);
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--accent);
+        padding-bottom: var(--spacing-s);
+
     a {
+        font: var(--f-s) var(--f-metadata);
+        text-transform: uppercase;
         display: flex;
         align-items: center;
         gap: var(--spacing-s);
