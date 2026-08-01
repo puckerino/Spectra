@@ -19,7 +19,7 @@
 
     .lastpost {
       border-top: 1px solid var(--border);
-      padding: var(--spacing);
+      padding: var(--spacing-s);
     }
   }
 
