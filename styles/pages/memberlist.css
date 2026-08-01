@@ -6,15 +6,15 @@
     gap: var(--spacing);
 
     .member { 
-        grid-row: span 4;
+        grid-row: span 2;
         display: grid;
         grid-template-rows: subgrid;
         grid-template-columns: .5fr 1fr;
         grid-template-areas: 
             "img username"
-            "img contact"
-            "data data"
+            "contact data"
             ;
+        
         gap: 0 var(--spacing);
         padding: var(--spacing);
         border: 1px solid var(--border);
@@ -60,6 +60,7 @@
         .contact { 
             grid-area: contact;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: space-around;
             background: var(--poster);
@@ -74,7 +75,6 @@
                     svg {
                         width: var(--f-base);
                         height: var(--f-base);
-                        stroke-width: 1;
                     }
                 }
             }
