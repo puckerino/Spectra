@@ -9,7 +9,7 @@
     grid-template-columns: 1rem 1fr .5fr;
     grid-template-areas:
       "title title img"
-      "title data img"
+      "data data img"
       "divider desc desc"
       "divider links links"
       "divider lastpost lastpost"
