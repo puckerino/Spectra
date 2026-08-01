@@ -255,6 +255,11 @@ footer .pixie-footer-groups {
             overflow: clip;
             color: contrast-color(var(--group-color));
 
+            &:last-of-type {
+                grid-column: 1 / -1;
+                aspect-ratio: auto;
+            }
+
             span, strong {
                 position: relative;
             }
