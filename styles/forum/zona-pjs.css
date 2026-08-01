@@ -15,9 +15,8 @@
       "divider lastpost lastpost"
       ;
 
-    background: radial-gradient(ellipse 70% 60% at 90% 30%, color-mix(in srgb, var(--surface-4), transparent 65%), transparent);
-    padding-top: var(--spacing);
-    padding-right: var(--spacing);
+    background: radial-gradient(ellipse 70% 60% at 0% 30%, color-mix(in srgb, var(--surface-4), transparent 65%), transparent);
+    padding: var(--spacing);
 
     &:before {
       content: "";
