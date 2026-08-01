@@ -2,11 +2,14 @@
     border-left: 1px solid var(--border);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: max-content;
     gap: var(--spacing);
 
     .member { 
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 4;
+        
         
         .avatar-memberlist { 
             img {
