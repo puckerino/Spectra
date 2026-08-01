@@ -8,6 +8,11 @@
         grid-template-columns: 1fr !important;
         grid-template-rows: repeat(2,max-content) !important;
         grid-template-areas: "title" "desc" !important;
+
+        &:after {
+            padding-left: var(--spacing);
+            border-left: 2px solid var(--accent);
+        }
     }
     
     .forum {
