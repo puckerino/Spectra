@@ -12,10 +12,10 @@
         grid-template-columns: .5fr 1fr;
         grid-template-areas: 
             "img username"
+            "img contact"
             "data data"
-            "contact contact"
             ;
-        gap: var(--spacing-s) var(--spacing);
+        gap: 0 var(--spacing);
         padding: var(--spacing);
         border: 1px solid var(--border);
         
@@ -42,6 +42,7 @@
         
         .data { 
             border-top: 1px solid var(--poster);
+            padding-top: var(--spacing);
             grid-area: data;
             display: flex;
             flex-direction: column;
