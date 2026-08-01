@@ -1,5 +1,9 @@
 @container style(--category: rol) {
 
+  .category {
+    padding: var(--spacing-5xl);
+  }
+
   .forum-wrap {
     gap: 0;
   }
