@@ -112,8 +112,8 @@ LAST POST
     .avatar-lastpost-forum {
 
         img {
-            filter: drop-shadow(0 0 0.75rem var(--poster-darker));
-            border: 5px solid var(--poster);
+            outline:1px solid var(--poster-dark);
+            border: 10px solid var(--poster);
         }
     }
 
