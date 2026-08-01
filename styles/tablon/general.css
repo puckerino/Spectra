@@ -8,7 +8,7 @@
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(4, max-content);
 	grid-template-areas: 
-		"intro intro links"
+		"intro intro anuncios"
 		"ciclo ciclo anuncios"
 		"dinamicas eventos staff"
 		"topics topics topics";
@@ -27,6 +27,7 @@
 	
 
 	.linksrapidos { 
+		display: none;
 		grid-area: links;
 	}
 
