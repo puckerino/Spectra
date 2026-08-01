@@ -17,10 +17,13 @@
     
     .forum {
         --forum-rows: 2;
-        grid-template-areas: "title" "links";
+        grid-template-columns: .5fr 1fr;
+        grid-template-areas: "title title" "img links";
 
         &:not([forum*="codigos"]) {
-            border: 1px solid var(--border);
+            .title {
+                border-bottom: 1px solid var(--border);
+            }
         }
 
       &[forum*="codigos"] {
