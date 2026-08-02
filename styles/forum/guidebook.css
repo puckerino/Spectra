@@ -20,17 +20,10 @@
         grid-template-columns: .5fr 1fr;
         grid-template-areas: "title title" "img links";
 
-        &:not([forum*="codigos"]) {
-            .title {
+
+         & > .title {
                 border-bottom: 1px solid var(--border);
             }
-        }
-
-      &[forum*="codigos"] {
-        --forum-rows: 1;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-areas: "title links";
-      }
 
         .data,
         .lastpost {
