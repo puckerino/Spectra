@@ -1,0 +1,8 @@
+.busqueda-rol {
+  border: 1px solid var(--border);
+  padding: var(--spacing);
+
+  br {
+    display: none;
+  }
+}
