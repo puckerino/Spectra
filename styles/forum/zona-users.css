@@ -25,18 +25,17 @@
 
   
 .forum[forum*="tiendas"] {
-  --forum-rows: 5;
-  --forum-lastpost: horizontal;
-  position: relative;
-  gap: var(--spacing-l) var(--spacing-5xl);
-  grid-template-columns: .5fr 1fr;
-  grid-template-areas: 
-    "img title"
-    "img data"
-    "img desc"
-    "img lastpost"
-    "img links"
-    ;
+      --forum-rows: 4;
+        --forum-lastpost: horizontal;
+        position: relative;
+        gap: var(--spacing);
+        grid-template-columns: 1fr 1fr max-content;
+        grid-template-rows: repeat(4, max-content);
+        grid-template-areas:         
+          "img title links"        
+          "img data links"        
+          "img desc links"        
+          "img lastpost links";
 
   &:before {
     content: "";
