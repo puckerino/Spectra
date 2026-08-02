@@ -24,8 +24,11 @@
 .viewtopic_body:has(.ficha, .fa-generated-reply-form) {
   --quickreply:no;
 
+  &:not( > .fa-generated-reply-form) {
+
   .topic-actions.topic-actions-bottom {
     display: none;
+  }
   }
 }
 
