@@ -35,7 +35,7 @@
   }
 }
 
-.post:has(.ficha, s-rol) {
+.post:has(.ficha, s-rol, .padding-no) {
   --padding: no;
 }
 
