@@ -9,18 +9,22 @@
   }
   
   .forum:first-of-type {
-    --forum-rows: 5;
+    --forum-rows: 6;
     grid-template-columns: repeat(3,1fr);
     grid-template-areas: 
       ". img ."
       ". desc ."
       "title title title"
       ". data ."
+      ". links ."
       ". lastpost ."
       ;
     
     & > .title {
       font: var(--f-4xl) var(--f-title-deco);
+      text-align: center;
+      place-content: center;
+      
     }
   }
   
