@@ -73,6 +73,14 @@
       gap: var(--spacing-s);
     }
 
+    .lastpost {
+      flex-direction: row-reverse;
+
+      .lastpost-data {
+        text-align: right;
+      }
+    }
+
     .forum-img {
       height: 150px;
       width: 150px;
