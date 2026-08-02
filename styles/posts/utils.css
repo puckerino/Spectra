@@ -21,7 +21,7 @@
   }
 }
 
-.viewtopic_body:has(.ficha) {
+.viewtopic_body:has(.ficha, .fa-generated-reply-form) {
   --quickreply:no;
 
   .topic-actions.topic-actions-bottom {
