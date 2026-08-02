@@ -29,24 +29,14 @@
   --forum-lastpost: horizontal;
   position: relative;
   gap: var(--spacing-l) var(--spacing-5xl);
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: .5fr 1fr;
   grid-template-areas: 
-    "title title img"
-    "data data img"
-    "desc desc img"
-    "lastpost . img"
-    "links links img"
+    "img title"
+    "img data"
+    "img desc"
+    "img lastpost"
+    "img links"
     ;
-
-  @media(max-width: 1600px) {
-    grid-template-areas:
-      "title title img"
-      "data data img"
-      "desc desc img"
-      "lastpost lastpost img"
-      "links links img"
-      ;
-  }
 
   &:before {
     content: "";
