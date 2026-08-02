@@ -1,5 +1,6 @@
 const COMPONENTS = {
   // UI
+  "s-icon": "ui/s-icon.js",
   "s-audio": "ui/s-audio.js",
   "s-spoiler": "ui/s-spoiler.js",
   "s-tabs": "ui/s-tabs.js",
@@ -8,7 +9,7 @@ const COMPONENTS = {
   "s-copy": "ui/s-copy.js",
   "s-accordion": "ui/s-accordion.js",
   "s-callout": "ui/s-callout.js",
-
+  
   // POSTS
   "s-rol": "posts/s-rol.js",
   "s-timeline": "posts/s-timeline.js",
