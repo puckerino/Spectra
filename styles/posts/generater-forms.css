@@ -1,0 +1,10 @@
+.fa-generated-reply-form {
+  border: 1px solid var(--border);
+  border-radius: var(--spacing-s);
+  corner-shape: var(--shape-cards);
+  background: var(--background-elevared);
+
+  br {
+    display: none;
+  }
+}
