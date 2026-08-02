@@ -4,6 +4,10 @@
     display: grid;
     gap: var(--spacing);
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    .announcement & {
+      grid-template-columns: repeat(2,1fr);
+    }
   }
   
   .topiclist-title {
@@ -31,6 +35,10 @@
         aspect-ratio: 1;
         mask-image: linear-gradient(to bottom, black, transparent);
       }
+
+      .announcement & {
+        display: none;
+      }
     }
     
     .topic-type { 
@@ -44,6 +52,12 @@
       text-align: left;
       margin-top: -1lh;
       position: relative;
+
+      .announcement & {
+        margin-top: none;
+        font: 300 var(--f-xl) var(--f-metadata);
+        text-transform: uppercase;
+      }
     }
 
     .lastpost {    
@@ -52,6 +66,10 @@
       padding: var(--spacing);
       border-top: 1px solid var(--border);
       background: var(--background-elevated);
+
+      .announcement & {
+        display: none;
+      }
     }
   }
 }
