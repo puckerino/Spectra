@@ -1,10 +1,10 @@
 .fa-generated-reply-form {
   border-radius: var(--spacing-s);
   corner-shape: var(--shape-cards);
-  background: var(--background-elevated);
 
-  &.has-border {
-    border: 1px solid var(--border);
+  &:not(.form-ficha) {
+    border: 1px solid var(--boder);
+    background: var(--background-elevated);
   }
 
   br {
