@@ -26,7 +26,6 @@
   
 .forum[forum*="tiendas"] {
       --forum-rows: 4;
-        --forum-lastpost: horizontal;
         position: relative;
         gap: var(--spacing);
         grid-template-columns: 1fr 1fr max-content;
@@ -51,6 +50,7 @@
   }
 
   & > .title {
+    align-self: end;
     font: bold var(--f-4xl) var(--f-title-deco);
     z-index: 2;
   }
@@ -76,6 +76,10 @@
     }
   }
 
+  .links {
+    place-content: center;
+  }
+  
   .forum-links {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
