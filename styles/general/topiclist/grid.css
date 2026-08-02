@@ -1,5 +1,9 @@
 .topiclist.grid {
 
+  .announcement & {
+    border: 0;
+  }
+
   & > .stack {
     display: grid;
     gap: var(--spacing);
@@ -21,6 +25,11 @@
     flex-direction: column;
     padding: 0;
     border: 1px solid var(--border);
+
+    .announcement & {
+      justify-content: center;
+      align-items: center;
+    }
     
     .icon { 
       display: none;
