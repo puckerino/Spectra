@@ -9,6 +9,16 @@
   }
   
   .forum:first-of-type {
+    --forum-rows: 5;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: 
+      ". img ."
+      ". desc ."
+      "title title title"
+      ". data ."
+      ". lastpost ."
+      ;
+    
     & > .title {
       font: var(--f-4xl) var(--f-title-deco);
     }
@@ -27,7 +37,7 @@
     align-items: center;
     gap: 0 var(--spacing);
     border: 1px solid var(--border);
-    border-top: 0;
+    border-bottom: 0;
     padding: var(--spacing);
 
     & > .title {
@@ -70,5 +80,9 @@
         aspect-ratio: 1;
       }
     }
+  }
+
+  .forum:last-of-type {
+    border-bottom: 1px solid var(--border);
   }
 }
