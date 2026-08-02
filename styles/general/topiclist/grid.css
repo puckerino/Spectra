@@ -7,6 +7,8 @@
 
     .announcement & {
       grid-template-columns: repeat(2,1fr);
+      padding: 0;
+      border: 0;
     }
   }
   
@@ -54,7 +56,7 @@
       position: relative;
 
       .announcement & {
-        margin-top: none;
+        margin-top: 0;
         font: 300 var(--f-xl) var(--f-metadata);
         text-transform: uppercase;
       }
