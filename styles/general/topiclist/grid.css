@@ -1,6 +1,6 @@
 .topiclist.grid {
 
-  .announcement & {
+   &.announcement {
     border: 0;
   }
 
