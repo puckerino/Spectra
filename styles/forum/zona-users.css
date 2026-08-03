@@ -25,16 +25,17 @@
 
   
 .forum[forum*="tiendas"] {
-      --forum-rows: 4;
+      --forum-rows: 5;
         position: relative;
         gap: var(--spacing);
-        grid-template-columns: 5vw 1fr max-content 1fr;
+        grid-template-columns: 5vw 1fr 1fr;
         grid-template-rows: repeat(4, max-content);
         grid-template-areas:         
-          "divider title links img"        
-          "divider data links img"        
-          "divider desc links img"        
-          "divider lastpost links img";
+          "divider title img"        
+          "divider data img"        
+          "divider desc img"        
+          "divider lastpost img"
+          "links links links";
 
   &:before {
     grid-area: divider;
@@ -81,7 +82,7 @@
   
   .forum-links {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: var(--spacing);
     z-index: 2;
 
@@ -91,7 +92,7 @@
       font: var(--f-base) var(--f-title);
       text-transform: uppercase;
       flex: 1;
-      aspect-ratio: 1;
+      height: 150px;
       display: flex;
       flex-direction: column;
       border: 1px solid var(--border);
