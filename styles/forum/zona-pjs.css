@@ -18,21 +18,26 @@
   }
 
   .forum:not([forum*="fichas"]) {
-    --forum-rows: 5;
-    grid-template-columns: 1fr .5fr;
-    grid-template-areas:
-      "title img"
-      "data img"
-      "desc desc"
-      "links links"
-      "lastpost lastpost"
-      ;
-
-    border: 1px solid var(--border);
+        --forum-rows: 4;
+        grid-template-columns: 1rem .5fr 1fr 1rem;
+        grid-template-areas:        
+          ". img title ."        
+          ". img data ."        
+          ". img links ."        
+          "lastpost lastpost lastpost lastpost";
+        border: 1px solid var(--border);
+        padding-top: var(--spacing);
 
     .lastpost {
       padding: var(--spacing-s);
       border-top: 1px solid var(--border);
+    }
+
+    .forum-img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+      background: var(--accent);
     }
   }
 }
