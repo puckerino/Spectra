@@ -1,5 +1,5 @@
 s-cronologia {
-  s-tab {
+  s-tab:not([hidden]) {
     padding: var(--spacing);
     display: flex !important;
     flex-direction: column;
