@@ -93,6 +93,7 @@ export default class STabs extends HTMLElement {
           border-right: 1px solid var(--border);
           margin-bottom: 0;
           padding: var(--spacing);
+          flex-direction: column;
           }
 
         s-tabs .s-tab-button {
@@ -122,6 +123,10 @@ export default class STabs extends HTMLElement {
 
         s-tab:not([hidden]) {
           display: block;
+        }
+
+        s-cronologia s-tab:not([hidden]) {
+          padding: var(--spacing);
         }
 
         s-tab[hidden] {
