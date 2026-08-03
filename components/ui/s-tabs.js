@@ -131,6 +131,9 @@ export default class STabs extends HTMLElement {
 
         s-cronologia s-tab:not([hidden]) {
           padding: var(--spacing);
+          display: flex;
+          flex-direction: column;
+          gap: var(--spacing-s);
         }
 
         s-tab[hidden] {
