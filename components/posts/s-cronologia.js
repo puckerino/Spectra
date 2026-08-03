@@ -14,6 +14,10 @@ export default class SCronologia extends HTMLElement {
       width: 100%;
       }
 
+      s-cronologia br {
+      display: none;
+      }
+
       s-cronologia .s-cronologia {
       width: 100%;
       display: flex;
