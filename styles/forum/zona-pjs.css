@@ -4,6 +4,14 @@
     padding: var(--spacing-5xl);
   }
 
+  .forum[forum*="fichas"]) {
+    color: var(--text-contrast);
+    background-color: var(--background-elevated-contrast);
+    background-image: url(https://i.imgur.com/6vNArVk.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
   .forum:not([forum*="fichas"]) {
     --forum-rows: 5;
     grid-template-columns: 1rem 1fr .5fr;
