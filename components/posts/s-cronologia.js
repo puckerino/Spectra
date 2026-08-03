@@ -25,6 +25,7 @@ export default class SCronologia extends HTMLElement {
       align-items: center;
       grid-template-columns: max-content 1fr 1fr;
       padding: var(--spacing-xl);
+      gap: var(--spacing-xl);
       border-bottom: 1px solid var(--border);
       }
 
