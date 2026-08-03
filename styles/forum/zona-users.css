@@ -46,6 +46,7 @@
     mask-image: url(https://puckerino.github.io/Spectra/assets/images/svg/lioncolumn.svg);
     mask-size: contain;
     mask-repeat: no-repeat;
+    mask-position: bottom;
   }
 
   & > .title {
