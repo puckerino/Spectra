@@ -70,6 +70,11 @@ export default class STabs extends HTMLElement {
           display: block;
         }
 
+        s-cronologia s-tabs {
+          display: grid;
+          grid-template-columns: 20vw 1fr;
+          }
+
         s-tabs .s-tabs-nav {
           display: flex;
           gap: var(--spacing-s);
@@ -82,6 +87,13 @@ export default class STabs extends HTMLElement {
           margin-bottom:
             var(--spacing-l);
         }
+
+        s-cronologia .s-tabs-nav {
+          border-bottom: 0;
+          border-right: 1px solid var(--border);
+          margin-bottom: 0;
+          padding: var(--spacing);
+          }
 
         s-tabs .s-tab-button {
           border: none;
