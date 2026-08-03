@@ -1,1 +1,48 @@
+s-tabs {
+    display: grid;
 
+    s-cronologia & {
+        grid-template-columns: 20vw 1fr;
+    }
+
+    .s-tabs-nav {
+        display: flex;
+        gap: var(--spacing-s);
+        border-bottom: 1px solid var(--border);
+        padding-bottom: var(--spacing-s);
+
+        s-cronologia & {
+            flex-direction: column;
+            border-bottom: 0;
+            border-right: 1px solid var(--border);
+        }
+
+    }
+
+    .s-tab-button {
+        background: var(--background-elevated);
+        cursor: pointer;
+        padding: var(--spacing-xs) var(--spacing-l);
+        border-radius: var(--spacing-s);
+        corner-shape: squircle;
+        color: contrast-color(var(--background-elevated)) !important;
+        background: var(--background-elevated);
+        font: var(--f-s) var(--f-metadata);
+        text-transform: uppercase;
+        transition: all .2s allow-discrete;
+
+        s-cronologia & {
+            justify-content: start;
+        }
+
+        &:hover {
+            background: var(--poster);
+            color: contrast-color(var(--poster)) !important;
+        }
+
+        &[active] {
+            background: var(--poster-dark) !important;
+            color: contrast-color(var(--poster-darker)) !important;
+        }
+    }
+}
