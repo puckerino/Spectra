@@ -17,6 +17,13 @@ const COMPONENTS = {
   "s-event": "posts/s-event.js",
   "s-location": "posts/s-location.js",
   "s-search": "posts/s-search.js",
+  "s-banner": "posts/s-banner.js",
+  "s-cronologia": "posts/s-cronologia.js",
+  "s-ciclo": "posts/s-ciclo.js",
+  "s-tema": "posts/s-tema.js",
+  "s-relaciones": "posts/s-relaciones.js",
+  "s-relacion": "posts/s-relacion.js",
+  "s-playlist": "posts/s-playlist.js",
 
   // RPG
   "s-tarot": "rpg/s-tarot.js"
