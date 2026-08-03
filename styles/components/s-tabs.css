@@ -12,6 +12,7 @@ s-tabs {
         padding-bottom: var(--spacing-s);
 
         s-cronologia & {
+            padding: var(--spacing);
             flex-direction: column;
             border-bottom: 0;
             border-right: 1px solid var(--border);
@@ -22,7 +23,7 @@ s-tabs {
     .s-tab-button {
         background: var(--background-elevated);
         cursor: pointer;
-        padding: var(--spacing-xs) var(--spacing-l);
+        padding: var(--spacing-s) var(--spacing);
         border-radius: var(--spacing-s);
         corner-shape: squircle;
         color: contrast-color(var(--background-elevated)) !important;
