@@ -4,7 +4,7 @@
     padding: var(--spacing-5xl);
   }
 
-  .forum[forum*="fichas"]) {
+  .forum[forum*="fichas"] {
     padding: var(--spacing-2xl);
     color: var(--text-contrast);
     background-color: var(--background-elevated-contrast);
