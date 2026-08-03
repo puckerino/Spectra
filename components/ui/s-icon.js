@@ -1,4 +1,20 @@
 const ICONS = {
+  cerrado: {
+    viewBox: "0 0 24 24",
+    type: "stroke",
+    content: `
+    <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+    `
+  },
+
+  abierto: {
+    viewBox: "0 0 24 24",
+    type: "stroke",
+    content: `
+    <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/>
+    `
+  },
+  
   heart: {
     viewBox: "0 0 24 24",
     type: "stroke",
