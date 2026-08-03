@@ -9,6 +9,7 @@ const COMPONENTS = {
   "s-copy": "ui/s-copy.js",
   "s-accordion": "ui/s-accordion.js",
   "s-callout": "ui/s-callout.js",
+  "s-filter": "ui/s-filter.js",
   
   // POSTS
   "s-rol": "posts/s-rol.js",
