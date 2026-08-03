@@ -66,74 +66,8 @@ export default class STabs extends HTMLElement {
 
       style.textContent = `
 
-        s-tabs {
-          display: block;
-        }
-
-        s-cronologia s-tabs {
-          display: grid;
-          grid-template-columns: 20vw 1fr;
-          }
-
-        s-tabs .s-tabs-nav {
-          display: flex;
-          gap: var(--spacing-s);
-          border-bottom:
-            1px solid var(--border);
-
-          padding-bottom:
-            var(--spacing-s);
-
-          margin-bottom:
-            var(--spacing-l);
-        }
-
-        s-cronologia .s-tabs-nav {
-          border-bottom: 0;
-          border-right: 1px solid var(--border);
-          margin-bottom: 0;
-          padding: var(--spacing);
-          flex-direction: column;
-          }
-
-        s-tabs .s-tab-button {
-          border: none;
-          background: none;
-          cursor: pointer;
-          padding:var(--spacing-xs) var(--spacing-l);
-          border-radius: 999px !important;
-          corner-shape: unset;
-          color: contrast-color(var(--background-elevated)) !important;
-          background: var(--background-elevated);
-          font:var(--f-s) var(--f-metadata);
-          text-transform:uppercase;
-          transition: .2s ease;
-
-        }
-
-        s-cronologia .s-tab-button {
-          justify-content: start;
-        }
-
-        s-tabs .s-tab-button:hover {
-          background:var(--poster);
-          color: contrast-color(var(--poster)) !important;
-        }
-
-        s-tabs .s-tab-button[active] {
-          background: var(--poster-dark)!important;
-          color: contrast-color(var(--poster-darker))!important;
-        }
-
         s-tab:not([hidden]) {
           display: block;
-        }
-
-        s-cronologia s-tab:not([hidden]) {
-          padding: var(--spacing);
-          display: flex;
-          flex-direction: column;
-          gap: var(--spacing-s);
         }
 
         s-tab[hidden] {
