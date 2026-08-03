@@ -28,24 +28,22 @@
       --forum-rows: 4;
         position: relative;
         gap: var(--spacing);
-        grid-template-columns: 1fr max-content 1fr;
+        grid-template-columns: 5vw 1fr max-content 1fr;
         grid-template-rows: repeat(4, max-content);
         grid-template-areas:         
-          "title links img"        
-          "data links img"        
-          "desc links img"        
-          "lastpost links img";
+          "divider title links img"        
+          "divider data links img"        
+          "divider desc links img"        
+          "divider lastpost links img";
 
   &:before {
+    grid-area: divider;
     content: "";
     background: var(--accent);
     height: 100%;
     width: 5vw;
-    position: absolute;
-    left: 0;
-    top: 0;
     mask-image: url(https://puckerino.github.io/Spectra/assets/images/svf/lioncolumn.svg);
-    mask-size: 100% auto;
+    mask-size: contain;
     mask-repeat: no-repeat;
   }
 
@@ -73,6 +71,7 @@
     img {
       object-fit: contain;
       width: 100%;
+      height: auto;
     }
   }
 
