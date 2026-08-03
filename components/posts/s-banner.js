@@ -11,6 +11,17 @@ export default class SBanner extends HTMLElement {
 
         this.innerHTML = `
       <style>
+      .s-banner {
+        width: 100%;
+        max-height: 70vh;
+        position: relative;
+        }
+
+        .s-banner-media img {
+        object-fit: cover;
+        max-width: 100%;
+        max-height: 70vh;
+        }
 
       </style>
 
