@@ -1,0 +1,24 @@
+s-cronologia {
+  s-tab {
+    padding: var(--spacing);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+  }
+}
+
+s-tema {
+  border: 1px solid var(--border);
+  background: var(--background-elevated);
+
+  .s-tema-titulo {
+    font: bold var(--f-base) var(--f-title);
+  }
+
+  .s-tema-lugar, .s-tema-pjs {
+    font: var(--f-s) var(--f-metadata);
+    text-transform: uppercase;
+    color: var(--text-subtle);
+  }
+    
+}
