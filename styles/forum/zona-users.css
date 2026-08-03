@@ -70,7 +70,7 @@
     bottom: 0;
     right: var(--spacing);
     height: 100%;
-    width: 100%;
+    width: 30vw;
 
     img {
       object-fit: contain;
