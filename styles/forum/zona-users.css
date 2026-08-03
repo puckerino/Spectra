@@ -28,23 +28,23 @@
       --forum-rows: 4;
         position: relative;
         gap: var(--spacing);
-        grid-template-columns: 1fr 1fr max-content;
+        grid-template-columns: 1fr max-content 1fr;
         grid-template-rows: repeat(4, max-content);
         grid-template-areas:         
-          "img title links"        
-          "img data links"        
-          "img desc links"        
-          "img lastpost links";
+          "title links img"        
+          "data links img"        
+          "desc links img"        
+          "lastpost links img";
 
   &:before {
     content: "";
     background: var(--accent);
     height: 100%;
-    width: 50%;
+    width: 5vw;
     position: absolute;
     left: 0;
     top: 0;
-    mask-image: url(https://i.imgur.com/29VahEc.png);
+    mask-image: url(https://puckerino.github.io/Spectra/assets/images/svf/lioncolumn.svg);
     mask-size: 100% auto;
     mask-repeat: no-repeat;
   }
