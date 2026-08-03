@@ -111,14 +111,18 @@ export default class STabs extends HTMLElement {
 
         }
 
+        s-cronologia .s-tab-button {
+          justify-content: start;
+        }
+
         s-tabs .s-tab-button:hover {
-          background:var(--text-subtle);
-          color: contrast-color(var(--text-subtle)) !important;
+          background:var(--poster);
+          color: contrast-color(var(--poster)) !important;
         }
 
         s-tabs .s-tab-button[active] {
-          background: var(--poster)!important;
-          color: contrast-color(var(--poster))!important;
+          background: var(--poster-dark)!important;
+          color: contrast-color(var(--poster-darker))!important;
         }
 
         s-tab:not([hidden]) {
