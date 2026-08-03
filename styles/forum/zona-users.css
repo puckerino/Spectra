@@ -42,7 +42,7 @@
     background: var(--accent);
     height: 100%;
     width: 5vw;
-    mask-image: url(https://puckerino.github.io/Spectra/assets/images/svf/lioncolumn.svg);
+    mask-image: url(https://puckerino.github.io/Spectra/assets/images/svg/lioncolumn.svg);
     mask-size: contain;
     mask-repeat: no-repeat;
   }
