@@ -11,30 +11,28 @@
     background-image: url(https://i.imgur.com/6vNArVk.png);
     background-size: contain;
     background-repeat: no-repeat;
+
+    & > .title {
+      font: var(--f-5xl) var(--f-title-deco);
+    }
   }
 
   .forum:not([forum*="fichas"]) {
     --forum-rows: 5;
-    grid-template-columns: 1rem 1fr .5fr;
+    grid-template-columns: 1fr .5fr;
     grid-template-areas:
-      "title title img"
-      "data data img"
-      "divider desc desc"
-      "divider links links"
-      "divider lastpost lastpost"
+      "title img"
+      "data img"
+      "desc desc"
+      "links links"
+      "lastpost lastpost"
       ;
 
-    background: radial-gradient(ellipse 70% 60% at 0% 30%, color-mix(in srgb, var(--surface-4), transparent 65%), transparent);
-    padding: var(--spacing);
+    border: 1px solid var(--border);
 
-    &:before {
-      content: "";
-      grid-area: divider;
-      width: 1px;
-      height: 100%;
-      background: var(--border);
+    .lastpost {
+      padding: var(--spacing-s);
+      border-top: 1px solid var(--border);
     }
-    
-    
   }
 }
