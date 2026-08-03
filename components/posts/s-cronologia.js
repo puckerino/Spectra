@@ -56,7 +56,7 @@ export default class SCronologia extends HTMLElement {
       </style>
 
       <div class="s-cronologia profile-no padding-no">
-        <hgroup class="s-cronologia-hero>
+        <hgroup class="s-cronologia-hero">
           <figure class="s-cronologia-media">
             <img src="${imagen}" />
           </figure>
