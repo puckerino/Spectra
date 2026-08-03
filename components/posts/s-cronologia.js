@@ -14,10 +14,6 @@ export default class SCronologia extends HTMLElement {
       width: 100%;
       }
 
-      s-cronologia br {
-      display: none;
-      }
-
       s-cronologia .s-cronologia {
       width: 100%;
       display: flex;
@@ -59,7 +55,7 @@ export default class SCronologia extends HTMLElement {
 
       </style>
 
-      <div class="s-cronologia profile-no padding-no">
+      <div class="s-cronologia profile-no padding-no br-no">
         <hgroup class="s-cronologia-hero">
           <figure class="s-cronologia-media">
             <img src="${imagen}" />
