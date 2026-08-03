@@ -68,19 +68,23 @@
   .forum-img {
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: var(--spacing);
     height: 100%;
     width: 100%;
 
     img {
       object-fit: contain;
-      width: 100%;
-      height: auto;
+      width: auto;
+      height: 100%;
     }
   }
 
   .links {
     place-content: center;
+    z-index: 2;
+    background: color-mix(in srgb, var(--background-elevated), transparent 10%);
+    backdrop-filter: blur(10px);
+    padding: var(--spacing);
   }
   
   .forum-links {
