@@ -53,7 +53,7 @@
 
     .forum:not([forum*="fichas"]) {
         --forum-rows: 4;
-        grid-template-columns: 1rem 60px 1fr 1rem;
+        grid-template-columns: max-content 60px 1fr max-contnt;
         grid-template-areas:
             ". img title ."
             ". img data ."
@@ -61,6 +61,7 @@
             "lastpost lastpost lastpost lastpost";
         border: 1px solid var(--border);
         padding-top: var(--spacing);
+        gap: var(--spacing-s) var(--spacing);
 
         .lastpost {
             padding: var(--spacing-s);
