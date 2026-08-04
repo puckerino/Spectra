@@ -1,6 +1,6 @@
   :root {
 
-    /* 
+      /* 
     light-dark(
       url(https://puckerino.github.io/Spectra/assets/images/.avif),
       url(https://puckerino.github.io/Spectra/assets/images/.avif)
@@ -10,41 +10,69 @@
     /* =========================================================================
     BANNER
     ========================================================================= */
-    
-    --banner-background-img: 
-      light-dark(
-        url(https://i.pinimg.com/1200x/7d/69/94/7d69940bc2160d0fc9401e307d614ecf.jpg), 
-        url(https://i.pinimg.com/736x/a0/97/42/a097429ce90fc88d1ccd1081bdaf182a.jpg)
-      );    
-    
+
+      --banner-background-img:
+          light-dark(
+            url(https://i.pinimg.com/1200x/7d/69/94/7d69940bc2160d0fc9401e307d614ecf.jpg),
+            url(https://i.pinimg.com/736x/a0/97/42/a097429ce90fc88d1ccd1081bdaf182a.jpg)
+          );
+
+    /* =========================================================================
+    FORUM ICONS MASK
+    ========================================================================= */
+
+      --guidebook-general-mask: url();
+      --guidebook-ambientacion-mask: url();
+      --guidebook-sistema-mask: url();
+      --guidebook-codigos-mask: url();
+
+      --forum-busquedas-mask: url();
+      --forum-baules-mask: url();
+      --forum-mensajeria-mask: url();
+
+      --fichas-funcionamiento-mask: url();
+      --fichas-formulario-inicial-mask: url();
+      --fichas-formulario-vidapasada-mask: url();
+
+      --forum-gestiones-mask: url();
+      --forum-inscripciones-mask: url();
+      --forum-tarot-mask: url();
+      --forum-balanza-mask: url();
+
+      --tienda-recompensas-mask: url();
+      --tienda-items-mask: url();
+      --tienda-nivel-mask: url();
+      --tienda-ecos-mask: url();
+
+
     /* =========================================================================
     FOOTER
     ========================================================================= */
-    
-    --footer-img: 
-    light-dark(
-      url(https://2img.net/i.imgur.com/QZ2bzKi.png),
-      url(https://2img.net/i.imgur.com/dgUqzty.png)
-    );
-    
-    --afiliados-img: 
-      light-dark(
-        url(https://2img.net/i.imgur.com/M9Twg1t.png),
-        url(https://static.vecteezy.com/system/resources/thumbnails/051/959/726/small/gothic-dark-castle-surrounded-by-fog-perfect-for-fantasy-and-horror-themes-high-resolution-stock-photo-with-eerie-atmosphere-png.png)
-      );
-    
-    --guidebook-img: 
-      light-dark(
-        url(https://2img.net/i.imgur.com/Kk5yX6c.png), 
-        url(https://puckerino.github.io/salt-and-smoke/assets/images/knight.avif)
-      );
-    
-    /* ======== TEXTURES =========== */
-    
-    --background-texture: 
-      light-dark(
-        url(https://puckerino.github.io/salt-and-smoke/assets/images/noiselight.avif),
-        url(https://2img.net/i.imgur.com/WpL4b7g.png)
-      );
+
+      --footer-img:
+          light-dark(
+            url(https://2img.net/i.imgur.com/QZ2bzKi.png),
+            url(https://2img.net/i.imgur.com/dgUqzty.png)
+          );
+
+      --afiliados-img:
+          light-dark(
+            url(https://2img.net/i.imgur.com/M9Twg1t.png),
+            url(https://static.vecteezy.com/system/resources/thumbnails/051/959/726/small/gothic-dark-castle-surrounded-by-fog-perfect-for-fantasy-and-horror-themes-high-resolution-stock-photo-with-eerie-atmosphere-png.png)
+          );
+
+      --guidebook-img:
+          light-dark(
+            url(https://2img.net/i.imgur.com/Kk5yX6c.png),
+            url(https://puckerino.github.io/salt-and-smoke/assets/images/knight.avif)
+          );
+
+      /* ======== TEXTURES =========== */
+
+      --background-texture:
+          light-dark(
+            url(https://puckerino.github.io/salt-and-smoke/assets/images/noiselight.avif),
+            url(https://2img.net/i.imgur.com/WpL4b7g.png)
+          );
 
   }
