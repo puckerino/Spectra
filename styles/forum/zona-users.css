@@ -1,136 +1,156 @@
 @container style(--category: users) {
 
-  .category {
-    padding: var(--spacing-5xl);
-  }
-
-  .forum:not([forum*="tiendas"]) {
-    --forum-rows: 6;
-    grid-template-columns: 1rem 1fr 1rem;
-    grid-template-areas: 
-    ". img ."
-    ". title ."
-    ". data ."
-    ". desc ."
-    ". links ."
-    "lastpost lastpost lastpost"
-    ;
-
-    border: 1px solid var(--border);
-    padding-top: var(--spacing);
-
-    .lastpost {
-      border-top: 1px solid var(--border);
-      padding: var(--spacing-s);
+    .category {
+        padding: var(--spacing-5xl);
     }
 
-    .forum-img {
-      height: 60px;
-      width: 60px;
-      background: var(--accent);
-    }
-  }
+    .forum:not([forum*="tiendas"]) {
+        --forum-rows: 6;
+        grid-template-columns: 1rem 1fr 1rem;
+        grid-template-areas:
+            ". img ."
+            ". title ."
+            ". data ."
+            ". desc ."
+            ". links ."
+            "lastpost lastpost lastpost"
+        ;
 
-  
-.forum[forum*="tiendas"] {
-      --forum-rows: 5;
+        border: 1px solid var(--border);
+        padding-top: var(--spacing);
+
+        .lastpost {
+            border-top: 1px solid var(--border);
+            padding: var(--spacing-s);
+        }
+
+        .forum-img {
+            height: 60px;
+            width: 60px;
+            background: var(--accent);
+            mask-image: var(--forum-mask);
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            mask-position: center;
+        }
+    }
+
+    .forum[forum*="gestiones"] {
+        --forum-mask: var(--forum-gestiones-mask);
+    }
+
+    .forum[forum*="inscripciones"] {
+        --forum-mask: var(--forum-inscripciones-mask);
+    }
+
+    .forum[forum*="tarot"] {
+        --forum-mask: var(--forum-tarot-mask);
+    }
+
+    .forum[forum*="balanza"] {
+        --forum-mask: var(--forum-balanza-mask);
+    }
+
+
+    .forum[forum*="tiendas"] {
+        --forum-rows: 5;
         position: relative;
         gap: var(--spacing);
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(5, max-content);
-        grid-template-areas:         
-          "title ."        
-          "data ."        
-          "desc ."        
-          "lastpost ."
-          "links links";
+        grid-template-areas:
+            "title ."
+            "data ."
+            "desc ."
+            "lastpost ."
+            "links links";
 
-  & > .title {
-    align-self: end;
-    font: bold var(--f-4xl) var(--f-title-deco);
-    z-index: 2;
-  }
+        &>.title {
+            align-self: end;
+            font: bold var(--f-4xl) var(--f-title-deco);
+            z-index: 2;
+        }
 
-  .description {
-    border-left: 2px solid var(--accent);
-    padding-left: var(--spacing-2xl);
-    width: 60ch;
-    z-index: 2;
-  }
+        .description {
+            border-left: 2px solid var(--accent);
+            padding-left: var(--spacing-2xl);
+            width: 60ch;
+            z-index: 2;
+        }
 
-  .forum-img {
-    position: absolute;
-    bottom: 0;
-    right: var(--spacing);
-    height: 100%;
-    width: 50%;
-    display: flex;
-    justify-content: flex-end;
+        .forum-img {
+            position: absolute;
+            bottom: 0;
+            right: var(--spacing);
+            height: 100%;
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
 
-    img {
-      object-fit: contain;
-      width: auto;
-      height: 100%;
+            img {
+                object-fit: contain;
+                width: auto;
+                height: 100%;
+            }
+        }
+
+        .links {
+            place-content: center;
+            padding: var(--spacing);
+            background: var(--background-elevated-contrast);
+        }
+
+        .forum-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing);
+            position: relative;
+            z-index: 2;
+
+
+            a {
+                padding: var(--spacing-xl);
+                font: var(--f-base) var(--f-title);
+                text-transform: uppercase;
+                flex: 1;
+                height: 150px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: var(--spacing-s);
+                padding: var(--spacing);
+                background: var(--background-elevated2-contrast);
+                color: var(--text-contrast);
+
+                &:before {
+                    content: "";
+                    height: 60px;
+                    width: 60px;
+                    background: var(--text-contrast);
+                    mask-image: var(--link-mask);
+                    mask-size: contain;
+                    mask-repeat: no-repeat;
+                    mask-position: center;
+                }
+
+                &[store="recompensas"] {
+                    --link-mask: var(--tienda-recompensas-mask);
+                }
+
+                &[store="items"] {
+                    --link-mask: var(--tienda-items-mask);
+                }
+
+                &[store="nivel"] {
+                    --link-mask: var(--tienda-nivel-mask);
+                }
+
+                &[store="ecos"] {
+                    --link-mask: var(--tienda-ecos-mask);
+                }
+            }
+        }
     }
-  }
 
-  .links {
-    place-content: center;
-    padding: var(--spacing);
-    background: var(--background-elevated-contrast);
-  }
-  
-  .forum-links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: var(--spacing);
-    position: relative;
-    z-index: 2;
-
-
-    a {
-      padding: var(--spacing-xl);
-      font: var(--f-base) var(--f-title);
-      text-transform: uppercase;
-      flex: 1;
-      height: 150px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: var(--spacing-s);
-      padding: var(--spacing);
-      background: var(--background-elevated2-contrast);
-      color: var(--text-contrast);
-
-      &:before {
-        content: "";
-        height: 60px;
-        width: 60px;
-        background: var(--text-contrast);
-        mask-image: var(--link-mask);
-        mask-size: contain;
-        mask-repeat: no-repeat;
-        mask-position: center;
-      }
-
-      &[store="recompensas"] {
-        --link-mask: var(--tienda-recompensas-mask);
-      }
-
-      &[store="items"] {
-        --link-mask: var(--tienda-items-mask);
-      }
-
-      &[store="nivel"] {
-        --link-mask: var(--tienda-nivel-mask);
-      }
-
-      &[store="ecos"] {
-        --link-mask: var(--tienda-ecos-mask);
-      }
-    }
-  }
-}
-  
 }
