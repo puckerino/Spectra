@@ -5,6 +5,13 @@
   }
 
   .forum[forum*="fichas"] {
+    --forum-rows: 3;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: 
+      "img title links"
+      "img data links"
+      "img desc lastpost"
+      ;
     padding: var(--spacing-2xl);
     color: var(--text-contrast);
     background-color: var(--background-elevated-contrast);
