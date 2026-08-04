@@ -82,6 +82,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: var(--spacing);
+    position: relative;
     z-index: 2;
 
 
@@ -98,6 +99,7 @@
       gap: var(--spacing-s);
       padding: var(--spacing);
       background: var(--background-elevated2-contrast);
+      color: var(--text-contrast);
 
       &:before {
         content: "";
