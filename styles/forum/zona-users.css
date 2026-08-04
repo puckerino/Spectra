@@ -108,6 +108,26 @@
         height: 60px;
         width: 60px;
         background: var(--text-contrast);
+        mask-image: var(--link-mask);
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+      }
+
+      &[store="recompensas"] {
+        --link-mask: var(--tienda-recompensas-mask);
+      }
+
+      &[store="items"] {
+        --link-mask: var(--tienda-items-mask);
+      }
+
+      &[store="nivel"] {
+        --link-mask: var(--tienda-nivel-mask);
+      }
+
+      &[store="ecos"] {
+        --link-mask: var(--tienda-ecos-mask);
       }
     }
   }
