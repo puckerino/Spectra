@@ -12,18 +12,25 @@
         &:after {
             padding-left: var(--spacing);
             border-left: 2px solid var(--accent);
+            margin-left: var(--spacing-5xl);
         }
     }
     
     .forum {
         --forum-rows: 2;
-        grid-template-columns: .5fr 1fr;
-        grid-template-areas: "title title" "img links";
+        grid-template-columns: 60px 1fr;
+        grid-template-areas: "img title" "img links";
 
 
          & > .title {
                 border-bottom: 1px solid var(--border);
             }
+
+        .forum-img {
+            height: 60px;
+            width: 60px;
+            background: var(--accent);
+        }
 
         .data,
         .lastpost {
