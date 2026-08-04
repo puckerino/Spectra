@@ -6,13 +6,11 @@
 
     .forum:not([forum*="tiendas"]) {
         --forum-rows: 6;
-        grid-template-columns: 1rem 1fr 1rem;
+        grid-template-columns: 1rem 60px 1fr 1rem;
         grid-template-areas:
-            ". img ."
-            ". title ."
-            ". data ."
-            ". desc ."
-            ". links ."
+            ". img title ."
+            ". img data ."
+            ". img links ."
             "lastpost lastpost lastpost"
         ;
 
