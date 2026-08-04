@@ -70,7 +70,6 @@
         .forum-img {
             width: 60px;
             height: 60px;
-            aspect-ratio: 1;
             background: var(--accent);
             mask-image: var(--forum-mask);
             mask-size: contain;
