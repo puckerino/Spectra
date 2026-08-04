@@ -52,14 +52,13 @@
     }
 
     .forum:not([forum*="fichas"]) {
-        --forum-rows: 5;
-        grid-template-columns: 1rem 1fr 1rem;
+        --forum-rows: 4;
+        grid-template-columns: 1rem 60px 1fr 1rem;
         grid-template-areas:
-            ". img ."
-            ". title ."
-            ". data ."
-            ". links ."
-            "lastpost lastpost lastpost";
+            ". img title ."
+            ". img data ."
+            ". img links ."
+            "lastpost lastpost lastpost lastpost";
         border: 1px solid var(--border);
         padding-top: var(--spacing);
 
