@@ -6,20 +6,28 @@
 
   .forum:not([forum*="tiendas"]) {
     --forum-rows: 6;
+    grid-template-columns: 1rem 1fr 1rem;
     grid-template-areas: 
-    "img"
-    "title"
-    "data"
-    "desc"
-    "links"
-    "lastpost"
+    ". img ."
+    ". title ."
+    ". data ."
+    ". desc ."
+    ". links ."
+    "lastpost lastpost lastpost"
     ;
 
     border: 1px solid var(--border);
+    padding-top: var(--spacing);
 
     .lastpost {
       border-top: 1px solid var(--border);
       padding: var(--spacing-s);
+    }
+
+    .forum-img {
+      height: 60px;
+      width: 60px;
+      background: var(--accent);
     }
   }
 
@@ -37,18 +45,6 @@
           "divider lastpost ."
           "links links links";
 
-  &:before {
-    grid-area: divider;
-    content: "";
-    background: var(--accent);
-    height: 100%;
-    width: 5vw;
-    mask-image: url(https://puckerino.github.io/Spectra/assets/images/svg/lioncolumn.svg);
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: bottom;
-  }
-
   & > .title {
     align-self: end;
     font: bold var(--f-4xl) var(--f-title-deco);
@@ -59,10 +55,6 @@
     border-left: 2px solid var(--accent);
     padding-left: var(--spacing-2xl);
     width: 60ch;
-    z-index: 2;
-  }
-
-  .lastpost {
     z-index: 2;
   }
 
@@ -83,8 +75,6 @@
   .links {
     place-content: center;
     z-index: 2;
-    background: color-mix(in srgb, var(--background-elevated), transparent 10%);
-    backdrop-filter: blur(10px);
     padding: var(--spacing);
   }
   
@@ -104,15 +94,6 @@
       display: flex;
       flex-direction: column;
       border: 1px solid var(--border);
-      backdrop-filter: blur(20px);
-      transition: all .3s allow-discrete;
-      background: linear-gradient(to bottom, transparent, color-mix(in srgb, var(--accent), transparent 50%));
-      background-size: 100% 200%;
-
-      &:hover {
-        transition: all .3s allow-discrete;
-        background-size:100% 100%;
-      }
     }
   }
 }
