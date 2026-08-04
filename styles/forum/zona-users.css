@@ -63,7 +63,9 @@
     bottom: 0;
     right: var(--spacing);
     height: 100%;
-    width: 30vw;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
 
     img {
       object-fit: contain;
