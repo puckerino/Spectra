@@ -53,7 +53,7 @@
 
     .forum:not([forum*="fichas"]) {
         --forum-rows: 4;
-        grid-template-columns: max-content 60px 1fr max-contnt;
+        grid-template-columns: max-content 60px 1fr max-content;
         grid-template-areas:
             ". img title ."
             ". img data ."
