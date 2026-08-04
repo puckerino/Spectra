@@ -1,93 +1,94 @@
 @container style(--category: pjs) {
 
-  .category {
-    padding: var(--spacing-5xl);
-  }
-
-  .forum[forum*="fichas"] {
-    --forum-rows: 3;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-areas: 
-      "img title links"
-      "img data links"
-      "img desc lastpost"
-      ;
-    
-    color: var(--text-contrast);
-    background-color: var(--background-elevated-contrast);
-
-    & > .title {
-      font: var(--f-5xl) var(--f-title-deco);
+    .category {
+        padding: var(--spacing-5xl);
     }
 
-    .forum-img {
-      img {
-        object-fit: contain;
-        max-height: 50vh;
-        width: auto;
-    }
+    .forum[forum*="fichas"] {
+        --forum-rows: 3;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "img title links"
+            "img data links"
+            "img desc lastpost"
+        ;
 
-      .links {
-        .forum-links {
-          display: flex;
-          flex-direction: column;
-          gap: var(--spacing);
+        color: var(--text-contrast);
+        background-color: var(--background-elevated-contrast);
 
-          a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--border);
-            padding: var(--spacing);
-
-            span {
-              font: var(--f-xl) var(--f-title);
-              text-transform: uppercase;
-            }
-          }
+        &>.title {
+            font: var(--f-5xl) var(--f-title-deco);
         }
-      }
-  }
 
-  .forum:not([forum*="fichas"]) {
+        .forum-img {
+            img {
+                object-fit: contain;
+                max-height: 50vh;
+                width: auto;
+            }
+
+            .links {
+                .forum-links {
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--spacing);
+
+                    a {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid var(--border);
+                        padding: var(--spacing);
+
+                        span {
+                            font: var(--f-xl) var(--f-title);
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .forum:not([forum*="fichas"]) {
         --forum-rows: 5;
         grid-template-columns: 1rem 1fr 1rem;
-        grid-template-areas:  
-          ". img ."
-          ". title ."        
-          ". data ."        
-          ". links ."        
-          "lastpost lastpost lastpost";
+        grid-template-areas:
+            ". img ."
+            ". title ."
+            ". data ."
+            ". links ."
+            "lastpost lastpost lastpost";
         border: 1px solid var(--border);
         padding-top: var(--spacing);
 
-    .lastpost {
-      padding: var(--spacing-s);
-      border-top: 1px solid var(--border);
+        .lastpost {
+            padding: var(--spacing-s);
+            border-top: 1px solid var(--border);
+        }
+
+        .forum-img {
+            width: 60px;
+            height: 60px;
+            aspect-ratio: 1;
+            background: var(--accent);
+            mask-image: var(--forum-mask);
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            mask-position: center;
+        }
     }
 
-    .forum-img {
-      width: 60px;
-      height: 60px;
-      aspect-ratio: 1;
-      background: var(--accent);
-      mask-image: var(--forum-mask);
-      mask-size: contain;
-      mask-repeat:no-repeat;
-      mask-position: center;
+    .forum[forum*="busquedas"] {
+        --forum-mask: var(--forum-busquedas-mask);
     }
-  }
 
-  .forum[forum*="busquedas"] {
-    --forum-mask: var(--forum-busquedas-mask);
-  }
+    .forum[forum*="baules"] {
+        --forum-mask: var(--forum-baules-mask);
+    }
 
-  .forum[forum*="baules"] {
-    --forum-mask: var(--forum-baules-mask);
-  }
-
-  .forum[forum*="mensajeria"] {
-    --forum-mask: var(--forum-mensajeria-mask);
-  }
+    .forum[forum*="mensajeria"] {
+        --forum-mask: var(--forum-mensajeria-mask);
+    }
 }
