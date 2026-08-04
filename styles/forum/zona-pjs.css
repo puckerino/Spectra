@@ -15,7 +15,7 @@
   }
 
   .forum:not([forum*="fichas"]) {
-        --forum-rows: 4;
+        --forum-rows: 5;
         grid-template-columns: 1rem 1fr 1rem;
         grid-template-areas:  
           ". img ."
