@@ -36,6 +36,22 @@
       height: 60px;
       aspect-ratio: 1;
       background: var(--accent);
+      mask-image: var(--forum-mask);
+      mask-size: contain;
+      mask-repeat:no-repeat;
+      mask-position: center;
     }
+  }
+
+  .forum[forum*="busquedas"] {
+    --forum-mask: var(--forum-busquedas-mask);
+  }
+
+  .forum[forum*="baules"] {
+    --forum-mask: var(--forum-baules-mask);
+  }
+
+  .forum[forum*="mensajeria"] {
+    --forum-mask: var(--forum-mensajeria-mask);
   }
 }
