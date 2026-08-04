@@ -36,14 +36,14 @@
       --forum-rows: 5;
         position: relative;
         gap: var(--spacing);
-        grid-template-columns: 5vw 1fr 1fr;
-        grid-template-rows: repeat(4, max-content);
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(5, max-content);
         grid-template-areas:         
-          "divider title ."        
-          "divider data ."        
-          "divider desc ."        
-          "divider lastpost ."
-          "links links links";
+          "title ."        
+          "data ."        
+          "desc ."        
+          "lastpost ."
+          "links links";
 
   & > .title {
     align-self: end;
@@ -74,8 +74,8 @@
 
   .links {
     place-content: center;
-    z-index: 2;
     padding: var(--spacing);
+    background: var(--background-elevated-contrast);
   }
   
   .forum-links {
@@ -93,7 +93,18 @@
       height: 150px;
       display: flex;
       flex-direction: column;
-      border: 1px solid var(--border);
+      justify-content: center;
+      align-items: center;
+      gap: var(--spacing-s);
+      padding: var(--spacing);
+      background: var(--background-elevated2-contrast);
+
+      &:before {
+        content: "";
+        height: 60px;
+        width: 60px;
+        background: var(--text-contrast);
+      }
     }
   }
 }
