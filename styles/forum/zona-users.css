@@ -95,7 +95,6 @@
 
         .forum-links {
             display: grid;
-            grid-template-columns: repeat(2,1fr);
             gap: var(--spacing);
             position: relative;
             z-index: 2;
