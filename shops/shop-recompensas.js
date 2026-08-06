@@ -2,7 +2,7 @@
  * shop-recompensas.js
  * Configuración de la tienda de recompensas para Spectra.
  *
- * @version 1.0.0
+ * @version 1.1.0
  *
  * Requiere:
  * - pixie-shop.js
@@ -12,25 +12,12 @@
  * - pixie-shop-totals.js
  * - pixie-shop-validators.js
  * - pixie-shop-output.js
- *
- * HTML:
- *
- * <form
- *   data-pixie-shop
- *   data-shop-config="recompensas"
- * >
- *   ...
- * </form>
  */
 
 (function (window) {
   "use strict";
 
   const SHOP_NAME = "recompensas";
-
-  /*
-   * Comprobación de PixieShop.
-   */
 
   if (!window.PixieShop) {
     console.warn(
@@ -43,7 +30,7 @@
   const PixieShop = window.PixieShop;
 
   /*
-   * Módulos necesarios.
+   * Módulos requeridos
    */
 
   const REQUIRED_MODULES = [
@@ -85,28 +72,10 @@
     PixieShop.use("totals");
 
   /*
-   * Datos de la tienda
-   * -------------------
+   * Datos de ejemplo
    *
-   * Puedes editar esta lista directamente.
-   *
-   * Cada recompensa admite:
-   *
-   * {
-   *   id: "identificador-unico",
-   *   titulo: "Título visible",
-   *   dinero: 50,
-   *   categoria: "Categoría",
-   *   tags: ["tag-1", "tag-2"],
-   *   descripcion: "Texto opcional",
-   *   mediaHTML: `...`,
-   *
-   *   quantity: {
-   *     enabled: true,
-   *     min: 1,
-   *     max: 99
-   *   }
-   * }
+   * Si window.SPECTRA_RECOMPENSAS existe,
+   * se utilizarán esos datos en su lugar.
    */
 
   const DEFAULT_REWARDS = [
@@ -151,18 +120,6 @@
     }
   ];
 
-  /*
-   * Puedes definir los datos antes de cargar
-   * este archivo:
-   *
-   * window.SPECTRA_RECOMPENSAS = [
-   *   ...
-   * ];
-   *
-   * Si no existe esa variable, se usarán los
-   * ejemplos de DEFAULT_REWARDS.
-   */
-
   const REWARDS =
     Array.isArray(
       window.SPECTRA_RECOMPENSAS
@@ -171,109 +128,118 @@
       : DEFAULT_REWARDS;
 
   /*
-   * Campo del carrito
-   * -----------------
+   * Campo de enlaces
    *
-   * Cada entrada necesita un enlace
-   * justificativo.
+   * El número de inputs se sincronizará
+   * automáticamente con la cantidad.
    */
 
-const rewardLinkField =
-  fields.repeatableUrl({
-    name: "links",
+  const rewardLinkField =
+    fields.repeatableUrl({
+      name: "links",
 
-    label: "Enlaces",
+      label: "Enlaces",
 
-    outputLabel: "Enlace",
+      outputLabel: "Enlace",
 
-    placeholder: "https://...",
+      placeholder: "https://...",
 
-    required: true,
+      required: true,
 
-    min: 1,
+      min: 1,
 
-    max: null,
+      max: null,
 
-    outsideOutput: true,
+      outsideOutput: true,
 
-    autocomplete: "url",
+      autocomplete: "url",
 
-    addLabel: "Añadir otro enlace",
+      addLabel:
+        "Añadir otro enlace",
 
-    removeLabel: "Eliminar enlace"
-  });
-
-  function syncLinksWithQuantity({
-  cart,
-  shop
-}) {
-  let changed = false;
-
-  Object.values(
-    cart.sections
-  ).forEach((entries) => {
-    entries.forEach((entry) => {
-      const quantity = Math.max(
-        1,
-        Number(entry.quantity) || 1
-      );
-
-      const links = Array.isArray(
-        entry.fields.links
-      )
-        ? entry.fields.links
-        : [];
-
-      while (
-        links.length < quantity
-      ) {
-        links.push("");
-        changed = true;
-      }
-
-      if (
-        links.length > quantity
-      ) {
-        links.length = quantity;
-        changed = true;
-      }
-
-      entry.fields.links = links;
+      removeLabel:
+        "Eliminar enlace"
     });
-  });
-
-  if (!changed) return;
-
-  shop.saveCart();
-  shop.renderCart();
-}
 
   /*
-   * Configuración de PixieShop.
+   * Sincroniza la cantidad de inputs
+   * con la cantidad de recompensas.
+   *
+   * Cantidad 1 → 1 enlace
+   * Cantidad 2 → 2 enlaces
+   * Cantidad 3 → 3 enlaces
+   */
+
+  function syncLinksWithQuantity({
+    cart,
+    shop
+  }) {
+    let changed = false;
+
+    Object.values(
+      cart?.sections || {}
+    ).forEach((entries) => {
+      if (!Array.isArray(entries)) {
+        return;
+      }
+
+      entries.forEach((entry) => {
+        const quantity = Math.max(
+          1,
+          Math.floor(
+            Number(entry.quantity) || 1
+          )
+        );
+
+        /*
+         * Compatibilidad con entradas antiguas
+         * guardadas en localStorage.
+         */
+
+        entry.fields ||= {};
+
+        const links = Array.isArray(
+          entry.fields.links
+        )
+          ? entry.fields.links
+          : [];
+
+        while (
+          links.length < quantity
+        ) {
+          links.push("");
+          changed = true;
+        }
+
+        if (
+          links.length > quantity
+        ) {
+          links.length = quantity;
+          changed = true;
+        }
+
+        entry.fields.links = links;
+      });
+    });
+
+    if (!changed) {
+      return;
+    }
+
+    shop.saveCart();
+    shop.renderCart();
+  }
+
+  /*
+   * Configuración de la tienda
    */
 
   PixieShop.register(
     SHOP_NAME,
     {
-      /*
-       * Datos.
-       */
-
       items: REWARDS,
 
-      /*
-       * Moneda mostrada en la tienda,
-       * carrito y total publicado.
-       */
-
       currency: "MONEDAS",
-
-      /*
-       * Clave del carrito en localStorage.
-       *
-       * PixieShop añadirá automáticamente
-       * el ID del usuario y la versión.
-       */
 
       storageKey:
         "spectra_shop_recompensas",
@@ -284,21 +250,12 @@ const rewardLinkField =
 
       itemsPerPage: 24,
 
-      /*
-       * Funciones de la interfaz.
-       */
-
       features: {
         search: true,
         sort: true,
         categories: true,
         tags: true
       },
-
-      /*
-       * Correspondencia entre los campos
-       * internos de PixieShop y los datos.
-       */
 
       fields: {
         id: "id",
@@ -308,24 +265,12 @@ const rewardLinkField =
         value: "dinero"
       },
 
-      /*
-       * Las recompensas pueden añadirse
-       * varias veces.
-       */
-
       quantity: {
         enabled: true,
         min: 1,
         max: 99,
         step: 1
       },
-
-      /*
-       * Configuración del carrito.
-       *
-       * Las recompensas repetidas se
-       * fusionan y aumentan su cantidad.
-       */
 
       cart: {
         defaultSection:
@@ -342,7 +287,7 @@ const rewardLinkField =
       },
 
       /*
-       * Sección única del carrito.
+       * Sección del carrito
        */
 
       sections: {
@@ -359,8 +304,6 @@ const rewardLinkField =
             ],
 
             /*
-             * Suma:
-             *
              * dinero × cantidad
              */
 
@@ -375,11 +318,7 @@ const rewardLinkField =
       },
 
       /*
-       * Renderizado de las tarjetas.
-       *
-       * Utiliza el template:
-       *
-       * [data-shop-item-template]
+       * Renderizado
        */
 
       renderer: {
@@ -399,11 +338,6 @@ const rewardLinkField =
             description:
               "descripcion",
 
-            /*
-             * Las recompensas no tienen
-             * bonus o efecto.
-             */
-
             effect: null,
 
             value:
@@ -420,18 +354,13 @@ const rewardLinkField =
           afterRender({
             node
           }) {
-            /*
-             * Clase opcional para estilos
-             * específicos de Spectra.
-             */
-
             node.classList.add(
               "shop-reward"
             );
 
             /*
-             * Si el template conserva un
-             * elemento de efecto, lo quitamos.
+             * Elimina el espacio reservado
+             * para bonus o efectos.
              */
 
             node
@@ -449,8 +378,8 @@ const rewardLinkField =
               );
 
             /*
-             * Los botones deben añadir la
-             * recompensa a la sección única.
+             * Todos los botones de la tarjeta
+             * añaden una recompensa.
              */
 
             node
@@ -478,7 +407,7 @@ const rewardLinkField =
               );
 
             /*
-             * No hay retirada en esta tienda.
+             * Esta tienda no admite retiradas.
              */
 
             node
@@ -496,14 +425,6 @@ const rewardLinkField =
               );
           }
         },
-
-        /*
-         * Renderizado de las entradas
-         * del carrito.
-         *
-         * El módulo fields insertará
-         * automáticamente el input del enlace.
-         */
 
         cart: {
           type: "basic-cart",
@@ -530,76 +451,102 @@ const rewardLinkField =
             node.classList.add(
               "cart-reward"
             );
+
+            /*
+             * Los enlaces dependen únicamente
+             * de la cantidad.
+             *
+             * El usuario no necesita añadirlos
+             * o eliminarlos manualmente.
+             */
+
+            node
+              .querySelectorAll(
+                [
+                  ".cart-item-field-add",
+                  ".cart-item-field-remove",
+                  "[data-cart-action='add-field']",
+                  "[data-cart-action='remove-field']"
+                ].join(", ")
+              )
+              .forEach(
+                (button) => {
+                  button.remove();
+                }
+              );
           }
         }
       },
 
       /*
        * Validación
-       * ----------
        *
-       * No hacen falta reglas adicionales.
+       * El módulo valida automáticamente:
+       * - que los campos sean obligatorios;
+       * - que los valores sean URLs.
        *
-       * pixie-shop-validators.js comprobará
-       * automáticamente que:
-       *
-       * - el enlace esté rellenado;
-       * - el contenido sea una URL válida.
+       * Esta regla adicional comprueba que
+       * haya un enlace completo por unidad.
        */
 
-validation: {
-  rules: [
-    {
-      type: "custom",
+      validation: {
+        rules: [
+          {
+            type: "custom",
 
-      validate({
-        entry,
-        item,
-        getFilledValues
-      }) {
-        const quantity = Math.max(
-          1,
-          Number(entry.quantity) || 1
-        );
+            validate({
+              entry,
+              item,
+              getFilledValues
+            }) {
+              const quantity =
+                Math.max(
+                  1,
+                  Math.floor(
+                    Number(
+                      entry.quantity
+                    ) || 1
+                  )
+                );
 
-        const links =
-          getFilledValues("links");
+              const links =
+                getFilledValues(
+                  "links"
+                );
 
-        if (
-          links.length < quantity
-        ) {
-          return (
-            `${item.title}: debes indicar ` +
-            `${quantity} enlace(s), uno por cada unidad.`
-          );
-        }
+              if (
+                links.length <
+                quantity
+              ) {
+                const title =
+                  item.title ||
+                  item.raw?.titulo ||
+                  "La recompensa";
 
-        return null;
-      }
-    }
-  ]
-},
+                return (
+                  `${title}: debes indicar ` +
+                  `${quantity} enlace(s), ` +
+                  "uno por cada unidad."
+                );
+              }
 
-      
-hooks: {
-  afterCartChange:
-    syncLinksWithQuantity
-},
+              return null;
+            }
+          }
+        ]
+      },
+
+      /*
+       * Sincronización del carrito
+       */
+
+      hooks: {
+        afterCartChange:
+          syncLinksWithQuantity
+      },
 
       /*
        * Publicación
-       * -----------
-       *
-       * Cada recompensa se publica como:
-       *
-       * <s-recompensa
-       *   titulo="..."
-       *   dinero="..."
-       *   cantidad="..."
-       * ></s-recompensa>
-       *
-       * El enlace se publica fuera de [code]
-       * como justificante.
        */
 
       output: {
@@ -644,11 +591,6 @@ hooks: {
           }
         },
 
-        /*
-         * Los inputs con outsideOutput: true
-         * aparecerán en este bloque.
-         */
-
         outsideFields: {
           enabled: true,
 
@@ -661,10 +603,6 @@ hooks: {
           linePrefix:
             "— "
         },
-
-        /*
-         * Total publicado al final.
-         */
 
         totals: [
           {
@@ -684,7 +622,7 @@ hooks: {
       },
 
       /*
-       * Textos de interfaz.
+       * Mensajes de interfaz
        */
 
       messages: {
@@ -717,19 +655,7 @@ hooks: {
       },
 
       /*
-       * Ordenación personalizada.
-       *
-       * El núcleo ya gestiona:
-       *
-       * name-asc
-       * name-desc
-       *
-       * Aquí añadimos:
-       *
-       * price-asc
-       * price-desc
-       * value-asc
-       * value-desc
+       * Ordenación
        */
 
       sort(
