@@ -178,24 +178,75 @@
    * justificativo.
    */
 
-  const rewardLinkField =
-    fields.url({
-      name: "link",
+const rewardLinkField =
+  fields.repeatableUrl({
+    name: "links",
 
-      label: "Enlace",
+    label: "Enlaces",
 
-      outputLabel:
-        "Enlace",
+    outputLabel: "Enlace",
 
-      placeholder:
-        "https://...",
+    placeholder: "https://...",
 
-      required: true,
+    required: true,
 
-      outsideOutput: true,
+    min: 1,
 
-      autocomplete: "url"
+    max: null,
+
+    outsideOutput: true,
+
+    autocomplete: "url",
+
+    addLabel: "Añadir otro enlace",
+
+    removeLabel: "Eliminar enlace"
+  });
+
+  function syncLinksWithQuantity({
+  cart,
+  shop
+}) {
+  let changed = false;
+
+  Object.values(
+    cart.sections
+  ).forEach((entries) => {
+    entries.forEach((entry) => {
+      const quantity = Math.max(
+        1,
+        Number(entry.quantity) || 1
+      );
+
+      const links = Array.isArray(
+        entry.fields.links
+      )
+        ? entry.fields.links
+        : [];
+
+      while (
+        links.length < quantity
+      ) {
+        links.push("");
+        changed = true;
+      }
+
+      if (
+        links.length > quantity
+      ) {
+        links.length = quantity;
+        changed = true;
+      }
+
+      entry.fields.links = links;
     });
+  });
+
+  if (!changed) return;
+
+  shop.saveCart();
+  shop.renderCart();
+}
 
   /*
    * Configuración de PixieShop.
@@ -496,9 +547,44 @@
        * - el contenido sea una URL válida.
        */
 
-      validation: {
-        rules: []
-      },
+validation: {
+  rules: [
+    {
+      type: "custom",
+
+      validate({
+        entry,
+        item,
+        getFilledValues
+      }) {
+        const quantity = Math.max(
+          1,
+          Number(entry.quantity) || 1
+        );
+
+        const links =
+          getFilledValues("links");
+
+        if (
+          links.length < quantity
+        ) {
+          return (
+            `${item.title}: debes indicar ` +
+            `${quantity} enlace(s), uno por cada unidad.`
+          );
+        }
+
+        return null;
+      }
+    }
+  ]
+},
+
+      
+hooks: {
+  afterCartChange:
+    syncLinksWithQuantity
+},
 
       /*
        * Publicación
