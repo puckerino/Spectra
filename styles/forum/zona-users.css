@@ -56,13 +56,13 @@
         --forum-rows: 4;
         position: relative;
         gap: var(--spacing);
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr max-content 1fr;
         grid-template-rows: repeat(4, max-content);
         grid-template-areas:
-            "title img links"
-            "data img links"
-            "desc img links"
-            "lastpost img links"
+            "title links img"
+            "data links img"
+            "desc links img"
+            "lastpost links img"
             ;
 
         &>.title {
