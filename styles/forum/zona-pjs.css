@@ -60,6 +60,7 @@
     }
 
     .forum:not([forum*="fichas"]) {
+        --forum-rows: 1;
         grid-column: 2;
         grid-template-columns: max-content 60px 1fr max-content;
         grid-template-rows: repeat(4, max-content);
