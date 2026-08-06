@@ -13,12 +13,13 @@
     .forum[forum*="fichas"] {
         grid-column: 1;
         grid-row: 1 / 4;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4,1fr);
         grid-template-areas:
-            "img title links"
-            "img data links"
-            "img desc lastpost"
+            "img title"
+            "img links"
+            "img desc"
+            "img lastpost"
         ;
 
         color: var(--text-contrast);
@@ -63,10 +64,9 @@
         --forum-rows: 1;
         grid-column: 2;
         grid-template-columns: max-content 60px 1fr max-content;
-        grid-template-rows: repeat(4, max-content);
+        grid-template-rows: repeat(3, max-content);
         grid-template-areas:
             ". img title ."
-            ". img data ."
             ". img links ."
             "lastpost lastpost lastpost lastpost";
         border: 1px solid var(--border);
