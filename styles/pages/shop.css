@@ -1,10 +1,14 @@
 form.shop {
-  width: 95vw;
+  width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 25vw;
-  grid-template-areas: "shop aside";
+  grid-template-rows: max-content 1fr;
+  grid-template-areas: "header header" "shop aside";
 
+  .shop-header {
+    grid-area: header;
+  }
   .shop-sidebar {
     grid-area: aside;
   }
