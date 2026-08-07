@@ -1,0 +1,15 @@
+form.shop {
+  width: 95vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 25vw;
+  grid-template-areas: "aside shop";
+
+  .shop-sidebar {
+    grid-area: aside;
+  }
+
+  .shop-main {
+    grid-area: shop;
+  }
+}
