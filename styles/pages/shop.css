@@ -3,7 +3,7 @@ form.shop {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 25vw;
-  grid-template-areas: "aside shop";
+  grid-template-areas: "shop aside";
 
   .shop-sidebar {
     grid-area: aside;
@@ -11,5 +11,18 @@ form.shop {
 
   .shop-main {
     grid-area: shop;
+  }
+}
+
+.shop-toolbar {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  padding: var(--spacing);
+  background: var(--background-elevated);
+
+  label {
+    font: var(--f-s) var(--f-metadata);
+    text-transform: uppercase;
   }
 }
