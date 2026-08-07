@@ -30,13 +30,35 @@ FILTERS
 SIDEBAR 
 ================================= */
 
+.shop-sidebar {
+  height: max-content;
+  position: sticky;
+  top: var(--nav-size);
+}
+
+.shop-cart-title {
+  font: var(--f-l) var(--f-title);
+  text-transform: uppercase;
+}
+
+.shop-cart-total {
+  display: flex;
+  flex-wrap: wrap;
+
+  .shop-cart-total-label {
+    width: 100%;
+    font: var(--f-s) var(--f-metadata);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--accent);
+  }
+}
+
 .shop-toolbar {
   display: flex;
   flex-direction: column;
   border: 1px solid var(--border);
   padding: var(--spacing);
   gap: var(--spacing-xs);
-  background: var(--background-elevated);
 
   label {
     font: var(--f-s) var(--f-metadata);
