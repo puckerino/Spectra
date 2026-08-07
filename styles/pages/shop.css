@@ -23,6 +23,7 @@ SIDEBAR
   flex-direction: column;
   border: 1px solid var(--border);
   padding: var(--spacing);
+  gap: var(--spacing-xs);
   background: var(--background-elevated);
 
   label {
@@ -36,7 +37,7 @@ SIDEBAR
 .shop-category-tabs {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-s);
+  gap: var(--spacing-xs);
 
   li {
     display: flex;
@@ -50,6 +51,6 @@ SIDEBAR
 .shop-actions {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-s);
+  gap: var(--spacing-xs);
 }
   
