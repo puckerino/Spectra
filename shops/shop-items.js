@@ -13,14 +13,6 @@
  * - pixie-shop-validators.js
  * - pixie-shop-output.js
  *
- * HTML:
- *
- * <form
- *   data-pixie-shop
- *   data-shop-config="items"
- * >
- *   ...
- * </form>
  */
 
 (function (window) {
