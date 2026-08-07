@@ -2,12 +2,11 @@ form.shop {
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 25vw;
-  grid-template-rows: max-content 1fr;
-  grid-template-areas: "header header" "shop aside";
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-areas: "filters shop aside";
 
-  .shop-header {
-    grid-area: header;
+  .shop-filters {
+    grid-area: filters;
   }
   .shop-sidebar {
     grid-area: aside;
@@ -19,12 +18,12 @@ form.shop {
 }
 
 /* =================================
-HEADER 
+FILTERS 
 ================================= */
 
-.shop-header {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
+.shop-filters {
+  display: flex;
+  flex-direction: column;
 }
 
 /* =================================
