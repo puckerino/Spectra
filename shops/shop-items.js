@@ -543,7 +543,7 @@
 
       items: ITEMS,
 
-      currency: "DADOS",
+      currency: "ELECTRUM",
 
       storageKey:
         "spectra_shop_items",
