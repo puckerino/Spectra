@@ -9,25 +9,31 @@
     }
 
     .forum:first-of-type {
-        --forum-rows: 6;
+        --forum-rows: 5;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 100px repeat(4,max-content) 100px;
+        grid-template-rows: 100px repeat(4,max-content);
         grid-template-areas:
             ". . ."
-            "data data data"
             ". desc ."
+            "data data data"
             "title title title"
             "links . lastpost"
-            ". . ."
         ;
 
         &:before {
             content: "";
             grid-column: 1 / -1;
-            grid-row: 3 / 7;
+            grid-row: 3 / 6;
             background: var(--forum-rol-cicloencurso-background);
             border: 1px solid var(--border);
             border-bottom: 0;
+        }
+
+        &:after {
+            content: "";
+            grid-column: 1 / -1;
+            grid-row: 5 / 6;
+            background: var(--background-elevated);
         }
 
         &>.title {
@@ -73,10 +79,13 @@
             display: flex;
             justify-content: center;
             grid-column: 2;
-            grid-row: 1 / 7;
+            grid-row: 1 / 6;
 
             img {
-
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+                max-height: 60vh;
             }
         }
     }
