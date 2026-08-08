@@ -97,7 +97,7 @@ nav {
         font: bold var(--f-base) var(--f-title);
         text-transform: uppercase;
         border-bottom: 1px solid var(--accent);
-        padding-bottom: var(--spacing-s);
+        width: 100%;
     }
 
     a {
