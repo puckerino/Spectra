@@ -12,13 +12,21 @@
         --forum-rows: 6;
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas:
-            ". img ."
+            ". . ."
             "data data data"
             ". desc ."
             "title title title"
             ". links ."
             ". lastpost ."
         ;
+
+        &:before {
+            content: "";
+            grid-column: 1 / -1;
+            grid-row: 3 / 7;
+            background: var(--forum-rol-cicloencurso-background);
+            border: 1px solid var(--border);
+        }
 
         &>.title {
             font: var(--f-4xl) var(--f-title-deco);
@@ -47,6 +55,20 @@
                 &:last-of-type {
                     grid-column: 3;
                 }
+            }
+        }
+
+        .forum-img {
+            display: flex;
+            justify-content: center;
+            grid-column: 2;
+            grid-row: 1 / 6;
+
+            img {
+                border-radius: 999px 999px 0 0;
+                outline: 1px solid var(--border);
+                outline-offset: var(--spacing-s);
+                border: 10px solid var(--accent);
             }
         }
     }
