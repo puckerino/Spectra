@@ -13,9 +13,9 @@
     grid-template-columns: repeat(3,1fr);
     grid-template-areas: 
       ". img ."
+      "data data data"
       ". desc ."
       "title title title"
-      ". data ."
       ". links ."
       ". lastpost ."
       ;
@@ -24,8 +24,25 @@
       font: var(--f-4xl) var(--f-title-deco);
       text-align: center;
       place-content: center;
-      
     }
+
+    .data {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+
+      & > .form-control {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: var(--spacing-xs);
+        
+        &:first-of-type {
+          grid-column: 1;
+        }
+        &:last-of-type {
+          grid-column: 3;
+        }
+      }
   }
   
   .forum:not(:first-of-type) {
