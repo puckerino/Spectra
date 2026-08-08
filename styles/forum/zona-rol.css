@@ -76,11 +76,8 @@
         }
 
         .forum-img {
-            display: flex;
-            justify-content: center;
             grid-column: 2;
             grid-row: 1 / 6;
-            height: 60vh;
             background: var(--forum-rol-cicloencurso-img);
             background-size: contain;
             background-position: center;
