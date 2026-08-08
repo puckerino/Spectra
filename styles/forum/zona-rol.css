@@ -37,7 +37,8 @@
         }
 
         &>.title {
-            font: var(--f-4xl) var(--f-title-deco);
+            padding: var(--spacing-5xl) var(--spacing-xl) var(--spacing-xl) var(--spacing-xl);
+            font: var(--f-5xl) var(--f-title-deco);
             text-align: center;
             place-content: center;
             position: relative;
@@ -47,7 +48,6 @@
         .description {
             text-align: center;
             height: max-content;
-            align-self: end;
             background: var(--background-contrast);
             color: var(--text-contrast);
             padding: var(--spacing-xs) var(--spacing);
