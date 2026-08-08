@@ -29,8 +29,8 @@
     
     --forum-rol-cicloencurso-img: 
       light-dark(
-        url(https://puckerino.github.io/Spectra/assets/images/.avif),
-        url(https://puckerino.github.io/Spectra/assets/images/.avif)
+        url(https://puckerino.github.io/salt-and-smoke/assets/images/knight.avif),
+        url(https://puckerino.github.io/salt-and-smoke/assets/images/knight.avif)
       );
 
 
@@ -68,14 +68,14 @@
 
       --footer-img:
           light-dark(
-            url(https://2img.net/i.imgur.com/QZ2bzKi.png),
-            url(https://2img.net/i.imgur.com/dgUqzty.png)
+            url(https://puckerino.github.io/salt-and-smoke/assets/images/knight.avif),
+            url(https://puckerino.github.io/salt-and-smoke/assets/images/knight.avif)
           );
 
       --afiliados-img:
           light-dark(
-            url(https://2img.net/i.imgur.com/M9Twg1t.png),
-            url(https://static.vecteezy.com/system/resources/thumbnails/051/959/726/small/gothic-dark-castle-surrounded-by-fog-perfect-for-fantasy-and-horror-themes-high-resolution-stock-photo-with-eerie-atmosphere-png.png)
+            url(),
+            url()
           );
 
       --guidebook-img:
