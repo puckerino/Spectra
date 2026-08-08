@@ -91,9 +91,11 @@
             position: relative;
             z-index: 2;
             align-items: flex-end;
+            padding: var(--spacing);
         }
 
         .links {
+            display: flex;
             justify-content: flex-end;
         }
 
