@@ -174,4 +174,28 @@
     .forum:last-of-type {
         border-bottom: 1px solid var(--border);
     }
+
+    @media (max-width: 700px) {
+        .forum {
+            --forum-rows: 5;
+            grid-template-columns: 150px 1fr;
+            grid-template-areas:
+                "img desc"
+                "img title"
+                "img data"
+                "img links"
+                "img lastpost"
+            ;
+            
+            align-items: center;
+            gap: 0 var(--spacing);
+            border: 1px solid var(--border);
+            border-bottom: 0;
+            padding: var(--spacing);
+
+            &:last-of-type {
+                border-bottom: 1px solid var(--border);
+            }
+        }
+    }
 }
