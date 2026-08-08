@@ -14,9 +14,9 @@
         grid-template-rows: 100px repeat(4,max-content);
         grid-template-areas:
             ". . ."
-            ". desc ."
             "data data data"
             "title title title"
+             ". desc ."
             "links . lastpost"
         ;
 
@@ -87,6 +87,11 @@
                 width: 100%;
                 max-height: 60vh;
             }
+        }
+
+        .lastpost, .links {
+            position: relative;
+            z-index: 2;
         }
     }
 
