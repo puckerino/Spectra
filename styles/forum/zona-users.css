@@ -65,10 +65,27 @@
             "lastpost links img"
             ;
 
+        @media (max-width: 700px) {
+            --forum-rows: 5;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(5 ,max-content);
+            grid-template-areas:
+                "title"
+                "data"
+                "desc"
+                "lastpost"
+                "links"
+                ;
+        }
+
         &>.title {
             align-self: end;
             font: bold var(--f-4xl) var(--f-title-deco);
             z-index: 2;
+
+            @media (max-width: 700px) {
+                font: bold var(--f-xl) var(--f-title-deco);
+            }
         }
 
         .description {
@@ -84,6 +101,10 @@
                 object-fit: contain;
                 width: 100%;
                 height: auto;
+            }
+
+            @media (max-width: 700px) {
+                display: none;
             }
         }
 
