@@ -84,6 +84,7 @@
             background: var(--forum-rol-cicloencurso-img);
             background-size: contain;
             background-position: center;
+            background-repeat: no-repeat;
         }
 
         .lastpost, .links {
