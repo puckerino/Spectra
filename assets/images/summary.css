@@ -18,6 +18,23 @@
           );
 
     /* =========================================================================
+    FORUM IMAGES
+    ========================================================================= */
+
+      --forum-rol-cicloencurso-background: 
+        light-dark(
+          url(https://puckerino.github.io/Spectra/assets/images/.avif),
+          url(https://puckerino.github.io/Spectra/assets/images/.avif)
+        );
+    
+    --forum-rol-cicloencurso-img: 
+      light-dark(
+        url(https://puckerino.github.io/Spectra/assets/images/.avif),
+        url(https://puckerino.github.io/Spectra/assets/images/.avif)
+      );
+
+
+    /* =========================================================================
     FORUM ICONS MASK
     ========================================================================= */
 
