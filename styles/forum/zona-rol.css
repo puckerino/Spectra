@@ -26,6 +26,10 @@
       place-content: center;
     }
 
+    .description {
+      text-align: center;
+    }
+
     .data {
       display: grid;
       grid-template-columns: repeat(3,1fr);
