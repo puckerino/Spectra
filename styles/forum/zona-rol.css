@@ -177,14 +177,15 @@
 
     @media (max-width: 700px) {
         .forum {
-            --forum-rows: 5;
-            grid-template-columns: 150px 1fr;
+            --forum-rows: 5 !important;
+            grid-template-columns: 150px 1fr !important;
             grid-template-areas:
                 "img desc"
                 "img title"
                 "img data"
                 "img links"
                 "img lastpost"
+            !important
             ;
             
             align-items: center;
