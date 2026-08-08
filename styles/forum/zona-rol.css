@@ -11,12 +11,12 @@
     .forum:first-of-type {
         --forum-rows: 5;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 100px repeat(4,max-content);
+        grid-template-rows: 100px repeat(4, max-content);
         grid-template-areas:
             ". . ."
             "data data data"
             "title title title"
-             ". desc ."
+            ". desc ."
             "links . lastpost"
         ;
 
@@ -84,7 +84,8 @@
             background-repeat: no-repeat;
         }
 
-        .lastpost, .links {
+        .lastpost,
+        .links {
             position: relative;
             z-index: 2;
             align-items: flex-end;
@@ -185,9 +186,9 @@
                 "img data"
                 "img links"
                 "img lastpost"
-            !important
+                !important
             ;
-            
+
             align-items: center;
             gap: 0 var(--spacing);
             border: 1px solid var(--border);
@@ -196,6 +197,55 @@
 
             &:last-of-type {
                 border-bottom: 1px solid var(--border);
+            }
+
+            &>.title {
+                text-transform: none;
+                font: 200 var(--f-xl) var(--f-metadata);
+            }
+
+            .description {
+                font: var(--f-s) var(--f-metadata);
+                text-transform: uppercase;
+                color: var(--text-subtle);
+            }
+
+            .data {
+                display: flex;
+                align-items: center;
+
+                &:before {
+                    content: "";
+                    height: 1px;
+                    width: 5vw;
+                    background: var(--accent);
+                }
+            }
+
+            .forum-links {
+                display: flex;
+                flex-direction: row;
+                gap: var(--spacing-s);
+            }
+
+            .lastpost {
+                flex-direction: row;
+
+                .lastpost-data {
+                    text-align: left;
+                }
+            }
+
+            .forum-img {
+                height: 100px;
+                width: 100px;
+
+                img {
+                    object-fit: contain;
+                    width: 150px;
+                    height: 150px;
+                    aspect-ratio: 1;
+                }
             }
         }
     }
