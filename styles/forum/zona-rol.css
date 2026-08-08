@@ -177,7 +177,7 @@
     }
 
     @media (max-width: 700px) {
-        .forum {
+        .forum, .forum:first-of-type, .forum:not(:first-of-type) {
             --forum-rows: 5 !important;
             grid-template-columns: 150px 1fr !important;
             grid-template-areas:
