@@ -121,7 +121,7 @@ PROFILE POPOVER
       text-transform: uppercase;
     }
 
-    .field_uneditable.invisible, .field_editable.insivible {
+    .field_uneditable.invisible, .field_editable.invisible {
       display: none;
     }
     
