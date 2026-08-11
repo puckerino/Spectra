@@ -239,7 +239,7 @@
     {
       items: REWARDS,
 
-      currency: "MONEDAS",
+      currency: "ELECTRUM",
 
       storageKey:
         "spectra_shop_recompensas",
