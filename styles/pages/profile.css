@@ -60,4 +60,36 @@ PROFILE POPOVER
       }
     }
   }
+
+  .profile-popover-administrate {
+    padding: var(--spacing);
+    gap: var(--spacing-xs);
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+
+    li {
+      &:first-of-type {
+        font: bold var(--f-s) var(--f-metadata);
+        text-transform: uppercase;
+      }
+
+      &:last-of-type {
+        font-size: 0;
+
+        a {
+          font-size: var(--f-s);
+        }
+      }
+
+      &:not(:first-of-type) {
+        a {
+          padding: var(--spacing-s) var(--spacing);
+          background: var(--accent);
+          color: var(--text-contrast);
+          font: var(--f-s) var(--f-metadata);
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
 }
