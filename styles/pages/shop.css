@@ -126,6 +126,25 @@ CARRITO
   }
 }
 
+.cart-item-extra-fields {
+  border-top: 1px solid var(--border);
+  padding-top: var(--spacing);
+
+  .cart-item-repeatable-field {
+    display: flex;
+    flex-direction: column;
+
+    .cart-item-field-label {
+      width: max-content;
+      background: var(--background-contrast);
+      color: var(--text-contrast);
+      font: bold var(--f-s) var(--f-metadata);
+      text-transform: uppercase;
+      padding: var(--spacing-s) var(--spacing);
+    }
+  }
+}
+
 
 
 /* BOTONES DE ACCIÓN*/
