@@ -24,10 +24,50 @@ FILTERS
 .shop-filters {
   display: flex;
   flex-direction: column;
+  background: var(--background-elevated);
+  padding: var(--spacing);
+}
+
+.shop-toolbar {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  padding: var(--spacing);
+  gap: var(--spacing-xs);
+  background: var(--background);
+
+  label {
+    font: var(--f-s) var(--f-metadata);
+    text-transform: uppercase;
+  }
+}
+
+.shop-filter-title {
+  font: var(--f-xl) var(--f-metadata);
+  text-transform: uppercase;
+  letter-spacing: .1ch;
+}
+
+
+.shop-category-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+
+  li {
+    display: flex;
+    align-items: center;
+    text-align:center;
+
+    button {
+      width: 100%;
+    }
+    
+  }
 }
 
 /* =================================
-SIDEBAR 
+CARRITO 
 ================================= */
 
 .shop-sidebar {
@@ -53,32 +93,7 @@ SIDEBAR
   }
 }
 
-.shop-toolbar {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--border);
-  padding: var(--spacing);
-  gap: var(--spacing-xs);
 
-  label {
-    font: var(--f-s) var(--f-metadata);
-    text-transform: uppercase;
-  }
-}
-
-/* FILTROS */
-
-.shop-category-tabs {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xs);
-
-  li {
-    display: flex;
-    align-items: center;
-    text-align:center;
-  }
-}
 
 /* BOTONES DE ACCIÓN*/
 
@@ -88,3 +103,13 @@ SIDEBAR
   gap: var(--spacing-xs);
 }
   
+/* =================================
+MAIN
+================================= */
+
+.shop-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+  padding: var(--spacing);
+}
