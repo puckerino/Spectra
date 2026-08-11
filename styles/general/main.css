@@ -55,7 +55,8 @@ main {
 .message-body,
 .viewonline_body,
 .groupcp,
-.viewcomments_body {
+.viewcomments_body,
+.agreement {
     border: 1px solid var(--border);
     border-radius: 1rem;
     corner-shape: var(--shape-deco);
