@@ -9,4 +9,49 @@
       height: 1rem;
     }
   }
+
+  
+}
+
+/* ==============================
+PROFILE POPOVER
+=============================== */
+
+.profile-popover-wrap {
+
+  hgroup {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: repeat(2,max-content);
+    grid-template-areas: "img username" "img userid";
+    gap: 0 var(--spacing);
+
+    .profile-popover-username {
+      grid-area: username;
+      line-height: 1;
+      font: var(--f-2xl) var(--f-post-username);
+    }
+
+    .profile-popover-userid {
+      grid-area: userid;
+      font: var(--f-s) var(--f-metadata);
+      text-transform: uppercase;
+
+      span {
+        font-weight: bold;
+      }
+    }
+
+    .profile-popover-avatar {
+      grid-area: img;
+      height: 100px;
+      width: 100px;
+
+      img {
+        height: 100px;
+        width: 100px;
+        object-fit: cover;
+      }
+    }
+  }
 }
