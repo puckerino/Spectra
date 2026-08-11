@@ -3,6 +3,8 @@ CATEGORY
 ================================== */
 
 .category {
+    padding: var(--spacing-5xl);
+    
     hgroup {
         width: 100%;
         display: grid;
