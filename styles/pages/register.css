@@ -1,0 +1,25 @@
+.ucp-main:has(#username_reg) {
+  p, fieldset, dl, dt, dd {
+    margin: 0;
+  }
+
+  dl {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  dd {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-xs);
+  }
+
+  .submit-buttons.group-buttons {
+    background: var(--background-elevated);
+    border-top: 1px solid var(--border);
+    padding: var(--spacing);
+  }
+  
+}
