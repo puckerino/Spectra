@@ -245,7 +245,7 @@
       name: "links",
 
       label:
-        "Enlaces de uso",
+        "Enlace de uso",
 
       outputLabel:
         "Enlace de uso",
