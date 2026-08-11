@@ -122,6 +122,11 @@ CARRITO
     border:1px solid var(--border);
     padding: var(--spacing-xs) var(--spacing);
     border-radius: 999px;
+    width: max-content;
+
+    .cart-withdrawal & {
+      display: none;
+    }
   }
 
   .cart-item-price {
