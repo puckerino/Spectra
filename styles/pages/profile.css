@@ -1,6 +1,9 @@
 .profile {
+  border: 1px solid var(--border);
 
   button[popovertarget="profile-popover"] {
+    padding: var(--spacing-s);
+    
     svg {
       width: 1rem;
       height: 1rem;
