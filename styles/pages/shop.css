@@ -84,6 +84,7 @@ CARRITO
 .shop-cart-total {
   display: flex;
   flex-wrap: wrap;
+  gap: var(--spacing-xs);
 
   .shop-cart-total-label {
     width: 100%;
@@ -106,13 +107,21 @@ CARRITO
 
 .cart-item-header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction:column;
 
   .cart-item-name {
     font: bold var(--f-base) var(--f-metadata);
     text-transform: uppercase;
     letter-spacing: .1ch;
+  }
+
+  .cart-item-price-wrap {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-s);
+    border:1px solid var(--border);
+    padding: var(--spacing-xs) var(--spacing);
+    border-radius: 999px;
   }
 
   .cart-item-price {
