@@ -120,6 +120,10 @@ PROFILE POPOVER
       font: bold var(--f-s) var(--f-metadata);
       text-transform: uppercase;
     }
+
+    .field_uneditable.invisible, .field_editable.insivible {
+      display: none;
+    }
     
    
       .ajax-profil_edit {
