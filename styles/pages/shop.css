@@ -116,12 +116,6 @@ CARRITO
   }
 
   .cart-item-price {
-    border: 1px solid var(--border);
-    border-radius: var(--spacing-xs);
-    corner-shape: squircle;
-    background: var(--accent);
-    color: var(--text-contrast);
-    padding: var(--spacing-s);
     font: italic var(--f-base) var(--f-title);
   }
 }
@@ -133,6 +127,7 @@ CARRITO
   .cart-item-repeatable-field {
     display: flex;
     flex-direction: column;
+    gap: var(--spacing-s);
 
     .cart-item-field-label {
       width: max-content;
@@ -142,7 +137,22 @@ CARRITO
       text-transform: uppercase;
       padding: var(--spacing-xs) var(--spacing);
     }
+
+      .cart-item-repeatable-list {
+    display: flex;
+    flex-direction: column:
+    gap: var(--spacing-s);
+
+    .cart-item-repeatable-row {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
   }
+    
+  }
+
+
 }
 
 
