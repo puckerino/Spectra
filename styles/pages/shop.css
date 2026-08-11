@@ -134,6 +134,17 @@ CARRITO
   }
 }
 
+.cart-item-quantity-controls {
+  button {
+    padding: var(--spacing-s)!important;
+
+    svg {
+      height: 1rem;
+      width: 1rem;
+    }
+  }
+}
+
 .cart-item-extra-fields {
   border-top: 1px solid var(--border);
   padding-top: var(--spacing-s);
