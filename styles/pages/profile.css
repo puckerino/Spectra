@@ -101,4 +101,29 @@ PROFILE POPOVER
       }
     }
   }
+
+  .page-subtitle {
+    padding: var(--spacing);
+    font: 200 var(--f-base) var(--f-metadata);
+    text-transform: uppercase;
+  }
+
+  .popover-profile-fields {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-s);
+  }
+
+  .popover-profile-field {
+    border: 1px solid var(--border);
+    
+    &:has(.ajax-profile_hover) {
+      .ajax-profile_edit {
+        display: flex;
+        height: 1rem;
+        width: 1rem;
+        background: red;
+      }
+    }
+  }
 }
