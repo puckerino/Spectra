@@ -140,7 +140,7 @@ CARRITO
 
       .cart-item-repeatable-list {
     display: flex;
-    flex-direction: column:
+    flex-direction: column;
     gap: var(--spacing-s);
 
     .cart-item-repeatable-row {
