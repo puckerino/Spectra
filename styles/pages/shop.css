@@ -200,3 +200,31 @@ MAIN
   gap: var(--spacing);
   padding: var(--spacing);
 }
+
+.shop-item {
+
+  .shop-item-title {
+    font: bold var(--f-base) var(--f-title);
+    text-transform: uppercase;
+  }
+  
+  .shop-item-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-s);
+
+    li {
+      display: flex;
+      align-items: center;
+      font: var(--f-s) var(--f-metadata);
+      color: var(--text-subtle);
+      text-transform: uppercase;
+    }
+  }
+
+  .shop-item-controls {
+  }
+  
+}
+  
