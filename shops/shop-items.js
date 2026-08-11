@@ -1070,7 +1070,7 @@
           "Debes iniciar sesión para utilizar la tienda.",
 
         quantity:
-          "Cantidad de {item}",
+          "Cantidad",
 
         remove:
           "Quitar {item}",
