@@ -43,7 +43,7 @@ FILTERS
 }
 
 .shop-filter-title {
-  font: var(--f-xl) var(--f-metadata);
+  font: var(--f-l) var(--f-metadata);
   text-transform: uppercase;
   letter-spacing: .1ch;
 }
@@ -110,7 +110,7 @@ CARRITO
   justify-content: space-between;
 
   .cart-item-name {
-    font: bold var(--f-base) var(--f-metadara);
+    font: bold var(--f-base) var(--f-metadata);
     text-transform: uppercase;
     letter-spacing: .1ch;
   }
@@ -119,7 +119,8 @@ CARRITO
     border: 1px solid var(--border);
     border-radius: var(--spacing-xs);
     corner-shape: squircle;
-    background: var(--background-elevated);
+    background: var(--accent);
+    color: var(--text-contrast);
     padding: var(--spacing-s);
     font: italic var(--f-base) var(--f-title);
   }
