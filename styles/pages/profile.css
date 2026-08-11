@@ -68,6 +68,10 @@ PROFILE POPOVER
     border-bottom: 1px solid var(--border);
 
     li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
       &:first-of-type {
         font: bold var(--f-s) var(--f-metadata);
         text-transform: uppercase;
@@ -88,6 +92,11 @@ PROFILE POPOVER
           color: var(--text-contrast);
           font: var(--f-s) var(--f-metadata);
           text-transform: uppercase;
+          display: flex;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          text-align:center;
         }
       }
     }
