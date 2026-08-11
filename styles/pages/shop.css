@@ -93,6 +93,38 @@ CARRITO
   }
 }
 
+.shop-cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+}
+
+.cart-item {
+  border: 1px solid var(--border);
+  padding: var(--spacing);
+}
+
+.cart-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .cart-item-name {
+    font: bold var(--f-base) var(--f-metadara);
+    text-transform: uppercase;
+    letter-spacing: .1ch;
+  }
+
+  .cart-item-price {
+    border: 1px solid var(--border);
+    border-radius: var(--spacing-xs);
+    corner-shape: squircle;
+    background: var(--background-elevated);
+    padding: var(--spacing-s);
+    font: italic var(--f-base) var(--f-title);
+  }
+}
+
 
 
 /* BOTONES DE ACCIÓN*/
