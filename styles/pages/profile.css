@@ -25,6 +25,10 @@ PROFILE POPOVER
     grid-template-rows: repeat(2,max-content);
     grid-template-areas: "img username" "img userid";
     gap: 0 var(--spacing);
+    padding: var(--spacing);
+    border-bottom: 1px solid var(--border);
+    background: var(--background-elevated);
+    
 
     .profile-popover-username {
       grid-area: username;
@@ -51,6 +55,8 @@ PROFILE POPOVER
         height: 100px;
         width: 100px;
         object-fit: cover;
+        border: 10px solid var(--background);
+        outline:1px solid var(--border);
       }
     }
   }
