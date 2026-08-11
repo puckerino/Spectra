@@ -128,7 +128,7 @@ CARRITO
 
 .cart-item-extra-fields {
   border-top: 1px solid var(--border);
-  padding-top: var(--spacing);
+  padding-top: var(--spacing-s);
 
   .cart-item-repeatable-field {
     display: flex;
@@ -140,7 +140,7 @@ CARRITO
       color: var(--text-contrast);
       font: bold var(--f-s) var(--f-metadata);
       text-transform: uppercase;
-      padding: var(--spacing-s) var(--spacing);
+      padding: var(--spacing-xs) var(--spacing);
     }
   }
 }
