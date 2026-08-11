@@ -9,8 +9,6 @@
       height: 1rem;
     }
   }
-
-  
 }
 
 /* ==============================
@@ -117,6 +115,11 @@ PROFILE POPOVER
 
   .popover-profile-field {
     border: 1px solid var(--border);
+
+    & > span {
+      font: bold var(--f-s) var(--f-metadata);
+      text-transform: uppercase;
+    }
     
    
       .ajax-profil_edit {
