@@ -5,11 +5,17 @@
 (function () {
   "use strict";
 
-  function configure() {
+  function configurePostReader() {
+    /*
+     * Pixie todavía no está listo.
+     */
     if (!window.PixiePostReader) {
       return false;
     }
 
+    /*
+     * Configuración específica de Spectra.
+     */
     PixiePostReader.configure({
       post: {
         rootSelector:
@@ -46,32 +52,31 @@
 
 
   /*
-   * Pixie ya está disponible.
+   * Si Pixie ya ha cargado,
+   * configuramos inmediatamente.
    */
-  if (configure()) {
+  if (configurePostReader()) {
     return;
   }
 
 
   /*
-   * Pixie todavía está cargando.
-   *
-   * Esperamos hasta que PixiePostReader
-   * esté disponible.
+   * Si Pixie todavía está cargando,
+   * comprobamos periódicamente hasta que
+   * PixiePostReader esté disponible.
    */
-  const interval =
-    setInterval(() => {
-      if (!configure()) {
-        return;
-      }
+  const interval = setInterval(() => {
+    if (!configurePostReader()) {
+      return;
+    }
 
-      clearInterval(interval);
-    }, 50);
+    clearInterval(interval);
+  }, 50);
 
 
   /*
    * Seguridad:
-   * dejamos de esperar después de 10 segundos.
+   * dejamos de comprobar tras 10 segundos.
    */
   setTimeout(() => {
     clearInterval(interval);
