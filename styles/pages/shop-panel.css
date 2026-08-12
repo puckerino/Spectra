@@ -1,0 +1,137 @@
+.pixie-profile-panel { 
+  width: 80vw;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+
+	.pixie-profile-panel__header { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing);
+
+		h2 { 
+      font: var(--f-2xl) var(--f-title-deco);
+      line-height: 1;
+
+		}
+
+		p { 
+      font: var(--f-s) var(--f-metadata);
+      color: var(--text-subtle);
+      text-transform: uppercase;
+      letter-spacing: .2ch;
+
+		}
+	}
+
+	.pixie-profile-panel__source { 
+
+		label { 
+
+		}
+
+		.pixie-profile-panel__source-actions { 
+
+			input { 
+
+			}
+
+			button { 
+
+			}
+		}
+
+		.pixie-profile-panel__status { 
+
+		}
+	}
+
+	.pixie-profile-panel__summary { 
+
+		h3 { 
+
+		}
+
+		.pixie-profile-panel__profile { 
+
+			p { 
+
+				strong { 
+
+				}
+			}
+		}
+
+		.pixie-profile-panel__changes { 
+
+			.pixie-profile-change { 
+
+				.pixie-profile-change__field { 
+
+				}
+
+				.pixie-profile-change__operation { 
+
+				}
+
+				.pixie-profile-change__value { 
+
+				}
+			}
+		}
+	}
+
+	.pixie-profile-panel__results { 
+
+		h3 { 
+
+		}
+
+		div { 
+
+			.pixie-profile-result { 
+
+				.pixie-profile-result__title { 
+
+				}
+
+				.pixie-profile-result__values { 
+
+					.pixie-profile-result__current { 
+
+						small { 
+
+						}
+
+						pre { 
+
+						}
+					}
+
+					.pixie-profile-result__new { 
+
+						small { 
+
+						}
+
+						pre { 
+
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.pixie-profile-panel__footer { 
+
+		button { 
+
+		}
+
+		.pixie-profile-panel__status { 
+
+		}
+	}
+}
