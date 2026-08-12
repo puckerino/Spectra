@@ -1,18 +1,6 @@
 /*!
  * shop-items.js
  * Configuración de la tienda de items para Spectra.
- *
- * @version 1.0.0
- *
- * Requiere:
- * - pixie-shop.js
- * - pixie-shop-fields.js
- * - pixie-shop-renderers.js
- * - pixie-shop-sections.js
- * - pixie-shop-totals.js
- * - pixie-shop-validators.js
- * - pixie-shop-output.js
- *
  */
 
 (function (window) {
