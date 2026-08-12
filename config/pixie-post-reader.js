@@ -1,86 +1,80 @@
 /*!
  * Spectra - PixiePostReader config
- *
- * Configuración de la estructura de posts
- * de Spectra para PixiePostReader.
  */
 
 (function () {
   "use strict";
 
-  if (!window.PixiePostReader) {
-    console.warn(
-      "[Spectra] PixiePostReader no está cargado."
-    );
+  function configure() {
+    if (!window.PixiePostReader) {
+      return false;
+    }
 
+    PixiePostReader.configure({
+      post: {
+        rootSelector:
+          "article.post",
+
+        idPrefix:
+          "p",
+
+        permalinkSelector:
+          ".permalink[id]"
+      },
+
+      content: {
+        codeSelector:
+          ".content.message dl.codebox code"
+      },
+
+      profile: {
+        linkSelectors: [
+          'aside.profile .username a[href^="/u"]',
+          'aside.profile .avatar-post a[href^="/u"]',
+          'aside.profile .avatar-post-mobile a[href^="/u"]',
+          'aside.profile .contact a[href^="/u"]',
+          'aside.profile a[href^="/u"]'
+        ],
+
+        pattern:
+          /\/u\d+/i
+      }
+    });
+
+    return true;
+  }
+
+
+  /*
+   * Pixie ya está disponible.
+   */
+  if (configure()) {
     return;
   }
 
-  PixiePostReader.configure({
-    /*
-     * ============================================
-     * POST
-     * ============================================
-     *
-     * <article id="p69" class="post">
-     */
-    post: {
-      rootSelector:
-        "article.post",
 
-      idPrefix:
-        "p",
+  /*
+   * Pixie todavía está cargando.
+   *
+   * Esperamos hasta que PixiePostReader
+   * esté disponible.
+   */
+  const interval =
+    setInterval(() => {
+      if (!configure()) {
+        return;
+      }
 
-      /*
-       * <a
-       *   class="permalink"
-       *   id="69"
-       * >
-       */
-      permalinkSelector:
-        ".permalink[id]"
-    },
+      clearInterval(interval);
+    }, 50);
 
 
-    /*
-     * ============================================
-     * CODEBOX
-     * ============================================
-     *
-     * <article class="content message">
-     *   <dl class="codebox">
-     *     <code>...</code>
-     *   </dl>
-     * </article>
-     */
-    content: {
-      codeSelector:
-        ".content.message dl.codebox code"
-    },
+  /*
+   * Seguridad:
+   * dejamos de esperar después de 10 segundos.
+   */
+  setTimeout(() => {
+    clearInterval(interval);
+  }, 10000);
 
-
-    /*
-     * ============================================
-     * PERFIL DEL AUTOR
-     * ============================================
-     *
-     * Se busca siempre dentro del post concreto.
-     */
-    profile: {
-      linkSelectors: [
-        'aside.profile .username a[href^="/u"]',
-
-        'aside.profile .avatar-post a[href^="/u"]',
-
-        'aside.profile .avatar-post-mobile a[href^="/u"]',
-
-        'aside.profile .contact a[href^="/u"]',
-
-        'aside.profile a[href^="/u"]'
-      ],
-
-      pattern:
-        /\/u\d+/i
-    }
-  });
 })();
