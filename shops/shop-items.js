@@ -1004,6 +1004,76 @@
           }
         },
 
+        afterCode: {
+  enabled: true,
+
+  render({
+    sections,
+    getItem,
+    escapeText
+  }) {
+    const compras =
+      Array.isArray(
+        sections.compras
+      )
+        ? sections.compras
+        : [];
+
+    if (!compras.length) {
+      return "";
+    }
+
+    const renderedItems =
+      compras
+        .map((entry) => {
+          const item =
+            getItem(entry);
+
+          if (!item) {
+            return "";
+          }
+
+          const title =
+            item.title ||
+            item.raw?.titulo ||
+            "Item";
+
+          const quantity =
+            Math.max(
+              1,
+              Number(
+                entry.quantity
+              ) || 1
+            );
+
+          return `
+<span class="shop-purchase-item">
+  <strong>${escapeText(title)}</strong>
+  <span class="shop-purchase-quantity">
+    × ${quantity}
+  </span>
+</span>`.trim();
+        })
+        .filter(Boolean)
+        .join("\n");
+
+    if (!renderedItems) {
+      return "";
+    }
+
+    return `
+<div class="shop-purchases">
+  <strong class="shop-purchases-title">
+    COMPRAS
+  </strong>
+
+  <div class="shop-purchases-list">
+    ${renderedItems}
+  </div>
+</div>`.trim();
+  }
+},
+
         /*
          * Solo Retiradas tiene campos
          * externos, por lo que los enlaces
