@@ -1114,14 +1114,14 @@ afterCode: {
                     }
 
                     return `
-<a class="shop-withdrawal-link" href="${escapeAttribute(link)}" target="_blank" rel="noopener noreferrer">Enlace de uso ${index + 1}</a>`.trim();
+<a class="shop-withdrawal-link" href="${escapeAttribute(link)}" target="_blank" rel="noopener noreferrer">— Enlace de uso ${index + 1}</a>`.trim();
                   }
                 )
                 .filter(Boolean)
                 .join("\n");
 
             return `
-<article class="shop-withdrawal-item"><strong class="shop-withdrawal-item-title">${escapeText(title)} × ${quantity}</strong>
+<span class="shop-withdrawal-item"><strong>${escapeText(title)}</strong><span class="shop-withdrawal-quantity"> × ${quantity}</span></span>
 
   ${
     renderedLinks
