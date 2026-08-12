@@ -228,450 +228,475 @@
    * =========================================================
    */
 
-  if (!window.PixieProfilePanel) {
-    console.warn(
-      "[Spectra] PixieProfilePanel no está cargado."
-    );
-
-    return;
-  }
-
-
-  PixieProfilePanel.register(
-    "inventory",
-    {
-      title:
-        "Ajuste de inventario",
-
-      description:
-        "Carga un post y aplica automáticamente sus compras y retiradas.",
+  function registerInventoryPanel() {
+    /*
+     * Pixie todavía no está listo.
+     */
+    if (!window.PixieProfilePanel) {
+      return false;
+    }
 
 
-      /*
-       * =====================================================
-       * CÓMO LEER EL POST
-       * =====================================================
-       */
-
-      source: {
-        reader:
-          "items",
-
-        options: {
-          /*
-           * Cada objeto de la Shop:
-           *
-           * <s-item ...>
-           */
-          itemSelector:
-            "s-item",
+    /*
+     * Evitamos registrar dos veces el mismo panel
+     * si el intervalo vuelve a ejecutarse.
+     */
+    if (
+      PixieProfilePanel.registry?.has?.(
+        "inventory"
+      )
+    ) {
+      return true;
+    }
 
 
-          /*
-           * Cada grupo genera una operación distinta.
-           */
-          groups: [
-            {
-              selector:
-                ".compras",
+    PixieProfilePanel.register(
+      "inventory",
+      {
+        title:
+          "Ajuste de inventario",
 
+        description:
+          "Carga un post y aplica automáticamente sus compras y retiradas.",
+
+
+        /*
+         * =====================================================
+         * CÓMO LEER EL POST
+         * =====================================================
+         */
+
+        source: {
+          reader:
+            "items",
+
+          options: {
+            /*
+             * Cada objeto de la Shop:
+             *
+             * <s-item ...>
+             */
+            itemSelector:
+              "s-item",
+
+
+            /*
+             * Cada grupo genera una operación distinta.
+             */
+            groups: [
+              {
+                selector:
+                  ".compras",
+
+                field:
+                  "inventory",
+
+                operation:
+                  "add"
+              },
+
+              {
+                selector:
+                  ".retiradas",
+
+                field:
+                  "inventory",
+
+                operation:
+                  "subtract"
+              }
+            ],
+
+
+            /*
+             * Cómo se llaman los atributos
+             * en el HTML de Spectra.
+             */
+            attributes: {
+              item:
+                "item",
+
+              quantity:
+                "cantidad",
+
+              price:
+                "coste",
+
+              extra: [
+                "bonus",
+                "descripcion"
+              ]
+            },
+
+
+            /*
+             * Cómo queremos que Pixie
+             * normalice esos atributos.
+             */
+            output: {
+              item:
+                "item",
+
+              quantity:
+                "cantidad",
+
+              price:
+                "precio"
+            },
+
+
+            /*
+             * Calculamos automáticamente:
+             *
+             * cantidad × precio
+             *
+             * para todo lo que esté en .compras
+             */
+            total: {
               field:
-                "inventory",
+                "spent",
+
+              from:
+                ".compras",
 
               operation:
                 "add"
-            },
-
-            {
-              selector:
-                ".retiradas",
-
-              field:
-                "inventory",
-
-              operation:
-                "subtract"
             }
-          ],
-
-
-          /*
-           * Cómo se llaman los atributos
-           * en el HTML de Spectra.
-           */
-          attributes: {
-            item:
-              "item",
-
-            quantity:
-              "cantidad",
-
-            price:
-              "coste",
-
-            extra: [
-              "bonus",
-              "descripcion"
-            ]
-          },
-
-
-          /*
-           * Cómo queremos que Pixie
-           * normalice esos atributos.
-           */
-          output: {
-            item:
-              "item",
-
-            quantity:
-              "cantidad",
-
-            price:
-              "precio"
-          },
-
-
-          /*
-           * Calculamos automáticamente:
-           *
-           * cantidad × precio
-           *
-           * para todo lo que esté en .compras
-           */
-          total: {
-            field:
-              "spent",
-
-            from:
-              ".compras",
-
-            operation:
-              "add"
-          }
-        }
-      },
-
-
-      /*
-       * =====================================================
-       * CAMPOS DEL PERFIL
-       * =====================================================
-       */
-
-      fields: [
-        /*
-         * ===================================================
-         * INVENTARIO
-         * ===================================================
-         */
-
-        {
-          key:
-            "inventory",
-
-          label:
-            "Inventario",
-
-
-          /*
-           * IMPORTANTE:
-           *
-           * Sustituye estos valores por los
-           * identificadores reales de Spectra.
-           */
-          id:
-            "field_id9",
-
-          field:
-            "inventario",
-
-          forumField:
-            "9",
-
-
-          type:
-            "html",
-
-
-          operations: [
-            "add",
-            "subtract"
-          ],
-
-
-          /*
-           * PixieProfile lee el HTML del campo
-           * y aquí lo convertimos a Map.
-           */
-          read({
-            html,
-            text
-          }) {
-            return inventoryToMap(
-              html || text
-            );
-          },
-
-
-          /*
-           * =================================================
-           * APLICAR CAMBIO
-           * =================================================
-           *
-           * Esta función recibe una directiva como:
-           *
-           * {
-           *   operation: "add",
-           *   value: {
-           *     item: "...",
-           *     cantidad: 1,
-           *     precio: 50,
-           *     bonus: "...",
-           *     descripcion: "..."
-           *   }
-           * }
-           */
-
-          apply({
-            current,
-            operation,
-            value
-          }) {
-            const map =
-              cloneInventoryMap(
-                current instanceof Map
-                  ? current
-                  : new Map()
-              );
-
-
-            const item =
-              String(
-                value?.item ||
-                ""
-              ).trim();
-
-
-            if (!item) {
-              return map;
-            }
-
-
-            const cantidad =
-              Number(
-                value?.cantidad
-              ) || 0;
-
-
-            const precio =
-              Number(
-                value?.precio
-              ) || 0;
-
-
-            const bonus =
-              String(
-                value?.bonus ||
-                ""
-              ).trim();
-
-
-            const descripcion =
-              String(
-                value?.descripcion ||
-                ""
-              ).trim();
-
-
-            /*
-             * Si todavía no existe,
-             * lo creamos.
-             */
-            if (!map.has(item)) {
-              map.set(
-                item,
-                {
-                  cantidad: 0,
-                  coste: precio,
-                  bonus,
-                  descripcion
-                }
-              );
-            }
-
-
-            const data =
-              map.get(item);
-
-
-            /*
-             * SUMAR
-             */
-            if (
-              operation ===
-              "add"
-            ) {
-              data.cantidad +=
-                cantidad;
-
-
-              if (precio) {
-                data.coste =
-                  precio;
-              }
-
-
-              if (bonus) {
-                data.bonus =
-                  bonus;
-              }
-
-
-              if (descripcion) {
-                data.descripcion =
-                  descripcion;
-              }
-            }
-
-
-            /*
-             * RESTAR
-             */
-            if (
-              operation ===
-              "subtract"
-            ) {
-              data.cantidad -=
-                cantidad;
-            }
-
-
-            /*
-             * Si el objeto llega a 0,
-             * desaparece del inventario.
-             */
-            if (
-              data.cantidad <= 0
-            ) {
-              map.delete(item);
-            }
-
-
-            return map;
-          },
-
-
-          /*
-           * Antes de guardar:
-           *
-           * Map → <s-item>
-           */
-          write(value) {
-            return mapToInventory(
-              value
-            );
-          },
-
-
-          /*
-           * Cómo mostramos el inventario
-           * en la previsualización.
-           */
-          format(value) {
-            if (
-              !(value instanceof Map)
-            ) {
-              return "—";
-            }
-
-
-            if (!value.size) {
-              return "Inventario vacío";
-            }
-
-
-            return Array.from(
-              value.entries()
-            )
-              .map(
-                ([item, data]) =>
-                  `${data.cantidad} × ${item}`
-              )
-              .join("\n");
-          },
-
-
-          /*
-           * Cómo mostramos cada cambio detectado.
-           */
-          formatDirective({
-            directive
-          }) {
-            const value =
-              directive.value ||
-              {};
-
-            const cantidad =
-              Number(
-                value.cantidad
-              ) || 0;
-
-            const item =
-              value.item ||
-              "Objeto";
-
-            return (
-              `${cantidad} × ${item}`
-            );
           }
         },
 
 
         /*
-         * ===================================================
-         * DINERO GASTADO
-         * ===================================================
+         * =====================================================
+         * CAMPOS DEL PERFIL
+         * =====================================================
          */
 
-        {
-          key:
-            "spent",
+        fields: [
+          /*
+           * ===================================================
+           * INVENTARIO
+           * ===================================================
+           */
 
-          label:
-            "Dinero gastado",
+          {
+            key:
+              "inventory",
+
+            label:
+              "Inventario",
+
+            id:
+              "field_id9",
+
+            field:
+              "inventario",
+
+            forumField:
+              "9",
+
+            type:
+              "html",
+
+            operations: [
+              "add",
+              "subtract"
+            ],
+
+
+            /*
+             * PixieProfile lee el HTML del campo
+             * y aquí lo convertimos a Map.
+             */
+            read({
+              html,
+              text
+            }) {
+              return inventoryToMap(
+                html || text
+              );
+            },
+
+
+            /*
+             * =================================================
+             * APLICAR CAMBIO
+             * =================================================
+             */
+
+            apply({
+              current,
+              operation,
+              value
+            }) {
+              const map =
+                cloneInventoryMap(
+                  current instanceof Map
+                    ? current
+                    : new Map()
+                );
+
+
+              const item =
+                String(
+                  value?.item ||
+                  ""
+                ).trim();
+
+
+              if (!item) {
+                return map;
+              }
+
+
+              const cantidad =
+                Number(
+                  value?.cantidad
+                ) || 0;
+
+
+              const precio =
+                Number(
+                  value?.precio
+                ) || 0;
+
+
+              const bonus =
+                String(
+                  value?.bonus ||
+                  ""
+                ).trim();
+
+
+              const descripcion =
+                String(
+                  value?.descripcion ||
+                  ""
+                ).trim();
+
+
+              /*
+               * Si todavía no existe,
+               * lo creamos.
+               */
+              if (!map.has(item)) {
+                map.set(
+                  item,
+                  {
+                    cantidad: 0,
+                    coste: precio,
+                    bonus,
+                    descripcion
+                  }
+                );
+              }
+
+
+              const data =
+                map.get(item);
+
+
+              /*
+               * SUMAR
+               */
+              if (
+                operation ===
+                "add"
+              ) {
+                data.cantidad +=
+                  cantidad;
+
+
+                if (precio) {
+                  data.coste =
+                    precio;
+                }
+
+
+                if (bonus) {
+                  data.bonus =
+                    bonus;
+                }
+
+
+                if (descripcion) {
+                  data.descripcion =
+                    descripcion;
+                }
+              }
+
+
+              /*
+               * RESTAR
+               */
+              if (
+                operation ===
+                "subtract"
+              ) {
+                data.cantidad -=
+                  cantidad;
+              }
+
+
+              /*
+               * Si el objeto llega a 0,
+               * desaparece del inventario.
+               */
+              if (
+                data.cantidad <= 0
+              ) {
+                map.delete(item);
+              }
+
+
+              return map;
+            },
+
+
+            /*
+             * Antes de guardar:
+             *
+             * Map → <s-item>
+             */
+            write(value) {
+              return mapToInventory(
+                value
+              );
+            },
+
+
+            /*
+             * Cómo mostramos el inventario
+             * en la previsualización.
+             */
+            format(value) {
+              if (
+                !(value instanceof Map)
+              ) {
+                return "—";
+              }
+
+
+              if (!value.size) {
+                return "Inventario vacío";
+              }
+
+
+              return Array.from(
+                value.entries()
+              )
+                .map(
+                  ([item, data]) =>
+                    `${data.cantidad} × ${item}`
+                )
+                .join("\n");
+            },
+
+
+            /*
+             * Cómo mostramos cada cambio detectado.
+             */
+            formatDirective({
+              directive
+            }) {
+              const value =
+                directive.value ||
+                {};
+
+              const cantidad =
+                Number(
+                  value.cantidad
+                ) || 0;
+
+              const item =
+                value.item ||
+                "Objeto";
+
+              return (
+                `${cantidad} × ${item}`
+              );
+            }
+          },
 
 
           /*
-           * IMPORTANTE:
-           *
-           * También debes sustituir estos datos
-           * por los reales.
+           * ===================================================
+           * DINERO GASTADO
+           * ===================================================
            */
-          id:
-            "field_id7",
 
-          field:
-            "dinero-gastado",
+          {
+            key:
+              "spent",
 
-          forumField:
-            "7",
+            label:
+              "Dinero gastado",
+
+            id:
+              "field_id7",
+
+            field:
+              "dinero-gastado",
+
+            forumField:
+              "7",
+
+            type:
+              "number",
+
+            operations: [
+              "add"
+            ],
+
+            min:
+              0
+          }
+        ]
+      }
+    );
 
 
-          type:
-            "number",
+    return true;
+  }
 
 
-          operations: [
-            "add"
-          ],
+  /*
+   * =========================================================
+   * ESPERAR A PIXIE
+   * =========================================================
+   */
+
+  /*
+   * Si PixieProfilePanel ya existe,
+   * el registro se hace inmediatamente.
+   */
+  if (registerInventoryPanel()) {
+    return;
+  }
 
 
-          min:
-            0
-        }
-      ]
-    }
-  );
+  /*
+   * Si el loader de Pixie todavía está trabajando,
+   * esperamos hasta que PixieProfilePanel aparezca.
+   */
+  const interval =
+    setInterval(() => {
+      if (
+        !registerInventoryPanel()
+      ) {
+        return;
+      }
+
+      clearInterval(interval);
+    }, 50);
+
+
+  /*
+   * Seguridad:
+   * dejamos de esperar después de 10 segundos.
+   */
+  setTimeout(() => {
+    clearInterval(interval);
+  }, 10000);
 
 })();
