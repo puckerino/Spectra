@@ -1158,24 +1158,8 @@ afterCode: {
   }
 },
 
-        /*
-         * Solo Retiradas tiene campos
-         * externos, por lo que los enlaces
-         * se publicarán automáticamente
-         * para esa sección.
-         */
-
         outsideFields: {
-          enabled: true,
-
-          title:
-            "JUSTIFICANTES",
-
-          itemSeparator:
-            "\n\n",
-
-          linePrefix:
-            "— "
+           enabled: false
         },
 
         /*
