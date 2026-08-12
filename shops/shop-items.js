@@ -1004,14 +1004,23 @@
           }
         },
 
-        afterCode: {
+afterCode: {
   enabled: true,
 
   render({
     sections,
     getItem,
+    escapeAttribute,
     escapeText
   }) {
+    const blocks = [];
+
+    /*
+     * =========================
+     * COMPRAS
+     * =========================
+     */
+
     const compras =
       Array.isArray(
         sections.compras
@@ -1019,47 +1028,133 @@
         ? sections.compras
         : [];
 
-    if (!compras.length) {
-      return "";
-    }
+    if (compras.length) {
+      const renderedPurchases =
+        compras
+          .map((entry) => {
+            const item =
+              getItem(entry);
 
-    const renderedItems =
-      compras
-        .map((entry) => {
-          const item =
-            getItem(entry);
+            if (!item) {
+              return "";
+            }
 
-          if (!item) {
-            return "";
-          }
+            const title =
+              item.title ||
+              item.raw?.titulo ||
+              "Item";
 
-          const title =
-            item.title ||
-            item.raw?.titulo ||
-            "Item";
+            const quantity =
+              Math.max(
+                1,
+                Math.floor(
+                  Number(
+                    entry.quantity
+                  ) || 1
+                )
+              );
 
-          const quantity =
-            Math.max(
-              1,
-              Number(
-                entry.quantity
-              ) || 1
-            );
-
-          return `
+            return `
 <span class="shop-purchase-item"><strong>${escapeText(title)}</strong><span class="shop-purchase-quantity">× ${quantity}</span></span>`.trim();
-        })
-        .filter(Boolean)
-        .join("\n");
+          })
+          .filter(Boolean)
+          .join("\n");
 
-    if (!renderedItems) {
-      return "";
+      if (renderedPurchases) {
+        blocks.push(`
+<div class="shop-purchases"><strong class="shop-purchases-title">COMPRAS</strong>
+<div class="shop-purchases-list">${renderedPurchases}</div>
+</div>`.trim());
+      }
     }
 
-    return `
-<div class="shop-purchases">
-<strong class="shop-purchases-title">COMPRAS</strong>
-<div class="shop-purchases-list">${renderedItems}</div></div>`.trim();
+    /*
+     * =========================
+     * RETIRADAS
+     * =========================
+     */
+
+    const retiradas =
+      Array.isArray(
+        sections.retiradas
+      )
+        ? sections.retiradas
+        : [];
+
+    if (retiradas.length) {
+      const renderedWithdrawals =
+        retiradas
+          .map((entry) => {
+            const item =
+              getItem(entry);
+
+            if (!item) {
+              return "";
+            }
+
+            const title =
+              item.title ||
+              item.raw?.titulo ||
+              "Item";
+
+            const quantity =
+              Math.max(
+                1,
+                Math.floor(
+                  Number(
+                    entry.quantity
+                  ) || 1
+                )
+              );
+
+            const links =
+              Array.isArray(
+                entry.fields?.links
+              )
+                ? entry.fields.links
+                : [];
+
+            const renderedLinks =
+              links
+                .map(
+                  (
+                    link,
+                    index
+                  ) => {
+                    if (!link) {
+                      return "";
+                    }
+
+                    return `
+<a class="shop-withdrawal-link" href="${escapeAttribute(link)}" target="_blank" rel="noopener noreferrer">Enlace de uso ${index + 1}</a>`.trim();
+                  }
+                )
+                .filter(Boolean)
+                .join("\n");
+
+            return `
+<article class="shop-withdrawal-item"><strong class="shop-withdrawal-item-title">${escapeText(title)} × ${quantity}</strong>
+
+  ${
+    renderedLinks
+      ? `
+  <div class="shop-withdrawal-justifications">${renderedLinks}</div>`
+      : ""
+  }
+</article>`.trim();
+          })
+          .filter(Boolean)
+          .join("\n");
+
+      if (renderedWithdrawals) {
+        blocks.push(`
+<div class="shop-withdrawals"><strong class="shop-withdrawals-title">RETIRADAS</strong>
+<div class="shop-withdrawals-list">${renderedWithdrawals}</div>
+</div>`.trim());
+      }
+    }
+
+    return blocks.join("\n\n");
   }
 },
 
