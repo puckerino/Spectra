@@ -69,26 +69,52 @@
 
         h3 {}
 
-        div {
+        div[data-pixie-result-fields] {
+			padding: var(--spacing);
 
             .pixie-profile-result {
 
-                .pixie-profile-result__title {}
+                .pixie-profile-result__title {
+					font: bold var(--f-base) var(--f-metadata);
+					text-transform: uppercase;
+					letter-spacing: .1ch;
+				}
 
                 .pixie-profile-result__values {
+					display: grid;
+					grid-template-columns:repeat(2,1fr);
+					gap: var(--spacing);
 
                     .pixie-profile-result__current {
+						border: 1px solid var(--border);
+						padding: var(--spacing);
+						display: flex;
+						flex-direction: column;
 
-                        small {}
+                        small {
+							font: bold var(--f-s) var(--f-metadata);
+							text-transform: uppercase;
+						}
 
-                        pre {}
+                        pre {
+							font: var(--f-base) var(--f-mono);
+						}
                     }
 
                     .pixie-profile-result__new {
+						border: 1px solid var(--border);
+						padding: var(--spacing);
+						display: flex;
+						flex-direction: column;
 
-                        small {}
+                        small {
+							font: bold var(--f-s) var(--f-metadata);
+							text-transform: uppercase;
+						}
 
-                        pre {}
+                        pre {
+							font: var(--f-base) var(--f-mono);
+						}
                     }
                 }
             }
