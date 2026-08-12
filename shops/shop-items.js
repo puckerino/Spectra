@@ -1047,12 +1047,7 @@
             );
 
           return `
-<span class="shop-purchase-item">
-  <strong>${escapeText(title)}</strong>
-  <span class="shop-purchase-quantity">
-    × ${quantity}
-  </span>
-</span>`.trim();
+<span class="shop-purchase-item"><strong>${escapeText(title)}</strong><span class="shop-purchase-quantity">× ${quantity}</span></span>`.trim();
         })
         .filter(Boolean)
         .join("\n");
@@ -1063,14 +1058,8 @@
 
     return `
 <div class="shop-purchases">
-  <strong class="shop-purchases-title">
-    COMPRAS
-  </strong>
-
-  <div class="shop-purchases-list">
-    ${renderedItems}
-  </div>
-</div>`.trim();
+<strong class="shop-purchases-title">COMPRAS</strong>
+<div class="shop-purchases-list">${renderedItems}</div></div>`.trim();
   }
 },
 
