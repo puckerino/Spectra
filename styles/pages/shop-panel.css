@@ -102,6 +102,8 @@
 
         button {}
 
-        .pixie-profile-panel__status {}
+        .pixie-profile-panel__status {
+			color: var(--text-1) !important;
+		}
     }
 }
