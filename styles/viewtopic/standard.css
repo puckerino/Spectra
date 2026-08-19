@@ -1,0 +1,226 @@
+.viewtopic_body {
+
+    .post {
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        grid-template-areas: "body aside";
+        gap: var(--spacing);
+
+        .profile {
+            height: max-content;
+            position: sticky;
+            top: var(--nav-size);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-areas: "header" "avatar" "contact";
+
+            @media (max-width: 700px) {
+                display: none;
+            }
+
+            .postheader {
+                grid-area: header;
+                display: grid;
+                align-items: center;
+
+                @media (max-width: 700px) {
+                    grid-template-columns: max-content 1fr;
+                    gap: var(--spacing);
+                }
+
+                .avatar-post-mobile {
+                    display: none;
+
+                    img {
+                        border-radius: .5rem;
+                        corner-shape: var(--shape-deco);
+                    }
+
+                    @media (max-width: 700px) {
+                        display: block;
+                    }
+                }
+
+                &:has(.rankimg:has(img)) {
+                    grid-template-columns: 1fr max-content max-content;
+                }
+
+                hgroup {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                div[data-profile-render-value="imagen-post"] {
+                    @media (max-width: 700px) {
+                        display: none;
+                    }
+                }
+
+                .rankimg:not(:has(img)) {
+                    display: none;
+                }
+
+                .username {
+                    font: 100 var(--f-3xl) var(--f-post-username);
+                    line-height: 1;
+                    text-transform: uppercase;
+                }
+
+                .rank {
+                    display: flex;
+                    align-items: center;
+                    gap: var(--spacing-s);
+                }
+            }
+
+            .avatar-post {
+                @media(max-width: 700px) {
+                    display: none;
+                }
+            }
+
+            .contact {
+                background: var(--poster-dark);
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+                gap: var(--spacing-s);
+
+                li {
+                    display: flex;
+                }
+            }
+
+            .profile-data {
+                height: var(--avatar-post-height);
+                width: var(--avatar-post-width);
+                background: color-mix(in srgb, var(--poster), transparent 70%);
+                backdrop-filter: grayscale(1) blur(20px) brightness(.5);
+                opacity: 0;
+                transition: all .3s ease-in-out;
+                color: var(--text-contrast);
+
+                &:hover {
+                    opacity: 1;
+                    transition: all .3s ease-in-out;
+                }
+
+
+
+                .profile-fields {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: var(--spacing-s);
+                    overflow: auto;
+                }
+
+                .profile-field {
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    .field-name {
+                        font: bold var(--f-s) var(--f-label);
+                        text-transform: uppercase;
+                    }
+
+                    .field-value {
+                        font: var(--f-base) var(--f-title);
+                    }
+
+                    &.field-mensajes {
+                        flex-direction: column-reverse;
+
+                        .field-value {
+                            font: var(--f-l) var(--f-title);
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .postbody {
+            border: 1px solid var(--border);
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            grid-template-areas: "data post";
+
+            &:has(.signature) {
+                grid-template-rows: 1fr max-content;
+                grid-template-areas: "data post" "data signature";
+            }
+
+
+
+
+            .data {
+                grid-area: data;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: var(--surface-elevated);
+                border-right: 1px solid var(--border);
+                border-bottom: 0;
+                gap: var(--spacing);
+                padding: var(--spacing-s);
+
+                @media (max-width: 700px) {
+                    display: grid;
+                    grid-template-columns: max-content 1fr;
+                }
+
+                .permalink,
+                .date {
+                    padding: var(--spacing-s);
+                    background: var(--poster-dark);
+                    color: contrast-color(var(--poster-darker));
+                }
+
+
+                .profile-icons {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: var(--spacing);
+
+                    a {
+                        padding: var(--spacing-s);
+                    }
+
+                    span {
+                        display: none;
+                    }
+                }
+
+                svg {
+                    width: var(--f-base);
+                    height: var(--f-base);
+                }
+
+            }
+
+        }
+
+        .content.message {
+            grid-area: post;
+            padding: var(--spacing-2xl);
+        }
+
+        .fa_like_div {
+            grid-area: likes;
+            display: none;
+        }
+
+        .signature {
+            grid-area: signature;
+            border-top: 1px solid var(--border);
+        }
+    }
+
+}
