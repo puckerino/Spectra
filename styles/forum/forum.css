@@ -1,0 +1,8 @@
+
+.forum {
+    background: var(--surface);
+
+    .icon {
+        display: none;
+    }
+}
