@@ -1,9 +1,7 @@
 @container style(--category:guidebook) {
 
     hgroup {
-        grid-template-columns: 1fr !important;
-        grid-template-rows: repeat(2,max-content) !important;
-        grid-template-areas: "title" "desc" !important;
+        grid-template-areas: "title title" ". desc" !important;
 
         &:after {
             padding-left: var(--spacing);
