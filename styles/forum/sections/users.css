@@ -1,7 +1,7 @@
 @container style(--category: users) {
 
     .forum:not([forum*="tiendas"]) {
-        --forum-lastpost: standard;
+        --forum-lastpost: bottomdecoration;
         --forum-rows: 6;
         grid-template-columns: 1rem 1fr 1rem;
         grid-template-areas:
