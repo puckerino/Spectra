@@ -43,7 +43,7 @@ main {
 
 /* ===== SHARED STYLES ====== */
 
-main:not(.modcp, .posting, .search-list), 
+main:not(.modcp, .posting, .search-list, .index), 
 .modcp>form, 
 .modcp:not(:has(form)), 
 .search-list>form, 
