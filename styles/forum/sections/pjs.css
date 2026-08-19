@@ -1,65 +1,8 @@
 @container style(--category: pjs) {
 
-    .forum-wrap {
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        gap: var(--spacing);
-    }
-
-    .forum[forum*="fichas"] {
-        grid-column: 1;
-        grid-row: 1 / 4;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4,1fr);
-        grid-template-areas:
-            "img title"
-            "img links"
-            "img desc"
-            "img lastpost"
-        ;
-
-        color: var(--text-contrast);
-        background-color: var(--background-elevated-contrast);
-
-        &>.title {
-            font: var(--f-5xl) var(--f-title-deco);
-        }
-
-        .forum-img {
-            img {
-                object-fit: contain;
-                max-height: 50vh;
-                width: auto;
-            }
-
-            .links {
-                .forum-links {
-                    display: flex;
-                    flex-direction: column;
-                    gap: var(--spacing);
-
-                    a {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                        border: 1px solid var(--border);
-                        padding: var(--spacing);
-
-                        span {
-                            font: var(--f-xl) var(--f-title);
-                            text-transform: uppercase;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     .forum:not([forum*="fichas"]) {
-        --forum-lastpost: bottomdecoration;
-        --forum-rows: 1;
-        grid-column: 2;
+        --forum-lastpost: standard;
+        --forum-rows: 3;
         grid-template-columns: max-content 60px 1fr max-content;
         grid-template-rows: repeat(3, max-content);
         grid-template-areas:
