@@ -53,10 +53,10 @@
         --forum-rows: 4;
         position: relative;
         gap: var(--spacing);
-        grid-template-columns: 1fr max-content 1fr;
+        grid-template-columns: repeat(3,1fr);
         grid-template-rows: repeat(4, max-content);
         grid-template-areas:
-            "title links img"
+            "title title img"
             "data links img"
             "desc links img"
             "desc lastpost img"
@@ -64,13 +64,16 @@
 
         &>.title {
             align-self: end;
-            z-index: 2;
         }
 
         .description {
+            max-width: 60ch;
         }
 
         .forum-img {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
 
             img {
                 object-fit: contain;
