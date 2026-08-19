@@ -2,7 +2,7 @@
 
 main {
     margin: var(--spacing-2xl) auto;
-    background: var(--background);
+    background: var(--surface);
 
     &:not(.memberlist, .message-body, .index, .viewcomments_body, .viewforum_body[forum="fichas"]) {
         width: 80vw;
@@ -118,7 +118,7 @@ main {
         align-items: center;
         gap: var(--spacing);
         padding: var(--spacing);
-        background: var(--background-elevated);
+        background: var(--surface-elevated);
 
         &.topic-actions-top {
             border-bottom: 1px solid var(--border);
