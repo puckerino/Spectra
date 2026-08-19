@@ -1,6 +1,7 @@
 @container style(--category: users) {
 
     .forum:not([forum*="tiendas"]) {
+        --forum-lastpost: standard;
         --forum-rows: 6;
         grid-template-columns: 1rem 1fr 1rem;
         grid-template-areas:
@@ -14,11 +15,6 @@
 
         border: 1px solid var(--border);
         padding-top: var(--spacing);
-
-        .lastpost {
-            border-top: 1px solid var(--border);
-            padding: var(--spacing-s);
-        }
 
         .forum-img {
             height: 60px;
