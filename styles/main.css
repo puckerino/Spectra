@@ -43,23 +43,11 @@ main {
 
 /* ===== SHARED STYLES ====== */
 
-.viewforum_body,
-.viewtopic_body,
-.modcp>form,
-.modcp:not(:has(form)),
-.posting>form,
-.topic-review,
-.ucp,
-.privmsgs-body,
-.memberlist,
-.discover,
-.search-list>form,
-.search-list.list-posts,
-.message-body,
-.viewonline_body,
-.groupcp,
-.viewcomments_body,
-.agreement {
+main:not(.modcp, .posting, .search-list), 
+.modcp>form, 
+.modcp:not(:has(form)), 
+.search-list>form, 
+.search-list.list-posts {
     border: 1px solid var(--border);
     border-radius: 1rem;
     corner-shape: var(--shape-deco);
