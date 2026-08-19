@@ -1,0 +1,5 @@
+.forum>.data {
+    font: var(--f-s) var(--f-metadata);
+    text-transform: uppercase;
+    color: var(--text-subtle);
+}
