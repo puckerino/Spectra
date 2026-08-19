@@ -52,7 +52,7 @@
         grid-template-columns: repeat(3,1fr);
         grid-template-rows: repeat(4, max-content);
         grid-template-areas:
-            "title title img"
+            "title links img"
             "data links img"
             "desc links img"
             "lastpost links img"
@@ -75,7 +75,7 @@
                 object-fit: contain;
                 width: 100%;
                 height: auto;
-                max-height: 50vh;
+                max-height: 45vh;
             }
 
             @media (max-width: 700px) {
@@ -85,8 +85,9 @@
 
 
         .forum-links {
+            place-self: center;
             display: grid;
-            grid-template-columns:repeat(2,150px);
+            grid-template-columns:repeat(2,200px);
             gap: var(--spacing);
             position: relative;
             z-index: 2;
