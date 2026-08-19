@@ -36,38 +36,3 @@ LINKS
       }
   }
 }
-
-/* =====================================
-LASTPOST
-====================================== */
-
-@container style(--forum-lastpost: horizontal) {
-    .lastpost {
-        display: flex;
-        align-items: center;
-        gap: var(--spacing);
-
-        .lastpost-data {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: var(--spacing);
-            flex-grow:1;
-        }
-    }
-}
-
-@container style(--forum-lastpost: standard) {
-    .lastpost {
-        display: flex;
-        align-items: center;
-        gap: var(--spacing-s);
-        justify-content: flex-start;
-
-        .lastpost-data {
-            gap: 0 var(--spacing-s);
-            line-height: 1;
-        }
-        
-    }
-}
