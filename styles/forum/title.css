@@ -5,7 +5,7 @@
 
 @container style(--forum-title: decoration) {
   .forum > .title {
-    font: var(--f-2xl) var(--f-title-deco);
+    font: var(--f-4xl) var(--f-title-deco);
     text-transform: uppercase;
   }
 }
