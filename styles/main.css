@@ -1,8 +1,11 @@
 /* ===== MAIN WIDTHS ===== */
 
 main {
+
+    &:not(.index) {
     margin: var(--spacing-2xl) auto;
     background: var(--surface);
+    }
 
     &:not(.memberlist, .message-body, .index, .viewcomments_body, .viewforum_body[forum="fichas"]) {
         width: 80vw;
