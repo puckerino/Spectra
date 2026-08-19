@@ -59,7 +59,7 @@
             "title links img"
             "data links img"
             "desc links img"
-            "lastpost links img"
+            "desc lastpost img"
             ;
 
         &>.title {
@@ -68,10 +68,6 @@
         }
 
         .description {
-            border-left: 2px solid var(--accent);
-            padding-left: var(--spacing-2xl);
-            width: 60ch;
-            z-index: 2;
         }
 
         .forum-img {
@@ -80,6 +76,7 @@
                 object-fit: contain;
                 width: 100%;
                 height: auto;
+                max-height: 50vh;
             }
 
             @media (max-width: 700px) {
@@ -87,11 +84,6 @@
             }
         }
 
-        .links {
-            place-content: center;
-            padding: var(--spacing);
-            background: var(--background-elevated-contrast);
-        }
 
         .forum-links {
             display: grid;
@@ -113,7 +105,7 @@
                 align-items: center;
                 gap: var(--spacing-s);
                 padding: var(--spacing);
-                background: var(--background-elevated2-contrast);
+                background: var(--background-contrast);
                 color: var(--text-contrast);
 
                 &:before {
