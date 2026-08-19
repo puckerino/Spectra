@@ -1,0 +1,4 @@
+.forum>.description {
+    font: var(--f-base) var(--f-text);
+    text-wrap: balance;
+}
