@@ -1,9 +1,5 @@
 @container style(--category: pjs) {
 
-    .category {
-        padding: var(--spacing-5xl);
-    }
-
     .forum-wrap {
         display: grid;
         grid-template-columns: repeat(2,1fr);
@@ -61,6 +57,7 @@
     }
 
     .forum:not([forum*="fichas"]) {
+        --forum-lastpost: bottomdecoration;
         --forum-rows: 1;
         grid-column: 2;
         grid-template-columns: max-content 60px 1fr max-content;
@@ -72,11 +69,6 @@
         border: 1px solid var(--border);
         padding-top: var(--spacing);
         gap: var(--spacing-s) var(--spacing);
-
-        .lastpost {
-            padding: var(--spacing-s);
-            border-top: 1px solid var(--border);
-        }
 
         .forum-img {
             width: 60px;
