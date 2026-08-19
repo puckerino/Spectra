@@ -2,6 +2,15 @@
 LINKS
 ====================================== */
 
+.forum .forum-links {
+    a {
+        font: var(--f-s) var(--f-forum-links);
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+    }
+}
+
 @container style(--forum-links-columns: column) {
     .forum-links {
         display: flex;
