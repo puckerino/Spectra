@@ -7,10 +7,6 @@
         display: none;
     }
 
-    .avatar-lastpost-forum {
-
-    }
-
     .lastpost-data {
         gap: 0 var(--spacing-s);
         flex-grow: 1;
