@@ -1,5 +1,0 @@
-@container style(--category: offtopic) {
-  .category {
-    padding: var(--spacing-5xl);
-  }
-}
