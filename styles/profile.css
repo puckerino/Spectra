@@ -1,4 +1,4 @@
-.profile {
+main.profile {
   border: 1px solid var(--border);
 
   button[popovertarget="profile-popover"] {
