@@ -12,15 +12,17 @@
     
     .forum {
         --forum-rows: 2;
-        grid-template-columns: 60px 1fr;
-        grid-template-areas: "img title" "img links";
+        grid-template-columns: 1fr;
+        grid-template-areas: "title" "links";
 
 
          & > .title {
-                border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+             position: relative;
             }
 
         .forum-img {
+            grid-area: title;
             height: 60px;
             width: 60px;
             background: var(--accent);
@@ -28,6 +30,7 @@
             mask-size: contain;
             mask-repeat: no-repeat;
             mask-position: center;
+            place-self: center;
         }
 
         &[forum*="general"] {
