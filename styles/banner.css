@@ -15,16 +15,7 @@
     }
 
     p {
-        font: italic var(--f-l) var(--f-label);
+        font: italic var(--f-l) var(--f-metadata);
         text-transform: lowercase;
-    }
-
-    #logo-desc {
-        position: absolute;
-        z-index: -1;
-        height: 80%;
-        width: 35vw;
-        background: center / cover var(--banner-background-img);
-        mask: url(https://2img.net/i.imgur.com/wyIeB8R.png) center / 100% 100%;
     }
 }
