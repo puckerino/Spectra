@@ -1,9 +1,5 @@
 @container style(--category: users) {
 
-    .category {
-        padding: var(--spacing-5xl);
-    }
-
     .forum:not([forum*="tiendas"]) {
         --forum-rows: 6;
         grid-template-columns: 1rem 1fr 1rem;
@@ -53,6 +49,7 @@
 
 
     .forum[forum*="tiendas"] {
+        --forum-title: decoration;
         --forum-rows: 4;
         position: relative;
         gap: var(--spacing);
@@ -65,27 +62,9 @@
             "lastpost links img"
             ;
 
-        @media (max-width: 700px) {
-            --forum-rows: 5;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(5 ,max-content);
-            grid-template-areas:
-                "title"
-                "data"
-                "desc"
-                "lastpost"
-                "links"
-                ;
-        }
-
         &>.title {
             align-self: end;
-            font: bold var(--f-4xl) var(--f-title-deco);
             z-index: 2;
-
-            @media (max-width: 700px) {
-                font: bold var(--f-xl) var(--f-title-deco);
-            }
         }
 
         .description {
