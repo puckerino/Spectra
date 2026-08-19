@@ -3,6 +3,5 @@
     display: grid;
     grid-template-columns: .5fr 1fr;
     gap: var(--spacing);
-    padding: var(--spacing-5xl);
   }
 }
