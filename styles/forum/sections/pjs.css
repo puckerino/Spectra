@@ -1,7 +1,7 @@
 @container style(--category: pjs) {
 
     .forum:not([forum*="fichas"]) {
-        --forum-lastpost: standard;
+        --forum-lastpost: bottomdecoration;
         --forum-rows: 3;
         grid-template-columns: max-content 60px 1fr max-content;
         grid-template-rows: repeat(3, max-content);
