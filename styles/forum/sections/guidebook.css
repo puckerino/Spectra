@@ -5,8 +5,7 @@
 
         &:after {
             padding-left: var(--spacing);
-            border-left: 2px solid var(--accent);
-            margin-left: var(--spacing-5xl);
+            text-align: right;
         }
     }
 
