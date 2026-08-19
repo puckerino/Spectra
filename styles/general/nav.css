@@ -2,7 +2,7 @@ nav {
     height: var(--nav-size);
     width: 100%;
     background: var(--navbar);
-    color: var(--navbar-text)
+    color: var(--navbar-text);
     position: sticky;
     top: 0;
     z-index: 999;
