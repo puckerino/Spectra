@@ -34,6 +34,12 @@
     }
 }
 
+@container style(--forum-lastpost: standard) {
+    .lastpost {
+        border-top: 1px solid var(--border);
+    }
+}
+
 @container style(--forum-lastpost: bottomdecoration) {
     .lastpost {
         display: flex;
