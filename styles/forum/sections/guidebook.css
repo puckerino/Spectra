@@ -32,10 +32,12 @@
              align-items: center;
              text-align: center;
              position: relative;
+             z-index: 2;
             }
 
         .forum-img {
             grid-area: title;
+            z-index: 1;
             height: 60px;
             width: 60px;
             background: var(--accent);
