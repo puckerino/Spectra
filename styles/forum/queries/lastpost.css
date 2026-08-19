@@ -1,0 +1,17 @@
+@container style(--forum-lastpost: bottomdecoration) {
+    .lastpost {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-xs) var(--spacing);
+        border-bottom: 10px solid var(--poster);
+        padding: 0;
+
+        .avatar-lastpost-forum {
+
+            img {
+                outline: 0;
+                border: 0;
+            }
+        }
+    }
+}
