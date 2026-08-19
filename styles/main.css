@@ -47,7 +47,8 @@ main:not(.modcp, .posting, .search-list),
 .modcp>form, 
 .modcp:not(:has(form)), 
 .search-list>form, 
-.search-list.list-posts {
+.search-list.list-posts,
+.posting>form {
     border: 1px solid var(--border);
     border-radius: 1rem;
     corner-shape: var(--shape-deco);
