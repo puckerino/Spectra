@@ -47,6 +47,7 @@
     .forum[forum*="tiendas"] {
         --forum-title: decoration;
         --forum-rows: 4;
+        background: transparent !important;
         position: relative;
         gap: var(--spacing);
         grid-template-columns: repeat(3,1fr);
