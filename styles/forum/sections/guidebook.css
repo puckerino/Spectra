@@ -9,11 +9,22 @@
             margin-left: var(--spacing-5xl);
         }
     }
+
+    .forum-wrap {
+        background: var(--accent-deco);
+        padding: var(--spacing-2xl);
+        border: 1px solid var(--border);
+    }
     
     .forum {
         --forum-rows: 2;
+        background: transparent !important;
         grid-template-columns: 1fr;
         grid-template-areas: "title" "links";
+
+        &:not(:last-of-type) {
+            border-right: 1px solid var(--border);
+        }
 
 
          & > .title {
