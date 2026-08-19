@@ -1,0 +1,12 @@
+.forum>.title {
+    font: 200 var(--f-xl) var(--f-forum-title);
+    text-transform: uppercase;
+}
+
+@container style(--forum-title: decoration) {
+  .forum > .title {
+    font: var(--f-2xl) var(--f-title-deco);
+    text-transform: uppercase;
+  }
+}
+  
