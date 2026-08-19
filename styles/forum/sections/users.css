@@ -83,9 +83,12 @@
             }
         }
 
+        .links {
+            place-self: center;
+        }
+
 
         .forum-links {
-            place-self: center;
             display: grid;
             grid-template-columns:repeat(2,200px);
             gap: var(--spacing);
