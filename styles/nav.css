@@ -83,6 +83,7 @@ nav {
     border: 0;
     border-radius: var(--spacing-s);
     corner-shape: var(--shape-elements);
+    border: 1px solid var(--border);
 }
 
 #forumnavmenu {
@@ -121,6 +122,7 @@ nav {
     border-radius: var(--spacing-s);
     corner-shape: var(--shape-elements);
     border: 0;
+    border: 1px solid var(--border);
 }
 
 #profile-popover {
@@ -134,6 +136,7 @@ nav {
     margin-top: calc(var(--nav-size) + calc(var(--spacing)/2));
     overflow: auto;
     border: 0;
+    border: 1px solid var(--border);
 }
 
 #switcheroo-popover {
@@ -146,6 +149,7 @@ nav {
     margin-right: calc(var(--spacing) / 2);
     margin-top: calc(var(--nav-size) + calc(var(--spacing)/2));
     border: 0;
+    border: 1px solid var(--border);
 }
 
 /* ===== NOTIS ===== */
